@@ -1,0 +1,34 @@
+% ****************************************************************************************************
+% config
+% ****************************************************************************************************
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=2.5cm]{geometry}
+\usepackage[latin1]{inputenc}
+\usepackage{babel}
+\usepackage{xspace} % to get the spacing after macros right
+\usepackage[sc]{mathpazo} % font Palatino
+\linespread{1.05}  % Palatino needs more leading (space between lines)
+\usepackage[T1]{fontenc}
+\usepackage{textcase}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{natbib}
+
+% ****************************************************************************************************
+% headings
+% ****************************************************************************************************
+\usepackage{titlesec}
+% \titleformat{command}{heading}{number}{distance}{code before}
+\titleformat{\chapter}{\Large\MakeTextUppercase}{\textbf{\Large\thechapter}}{5pt}{\textbf}
+
+% ****************************************************************************************************
+% page numbering
+% ****************************************************************************************************
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt} %obere Trennlinie
+\makeatletter
+\let\ps@plain\ps@fancy
+\makeatother
+

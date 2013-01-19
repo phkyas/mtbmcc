@@ -1,15 +1,27 @@
-
-\documentclass[12pt,a4paper,oneside,notitlepage]{scrreprt}
-
-\usepackage[sc]{mathpazo}
-\linespread{1.05}         % Palatino needs more leading (space between lines)
-\usepackage[T1]{fontenc}
-
-\usepackage{graphicx}
-
+% ****************************************************************************************************
+% mtbmcc
+% ****************************************************************************************************
+\documentclass[12pt,a4paper,oneside,notitlepage,USenglish]{scrreprt}
+\input{mtbmcc-config}
+\input{mtbmcc-metadata}
 \begin{document}
 
-%include file with data: name, uni,...
+% ****************************************************************************************************
+% front matter
+% ****************************************************************************************************
+\titlespacing*{\chapter}{0pt}{3\baselineskip}{3\baselineskip}
 \include{frontBackMatter/titlepage}
+\include{frontBackMatter/abstract}
+\include{frontBackMatter/tables}
+% ****************************************************************************************************
+% mchapters
+% ****************************************************************************************************
+\titlespacing*{\chapter}{0pt}{.3333\textheight}{3\baselineskip}
+
+% ****************************************************************************************************
+% bibliography & appendix
+% ****************************************************************************************************
+\titlespacing*{\chapter}{0pt}{3\baselineskip}{3\baselineskip}
+\include{frontBackMatter/bibliography}
 
 \end{document}
