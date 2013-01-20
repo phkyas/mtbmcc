@@ -12,13 +12,30 @@
 \usepackage{graphicx}
 \usepackage{lastpage}
 \usepackage{natbib}
+\usepackage{fixltx2e} % fixes some LaTeX stuff 
 
 % ****************************************************************************************************
 % headings
 % ****************************************************************************************************
 \usepackage{titlesec}
 % \titleformat{command}{heading}{number}{distance}{code before}
-\titleformat{\chapter}{\Large\MakeTextUppercase}{\textbf{\Large\thechapter}}{5pt}{\textbf}
+\titleformat{\chapter}{\Large\MakeTextUppercase}{\textbf{\Large\thechapter}}{15pt}{\textbf}
+\titleformat{\section}{\large}{\textbf{\large\thesection}}{10pt}{\textbf}
+\titleformat{\subsection}{\normalsize}{\textbf{\normalsize\thesubsection}}{5pt}{\textbf}
+
+% ****************************************************************************************************
+% table of contents (chapter in capital letters)
+% ****************************************************************************************************
+\usepackage{ifthen}
+\makeatletter
+\let\Addcontentsline\addcontentsline
+\renewcommand\addcontentsline[3]{
+	\ifthenelse
+	{\equal{#2}{chapter}}
+	{\Addcontentsline{#1}{#2}{\MakeTextUppercase{#3}}}
+	{\Addcontentsline{#1}{#2}{#3}}}
+\makeatother
+
 
 % ****************************************************************************************************
 % page numbering
@@ -32,3 +49,29 @@
 \let\ps@plain\ps@fancy
 \makeatother
 
+% ****************************************************************************************************
+% hyperref
+% ****************************************************************************************************
+\usepackage[pdftex]{hyperref}
+\hypersetup{
+	breaklinks=true,
+	pdfpagemode=UseNone, 
+	pageanchor=true, 
+	pdfpagemode=UseOutlines,
+	plainpages=false, 
+	bookmarksnumbered, 
+	bookmarksopen=true, 
+	bookmarksopenlevel=1,
+  hypertexnames=true, 
+	pdfhighlight=/O,
+  urlcolor=webbrown, 
+	linkcolor=RoyalBlue, 
+	citecolor=webgreen, 
+	pdftitle={\myTitle},
+	pdfauthor={\textcopyright\ \myName, \myUni, \myFaculty},
+	pdfsubject={},
+  pdfkeywords={},
+  pdfcreator={pdfLaTeX},
+  pdfproducer={LaTeX with hyperref and scrreprt},
+	%hidelinks
+}
