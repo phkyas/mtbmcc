@@ -15,6 +15,16 @@
 \usepackage{fixltx2e} % fixes some LaTeX stuff
 \usepackage[printonlyused]{acronym} 
 
+	%***** TEMP
+	\usepackage{bibentry}
+	\usepackage{hanging}
+	\nobibliography*
+	\newcommand\hangbibentry[1]{%
+			\smallskip\par\hangpara{1em}{1}\bibentry{#1}\smallskip\par %{indent}{afterline}
+	}
+	%\hangbibentry{<Key>}
+	%***** TEMP
+
 % ****************************************************************************************************
 % headings
 % ****************************************************************************************************
