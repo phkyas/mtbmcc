@@ -2,24 +2,28 @@
 % tables
 % ****************************************************************************************************
 
-\renewcommand{\listfigurename}{Figures}
-\listoffigures
-\thispagestyle{empty}
-\addcontentsline{toc}{chapter}{Figures}
-
-\renewcommand{\listtablename}{Tables}
-\listoftables
-\thispagestyle{empty}
-\addcontentsline{toc}{chapter}{Tables}
-
-\renewcommand{\contentsname}{Table of Contents}
+%\renewcommand{\contentsname}{Table of Contents}
 \tableofcontents
 \thispagestyle{empty}
-\addcontentsline{toc}{chapter}{Table of Contents}
+%\addcontentsline{toc}{chapter}{Table of Contents}
+\pdfbookmark[1]{\contentsname}{toc}
 
-\chapter*{Abbreviations}
+%\renewcommand{\listfigurename}{Figures}
+\listoffigures
 \thispagestyle{empty}
-\addcontentsline{toc}{chapter}{Abbreviations}
+%\addcontentsline{toc}{chapter}{Figures}
+\pdfbookmark[1]{\listfigurename}{lof}
+
+%\renewcommand{\listtablename}{Tables}
+\listoftables
+\thispagestyle{empty}
+%\addcontentsline{toc}{chapter}{Tables}
+\pdfbookmark[1]{\listtablename}{lot}
+
+\chapter*{Acronyms}
+\thispagestyle{empty}
+%\addcontentsline{toc}{chapter}{Acronyms}
+\pdfbookmark[1]{Acronyms}{Acronyms}
 
 \begin{acronym}[PaaS]
 		\acro{DRY}{Don't Repeat Yourself}
