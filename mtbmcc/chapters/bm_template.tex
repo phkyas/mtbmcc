@@ -1,0 +1,114 @@
+% ****************************************************************************************************
+% Business Model Template
+% ****************************************************************************************************
+
+\newlength{\column}
+\setlength{\column}{0.25\textwidth - 2\tabcolsep}
+\newlength{\columnT}
+\setlength{\columnT}{2\column + 2\tabcolsep}
+\newlength{\columnF}
+\setlength{\columnF}{4\column + 6\tabcolsep}
+
+
+\tablefirsthead{
+	\hline
+	}
+
+\tablehead{
+	\hline  
+	\multicolumn{4}{|l|}{\textit{continued from previous page (Business Model CloudBees)}}\\ 
+	\hline}
+
+\tabletail{
+	\hline
+	\multicolumn{4}{|r|}{\textit{continued on next page}}\\
+	\hline}
+	
+\tablelasttail{\hline}
+
+\bottomcaption{Business Model CloudBees\label{bm:cloudbees}}
+
+\begin{supertabular}{|L{\column}|L{\column}|L{\column}|L{\column}|}
+
+\multicolumn{4}{|c|}{Customer Value Proposition (CVP)}\\ \hline
+
+Target customer &
+Job to be done &
+\multicolumn{2}{|L{\columnT}|}{Offering} \\ \hline
+
+% START CUSTOMERS
+
+~\newline Business End-Consumer &
+~\newline Manage the entire Java application lifecycle within the cloud in a cost efficiency manner &
+\multicolumn{2}{|L{\columnT}|}{
+	\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt]
+			\item Manage the entire Java and Java Virtual Machine application lifecycle
+			\item CloudBees Eclipse plugin and software development kit
+			\item Different deployment scenarios: public, private, and hybrid
+			\item 'No vendor lock-in' (standard Java)
+			\item CloudBees partner ecosystem provides platform extensions -- databases, monitoring as well as deployment tools
+	\end{itemize}
+} \\ \hline
+
+~\newline Independent Software Vendor &
+~\newline Develop, manage, and market application lifecycle related applications and services globally &
+\multicolumn{2}{|L{\columnT}|}{
+	\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt]
+			\item CloudBees Platform as a Service truly dedicated to Java and Java Virtual Machine applications (clear vision)
+			\item Service resp. application listing within the Ecosystem Technology Partner directory
+			\item Support mechanism between CloudBees and service provider, to resolve customer problems within a narrow time frame
+			\item Joint marketing activities
+			\item Payment handling (incl. billing) by CloudBees
+	\end{itemize}
+} \\ \hline
+
+% END CUSTOMERS
+
+
+
+% KEY RESOURCES
+\multicolumn{2}{|L{\columnT}|}{
+Key Resources (KR) \newline
+	\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt]
+				\item CloudBees Platform as a Service, including
+					\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt]
+						\item Build: create, integrate, and test
+						\item Run: choose, deploy, and store
+						\item Manage: scale, monitor, and enhance
+					\end{itemize}
+				\item CloudBees Eclipse plugin and software development kit
+				\item Consulting partners, for instance Black Diamond Software
+				\item Partnership with IaaS providers, for instance Amazon Web Services as well as deployment tools
+	\end{itemize}
+
+} &
+% KEY PPROCESSES
+\multicolumn{2}{|L{\columnT}|}{
+Key Processes (KP) \newline
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt]
+				\item Maintain full lifecycle support for Java and Java Virtual Machine applications as well as keep the platform up to date (in respect of new Java versions and features)
+				\item Facilitate different deployment scenarios -- public, private, and hybrid -- based on multiple IaaS provider
+				\item Maintain partnerships with existing IaaS provider as well as begin negotiations with potential providers
+				\item Partner program for consulting partners, including business and marketing support, access to products plans, trainings, reselling options, and listing in the CloudBees Service Partner Directory
+				\item Offer support via Stack Overflow, frequently asked questions, and documentation/ guides deployment tools
+	\end{itemize}
+} \\ \hline
+
+% PROFIT FORMULA
+\multicolumn{4}{|L{\columnF}|}{
+	Profit Formula \newline
+	\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt]
+				\item Subscription and transaction based revenue for platform usage:
+					\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt]
+						\item DEV@cloud: USD 0 - 100 / Monthly + build minutes
+						\item RUN@cloud Multi-Tenant: Free (limited) or transaction based (depends among other things on the used software stack per app per hour) 
+						\item RUN@cloud Dedicated: Different IaaS provider, e.g. AWS US m1.small USD 153 \/ Monthly
+						\item Database: Offered by CloudBees (MySQL) USD 0 - 25 / Monthly or by different partners
+					\end{itemize}
+				\item Partner program fee: USD 2000 - 5000 / Yearly
+				\item Revenue sharing (30\%; or individual negotiated) for apps and services offered by third parties
+	\end{itemize}
+} \\
+
+
+\end{supertabular}
