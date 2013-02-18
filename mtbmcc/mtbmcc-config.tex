@@ -1,6 +1,21 @@
 % ****************************************************************************************************
 % config
 % ****************************************************************************************************
+
+
+
+	%***** TEMP
+	\usepackage{bibentry}
+	\usepackage{hanging}
+	\nobibliography*
+	\newcommand\hangbibentry[1]{%
+			\smallskip\par\hangpara{1em}{1}\bibentry{#1}\smallskip\par %{indent}{afterline}
+	}
+	%\hangbibentry{<Key>}
+	%***** TEMP
+
+
+
 \usepackage[left=3cm,right=3cm,top=3cm,bottom=2.5cm]{geometry}
 \usepackage[latin1]{inputenc}
 \usepackage{babel}
@@ -13,47 +28,33 @@
 \usepackage{lastpage}
 \usepackage{natbib}
 \usepackage{fixltx2e} % fixes some LaTeX stuff
-\usepackage[printonlyused]{acronym} 
-\usepackage{supertabular}
+\usepackage[printonlyused]{acronym}
+% ****************************************************************************************************
+% TABLES
+% ****************************************************************************************************
+\usepackage{longtable}
 \usepackage{tabularx}
-\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}} % linksbündig mit Breitenangabe
 \usepackage{calc}
 \usepackage{lipsum}
 \usepackage{enumitem}
-
-	%***** TEMP
-	\usepackage{bibentry}
-	\usepackage{hanging}
-	\nobibliography*
-	\newcommand\hangbibentry[1]{%
-			\smallskip\par\hangpara{1em}{1}\bibentry{#1}\smallskip\par %{indent}{afterline}
-	}
-	%\hangbibentry{<Key>}
-	%***** TEMP
-
+\usepackage{colortbl}
+\usepackage{nameref}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}} % linksbündig mit Breitenangabe
+\definecolor{lightgray}{gray}{.95}
+\newlength{\column}
+\setlength{\column}{0.25\textwidth - 2\tabcolsep}
+\newlength{\columnT}
+\setlength{\columnT}{2\column + 2\tabcolsep}
+\newlength{\columnF}
+\setlength{\columnF}{4\column + 6\tabcolsep}
 % ****************************************************************************************************
 % headings
 % ****************************************************************************************************
 \usepackage{titlesec}
 % \titleformat{command}{heading}{number}{distance}{code before}
-\titleformat{\chapter}{\Large\MakeTextUppercase}{\textbf{\Large\thechapter}}{15pt}{\textbf}
+\titleformat{\chapter}{\Large}{\textbf{\Large\thechapter}}{15pt}{\textbf}
 \titleformat{\section}{\large}{\textbf{\large\thesection}}{10pt}{\textbf}
 \titleformat{\subsection}{\normalsize}{\textbf{\normalsize\thesubsection}}{5pt}{\textbf}
-
-% ****************************************************************************************************
-% table of contents (chapter in capital letters)
-% ****************************************************************************************************
-\usepackage{ifthen}
-\makeatletter
-\let\Addcontentsline\addcontentsline
-\renewcommand\addcontentsline[3]{
-	\ifthenelse
-	{\equal{#2}{chapter}}
-	{\Addcontentsline{#1}{#2}{\MakeTextUppercase{#3}}}
-	{\Addcontentsline{#1}{#2}{#3}}
-}
- 
-\makeatother
 
 % ****************************************************************************************************
 % page numbering
