@@ -1,21 +1,6 @@
 % ****************************************************************************************************
 % config
 % ****************************************************************************************************
-
-
-
-	%***** TEMP
-	\usepackage{bibentry}
-	\usepackage{hanging}
-	\nobibliography*
-	\newcommand\hangbibentry[1]{%
-			\smallskip\par\hangpara{1em}{1}\bibentry{#1}\smallskip\par %{indent}{afterline}
-	}
-	%\hangbibentry{<Key>}
-	%***** TEMP
-
-
-
 \usepackage[left=3cm,right=3cm,top=3cm,bottom=2.5cm]{geometry}
 \usepackage[latin1]{inputenc}
 \usepackage{babel}
@@ -26,17 +11,27 @@
 \usepackage{textcase}
 \usepackage{graphicx}
 \usepackage{lastpage}
-\usepackage{natbib}
-
-
-
+\usepackage{url}
+\usepackage{apacite}
+\usepackage[longnamesfirst]{natbib}
 \usepackage{fixltx2e} % fixes some LaTeX stuff
 \usepackage[printonlyused]{acronym}
+
+	%***** TEMP
+	%\usepackage{bibentry}
+	%\usepackage{hanging}
+	%\nobibliography*
+	%\newcommand\hangbibentry[1]{%
+			%\smallskip\par\hangpara{1em}{1}\bibentry{#1}\smallskip\par %{indent}{afterline}
+	%}
+	%\hangbibentry{<Key>}
+	%***** TEMP
 % ****************************************************************************************************
 % TABLES
 % ****************************************************************************************************
 \usepackage{longtable}
 \usepackage{tabularx}
+\usepackage{multirow}
 \usepackage{calc}
 \usepackage{lipsum}
 \usepackage{enumitem}
