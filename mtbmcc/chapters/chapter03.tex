@@ -2,8 +2,19 @@
 \chapter{State--of--the--Art PaaS Providers' Business Models}\label{ch:sota}
 % ****************************************************************************************************
 
+In order to assess the current state of \ac{PaaS} providers' business models and identify key elements within these business models, the current business models of 23 \ac{PaaS} providers were analyzed. The initial selection of the analyzed \ac{PaaS} providers in this thesis was based on technical reports respectively market reports provided by three different market research companies:
+\begin{itemize}
+	\item Forrester Research, Inc. -- \citet{Ried2011a,Rymer2011}
+	\item \ac{IDC} -- \citet{Bradshaw2012,Hendrick2012, Hendrick2012a}
+	\item Gartner, Inc. -- \citet{Smith2012}
+\end{itemize}
+The initially identified and selected \ac{PaaS} providers were further selected to receive a manageable set of representative \ac{PaaS} providers. Four disjunct selection criteria were used in the second evaluation round to identify the final set of 23 \ac{PaaS} providers -- market share, growth rate, availability of the platform to customers as of February 2013, and background of the \ac{PaaS} provider, for instance, former purely \ac{IaaS} or \ac{SaaS} providers extend their cloud portfolio with \ac{PaaS} functionalities. According to \citet{}, the world largest \ac{PaaS} provider is XXX with a market share of XX \% in 2011 and with a growth rate of XXX \% in 2011 XXX is the fastest-growing \ac{PaaS} provider.
 
-\section{Business Model Conceptualization}
+In the following, four case studies -- CloudBees, GigaSpaces Cloudify, Facebook Developers, and SAP NetWeaver Cloud -- are described in detail. The remaining 19 case studies are presented for reasons of comprehensibility within Appendix \ref{ch:app01}. To receive a coherent representation, all presented business models within this thesis follow the introduced business model conceptualization approach (cf. Section \ref{ch:sota:bmc}).
+
+Based upon the performed analyzes of current \ac{PaaS} providers' business models, a classification model for \ac{PaaS} providers is developed and introduced in Section \ref{ch:sota:cm}.
+
+\section{Business Model Conceptualization}\label{ch:sota:bmc}
 
 Based on an analysis of definitions for business models in literature (cf. Section \ref{ch:tf:bm}), the definition of \citet{Johnson2008} was taken as a basis for the research presented in this paper. According to \citet[p. 52]{Johnson2008}, "A business model \ldots consists of four interlocking elements that, taken together, create and deliver value". These four elements are denoted as follows: \ac{CVP}, Profit Formula, Key Resources and Key Processes. 
 
@@ -14,11 +25,13 @@ Assets which are essential to create and deliver the above described customer va
 
 Processes in combination with the assets (key resources) are necessary to deliver the value proposition to the company's customers. These processes need to be efficient, repeatable, and scalable. Key processes include repeating operations -- training, development, manufacturing, budgeting, planning, sales, and services -- as well as the company's rules, metrics, and norms \citep[p. 53]{Johnson2008}.
 
-In summary, within the business model conceptualization proposed by \citet[p. 54]{Johnson2008} the customer value proposition and the profit formula encompass the value description for both parties, the target customers as well as the company itself. The value creation and delivery is explained by the two business model elements key resources and key processes.
+In summary, within the business model conceptualization proposed by \citet[p. 54]{Johnson2008} the customer value proposition and the profit formula encompass the value description for both parties, the target customers as well as the company itself. The value creation and delivery is explained by the two business model elements key resources and key processes. In Table \ref{bm:concept} the business model conceptualization is graphical depicted.
 
 \input{chapters/bm_concept}
 
-\section{The Case of CloudBees}
+The main focus at all conducted case studies was rather how the business model appears on the market and is experienced by customers than how the business model is implemented by a specific company or to describe the internal view of the business model. For this reason, the market view elements -- the \ac{CVP} and, in parts, the profit formula -- are mainly considered, even though the non-market view elements -- key resources and key processes -- are mentioned as far as possible. Moreover, the focus on market view elements allowed to solely utilize secondary data for the conducted analysis of \ac{PaaS} providers' business models -- for instance reliable, public data or documentations, both providing comprehensive information about the business model under investigation. Information concerning the internal business model elements -- key resources, key processes, and, in parts, the profit formula -- is difficult to obtain, due to the fact, that this information is in most cases kept confidential, for instance, the cost structure as well as process or workflow descriptions. Thus, the following presented business models mainly focus on the market view elements.
+
+\section{The Case of CloudBees}\label{ch:sota:cb}
 
 CloudBees was founded in the beginning of 2012 and introduced its identically named platform as a service offer. Many of CloudBees' management team members, including the founder, worked prior for companies like Oracle, Sun, IBM, and VMware or were involved in development projects around JBoss and Jenkins CI. Already the background of CloudBees' management reveals the main objective -- a platform as a service solution truly dedicated around the Java programming language ecosystem, supporting the whole application lifecycle \citep{CloudBees2013}.
 
@@ -34,7 +47,7 @@ Business end-consumer pay for the CloudBees platform a combination of subscripti
 
 \input{chapters/bm_cloudbees}
 
-\section{The Case of GigaSpaces Cloudify}
+\section{The Case of GigaSpaces Cloudify}\label{ch:sota:gsc}
 
 Within the evolving platform as a service ecosystem are just a few open source platform solutions available -- Cloudify is one of them. Since the beginning of 2012, the Cloudify Open PaaS Stack is available on the market. Cloudify itself and the Cloudify Community are promoted by the company GigaSpaces \citep{GigaSpaces2013a}.
 
@@ -48,7 +61,7 @@ GigaSpaces' Cloudify platform is offered as an open source platform and thereby 
 
 \input{chapters/bm_cloudify}
 
-\section{The Case of Facebook Developers}
+\section{The Case of Facebook Developers}\label{ch:sota:fd}
 
 Facebook -- the social network with more than a billion monthly active users, 618 million daily active users, and 680 million monthly active users using mobile devices to access Facebook's social network; all figures as of December 2013 -- introduced its platform as a service offer, called Facebook Developers, in May 2007 \citep{Facebook2013}. By the end of March 2012, more than nine million applications and websites are built upon or utilizing features of the Facebook Developers platform and are integrated with Facebook \citep{Facebook2013}. Facebook Developers gains its attractiveness especially through Facebook's huge user base and thereby millions of potential users of applications and websites.
 
@@ -60,7 +73,7 @@ Furthermore, Facebook generates also non-monetary revenue in respect of even mor
 
 %insert BM Facebook Developers
 
-\section{The Case SAP NetWeaver Cloud}
+\section{The Case SAP NetWeaver Cloud}\label{ch:sota:sap}
 
 SAP, a German enterprise software vendor with more than 200.000 customers worldwide, launched a new platform as a service solution -- named SAP NetWeaver Cloud -- at the end of 2012 \citep{SAP2013a, SAP2013b}. SAP NetWeaver Cloud aims to support the development, deployment, and management of standalone as well as integrated cloud applications. The platform itself and the applications build upon the platform are both hosted by SAP with a guaranteed system availability of 99.9\% \citep{SAP2013b}.
 
@@ -79,6 +92,6 @@ Independent software vendors, startup companies, and solution providers -- summa
 
 %insert BM SAP NetWeaver Cloud
 
-\section{Classification Approach}
+\section{Classification Approach}\label{ch:sota:cm}
 
 %\hangbibentry{Fettke2003}
