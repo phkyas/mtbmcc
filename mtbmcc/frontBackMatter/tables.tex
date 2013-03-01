@@ -6,44 +6,35 @@
 \pagestyle{empty}
 
 %\renewcommand{\contentsname}{Table of Contents}
+\pdfbookmark[1]{\contentsname}{toc}
 \tableofcontents
 \thispagestyle{empty}
 %\addcontentsline{toc}{chapter}{\contentsname}
-\pdfbookmark[1]{\contentsname}{toc}
 
 %\renewcommand{\listfigurename}{Figures}
+\pagebreak
+\pdfbookmark[1]{\listfigurename}{lof}
 \listoffigures
 \thispagestyle{empty}
 %\addcontentsline{toc}{chapter}{\listfigurename}
-\pdfbookmark[1]{\listfigurename}{lof}
 
 %\renewcommand{\listtablename}{Tables}
+\pagebreak
+\pdfbookmark[1]{\listtablename}{lot}
 \listoftables
 \thispagestyle{empty}
 %\addcontentsline{toc}{chapter}{\listtablename}
-\pdfbookmark[1]{\listtablename}{lot}
 
+\pagebreak
+\pdfbookmark[1]{Acronyms}{Acronyms}
 \chapter*{Acronyms}
 \thispagestyle{empty}
 %\addcontentsline{toc}{chapter}{Acronyms}
-\pdfbookmark[1]{Acronyms}{Acronyms}
-
-\begin{acronym}[ABCDEFGH]
-	\acro{AWS}{Amazon Web Services}
-	\acro{CVP}{Customer Value Proposition}
-	\acro{IaaS}{Infrastructure as a Service}
-	\acro{IDC}{International Data Corporation}
-	\acro{PaaS}{Platform as a Service}
-	\acro{SaaS}{Software as a Service}
-\end{acronym}
-
+\input{frontBackMatter/acronyms}
 \clearpage
 \endgroup
 
-% \ac{KDE}  Gibt bei der ersten Verwendung die Langform mit der Abkürzung in Klammern aus, ab dann stets die Kurzform.
-% \acs{KDE} Gibt die Abkürzung aus.
-% \acf{KDE} Gibt die Langform und die Kurzform aus.
-% \acl{KDE} Gibt nur die Langform ohne die Kurzform aus.
+
 
 
 
