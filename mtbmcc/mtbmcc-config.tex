@@ -30,13 +30,17 @@
 % TABLES
 % ****************************************************************************************************
 \usepackage{longtable}
+\usepackage{rotating}
 \usepackage{tabularx}
 \usepackage{multirow}
 \usepackage{calc}
 \usepackage{enumitem}
 \usepackage{colortbl}
 \usepackage{nameref}
+\usepackage{diagbox}
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}} % linksbündig mit Breitenangabe
+\newcolumntype{C}[1]{>{\centering\arraybackslash}b{#1}} % zentriert mit Breitenangabe
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}} % rechtsbündig mit Breitenangabe
 \definecolor{lightgray}{gray}{.95}
 \newlength{\column}
 \setlength{\column}{0.25\textwidth - 2\tabcolsep}
@@ -91,3 +95,9 @@
   pdfproducer={LaTeX with hyperref and scrreprt},
 	hidelinks
 }
+% ****************************************************************************************************
+% TikZ
+% ****************************************************************************************************
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{fit}
