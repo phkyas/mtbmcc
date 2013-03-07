@@ -10,27 +10,48 @@ In order to assess the current state of \ac{PaaS} providers' business models and
 \end{itemize}
 The initially identified and selected \ac{PaaS} providers were further selected to receive a manageable set of representative \ac{PaaS} providers. Four disjunct selection criteria were used in the second evaluation round to identify the final set of 23 \ac{PaaS} providers -- market share, growth rate, availability of the platform to customers as of February 2013, and background of the \ac{PaaS} provider, for instance, former purely \ac{IaaS} or \ac{SaaS} providers extend their cloud portfolio with \ac{PaaS} functionalities. According to \citet{Hendrick2012}, the world largest \ac{PaaS} provider is GXS Worldwide, Inc. (cf. Appendix \ref{ch:app01:gxs}) with a market share of 14.2\% in 2011 and with a growth rate of 428.6\% in 2011 CloudBees (cf. Section \ref{ch:sota:cb}) is the fastest-growing \ac{PaaS} provider.
 
-In the following, four case studies -- CloudBees, GigaSpaces Cloudify, Facebook Developers, and SAP NetWeaver Cloud -- are described in detail. The remaining 19 case studies are presented for reasons of comprehensibility within Appendix \ref{ch:app01}. To receive a coherent representation, all presented business models within this thesis follow the afterwards introduced business model conceptualization approach (cf. Section \ref{ch:sota:bmc}).
+In the following, four case studies -- CloudBees, GigaSpaces Cloudify, Facebook Developers, and SAP NetWeaver Cloud -- are described in detail. The remaining 19 case studies are presented for reasons of comprehensibility within Appendix \ref{ch:app01}. To receive a coherent representation, all presented business models within this thesis follow the prior introduced business model conceptualization approach (cf. Section \ref{ch:sota:bmc}).
 
 Based upon the performed analyzes of current \ac{PaaS} providers' business models, a classification model for \ac{PaaS} providers is developed and introduced in Section \ref{ch:sota:cm}.
 
-\section{Business Model Conceptualization}\label{ch:sota:bmc}
+\section{Classification Scheme}\label{ch:sota:cm}
 
-Based on an analysis of definitions for business models in literature (cf. Section \ref{ch:tf:bm}), the definition of \citet{Johnson2008} was taken as a basis for the research presented in this paper. According to \citet[p. 52]{Johnson2008}, "A business model \ldots consists of four interlocking elements that, taken together, create and deliver value". These four elements are denoted as follows: \ac{CVP}, Profit Formula, Key Resources and Key Processes. 
+"Classification in an important tool for perception, because it provides clarity. \ldots Well-known examples are the periodic table of the elements in chemistry \ldots and the decimal classification in library science." \citep[p. 36]{Fettke2003}. In order to achieve this objective, the classification methodology introduced by \citet{Fettke2003} is used to develop a classification scheme for \ac{PaaS} business models. According to \citet[p. 39]{Fettke2003}, "A classification scheme consists of a set of characteristics which are suitable to classify objects of a specific application domain." Within each classification process, the crucial step is to select the appropriate classification objects and characteristics, neither too general nor too specific. The following six universal guidelines are helpful to improve the quality of classification schemes -- completeness, precision, consistency, extensibility, user-friendliness, and economic efficiency \citep[pp. 40-41]{Fettke2003}. 
 
-The \ac{CVP} is considered as the most crucial part based on its main objective to satisfy customer needs. In order to understand the customer needs, the following key questions should be answered: Who are my target customers?, What is their job to be done (problem)?, and How can their problems be solved (offering)? The interrelation between the job to be done and the corresponding offer as well as the value of the \ac{CVP} are described by  \citet[p. 52]{Johnson2008} in the following way, "The more important the job is to the customer, the lower the level of customer satisfaction with current options for getting the job done, and the better your solution is than existing alternatives at getting the job done (and, of course, the lower the price), the greater the CVP."'
+Five interrelated phases which are performed subsequently and possibly iterative constitute the proposed classification methodology (cf. Figure \ref{fig:cm}) -- (1) Inception, (2) Elaborate Characteristics, (3) Specify Classification Scheme, (4) Test, and (5) Use and Maintenance. These five phases were applied as follows:
 
-How a company is capturing value for itself based on the offering to its customer is another key element within each business model -- named here as profit formula, consisting of the sub elements revenue model, cost structure, margin model, and resource velocity.
+\begin{figure}[htb]
+	\centering
+	\input{gfx/proceduralModel}
+	\caption[Classification Methodology]{Classification Methodology adapted from \citet{Fettke2003}}
+	\label{fig:cm}
+\end{figure}
 
-Assets which are essential to create and deliver the above described customer value proposition are summarized as key resources. According to \citet[p. 53]{Johnson2008}, these key resources include people, technology, products, facilities, equipment, channels, as well as the company's brand respectively reputation.
+\begin{enumerate}
+	\item Inception: For the purpose of classifying \ac{PaaS} business models, a corresponding \ac{PaaS} classification scheme needs to be developed. This scheme should further serve as a starting point for the later introduced interdependencies within \ac{PaaS} business models (cf. Chapter \ref{ch:dm}).
 
-Processes in combination with the assets (key resources) are necessary to deliver the value proposition to the company's customers. These processes need to be efficient, repeatable, and scalable. Key processes include repeating operations -- training, development, manufacturing, budgeting, planning, sales, and services -- as well as the company's rules, metrics, and norms \citep[p. 53]{Johnson2008}.
+	\item Elaborate Characteristics: The data obtained through the comprehensive analysis of existing \ac{PaaS} business models was analyzed on the one hand as stand-alone business models (analyzing within-case data) and on the other hand to search for cross-case patterns \citep[pp. 539-540]{Eisenhardt1989}. Within the identification process of potential cross-case patterns two different approaches were used. First, the four elements of a business model representation (cf. Section \ref{ch:sota:bmc}) introduced by \citet{Johnson2008} were used to compare business models and reveal common similarities as well as fundamental varieties. Second, various selective pairs of two business models were built to uncover further potential distinguishing features. 
 
-In summary, within the business model conceptualization proposed by \citet[p. 54]{Johnson2008} the customer value proposition and the profit formula encompass the value description for both parties, the target customers as well as the company itself. The value creation and delivery is explained by the two business model elements key resources and key processes. In Table \ref{bm:concept} the business model conceptualization is graphical depicted.
+	\item Specify Classification Scheme: In order to visualize the identified \ac{PaaS} business model categories as well as their characteristics in a structured approach, the concept of a morphological matrix adapted from \citet{ Zwicky1969} was used (cf. Figure \ref{fig:cs}).
 
-\input{businessModels/bm_concept}
+	\item Test: By classing the set of 23 investigated \ac{PaaS} providers business models, the classification scheme was evaluated and iteratively revised as well as enhanced. Whereas classing is considered "as an operation whereby objects \ldots are assigned to classes \ldots which have been previously defined" \citep[p. 130]{Marradi1990}.
 
-The main focus at all conducted case studies was rather how the business model appears on the market and is experienced by customers than how the business model is implemented by a specific company or to describe the internal view of the business model. For this reason, the market view elements -- the \ac{CVP} and, in parts, the profit formula -- are mainly considered, even though the non-market view elements -- key resources and key processes -- are mentioned as far as possible. Moreover, the focus on market view elements allowed to solely utilize secondary data for the conducted analysis of \ac{PaaS} providers' business models -- for instance reliable, public data or documentations, both providing comprehensive information about the business model under investigation. Information concerning the internal business model elements -- key resources, key processes, and, in parts, the profit formula -- is difficult to obtain, due to the fact, that this information is in most cases kept confidential, for instance, the cost structure as well as process or workflow descriptions. Thus, the following presented business models mainly focus on the market view elements.
+	\item Use and Maintenance: The finally obtained \ac{PaaS} business model classification scheme (cf. Figure \ref{fig:cs}) was used to survey the 23 investigated \ac{PaaS} providers business models (cf. Appendix \ref{ch:app02}) and as a basis to answer the research question: "How should \ac{PaaS} business models be designed?" (cf. Chapter \ref{ch:dm}).
+
+\end{enumerate}
+
+
+
+
+
+\begin{figure}[htb]
+	\centering
+	\input{gfx/classificationScheme}
+	\caption{PaaS Business Model Classification Scheme}
+	\label{fig:cs}
+\end{figure}
+
+
 
 \section{The Case of CloudBees}\label{ch:sota:cb}
 
@@ -75,7 +96,7 @@ Furthermore, Facebook generates also non-monetary revenue in respect of even mor
 \newpage
 \input{businessModels/bm_facebook}
 
-\section{The Case SAP NetWeaver Cloud}\label{ch:sota:sap}
+\section{The Case of SAP NetWeaver Cloud}\label{ch:sota:sap}
 
 SAP, a German enterprise software vendor with more than 200.000 customers worldwide, launched a new \ac{PaaS} solution -- named SAP\linebreak NetWeaver Cloud -- at the end of 2012 \citep{SAP2013b,SAP2013a}. SAP NetWeaver Cloud aims to support the development, deployment, and management of standalone as well as integrated cloud applications. The platform itself and the applications build upon the platform are both hosted by SAP with a guaranteed system availability of 99.9\% \citep{SAP2013b}.
 
@@ -92,42 +113,5 @@ The revenue for SAP is based on the following revenue streams: As mentioned abov
 \acp{ISV}, startup companies, and solution providers -- summarized as development partners -- provide \ac{SaaS} applications upon the SAP NetWeaver Cloud platform \citep{SAP2013a}. In order to utilize SAP's platform, development partners need to pay an annual partner fee of EUR 1.990. All third-party applications available within the SAP store are certified by SAP. Application providers need to pay an initial application certification fee (EUR 990) and recurring annual fees (EUR 495). Furthermore, SAP gets a 15\% revenue share (offset against the annual partner fee) for all applications based on SAP NetWeaver Cloud and sold via the SAP Store.
 
 \input{businessModels/bm_sap}
-
-\section{Classification Scheme}\label{ch:sota:cm}
-
-"Classification in an important tool for perception, because it provides clarity. \ldots Well-known examples are the periodic table of the elements in chemistry \ldots and the decimal classification in library science." \citep[p. 36]{Fettke2003}. In order to achieve this objective, the classification methodology introduced by \citet{Fettke2003} is used to develop a classification scheme for \ac{PaaS} business models. According to \citet[p. 39]{Fettke2003}, "A classification scheme consists of a set of characteristics which are suitable to classify objects of a specific application domain." Within each classification process, the crucial step is to select the appropriate classification objects and characteristics, neither too general nor too specific. The following six universal guidelines are helpful to improve the quality of classification schemes -- completeness, precision, consistency, extensibility, user-friendliness, and economic efficiency \citep[pp. 40-41]{Fettke2003}. 
-
-Five interrelated phases which are performed subsequently and possibly iterative constitute the proposed classification methodology (cf. Figure \ref{fig:cm}) -- (1) Inception, (2) Elaborate Characteristics, (3) Specify Classification Scheme, (4) Test, and (5) Use and Maintenance. These five phases were applied as follows:
-
-\begin{figure}[htb]
-	\centering
-	\input{gfx/proceduralModel}
-	\caption[Classification Methodology]{Classification Methodology adapted from \citet{Fettke2003}}
-	\label{fig:cm}
-\end{figure}
-
-\begin{enumerate}
-	\item Inception: For the purpose of classifying \ac{PaaS} business models, a corresponding \ac{PaaS} classification scheme needs to be developed. This scheme should further serve as a starting point for the later introduced interdependencies within \ac{PaaS} business models (cf. Chapter \ref{ch:dm}).
-
-	\item Elaborate Characteristics: The data obtained through the comprehensive analysis of existing \ac{PaaS} business models was analyzed on the one hand as stand-alone business models (analyzing within-case data) and on the other hand to search for cross-case patterns \citep[pp. 539-540]{Eisenhardt1989}. Within the identification process of potential cross-case patterns two different approaches were used. First, the four elements of a business model representation (cf. Section \ref{ch:sota:bmc}) introduced by \citet{Johnson2008} were used to compare business models and reveal common similarities as well as fundamental varieties. Second, various selective pairs of two business models were built to uncover further potential distinguishing features. 
-
-	\item Specify Classification Scheme: In order to visualize the identified \ac{PaaS} business model categories as well as their characteristics in a structured approach, the concept of a morphological matrix adapted from \citet{ Zwicky1969} was used (cf. Figure \ref{fig:cs}).
-
-	\item Test: By classing the set of 23 investigated \ac{PaaS} providers business models, the classification scheme was evaluated and iteratively revised as well as enhanced. Whereas classing is considered "as an operation whereby objects \ldots are assigned to classes \ldots which have been previously defined" \citep[p. 130]{Marradi1990}.
-
-	\item Use and Maintenance: The finally obtained \ac{PaaS} business model classification scheme (cf. Figure \ref{fig:cs}) was used to survey the 23 investigated \ac{PaaS} providers business models (cf. Appendix \ref{ch:app02}) and as a basis to answer the research question: "How should \ac{PaaS} business models be designed?" (cf. Chapter \ref{ch:dm}).
-
-\end{enumerate}
-
-
-
-
-
-\begin{figure}[htb]
-	\centering
-	\input{gfx/classificationScheme}
-	\caption{PaaS Business Model Classification Scheme}
-	\label{fig:cs}
-\end{figure}
 
 
