@@ -14,21 +14,10 @@
 \usepackage{url}
 \usepackage{apacite}
 \usepackage[longnamesfirst]{natbib}
-
+\usepackage{subcaption}
 \newcommand{\mycite}[4]{(\citealp[#2]{#1}; \citealp[#4]{#3})}
-
 \usepackage{fixltx2e} % fixes some LaTeX stuff
 \usepackage[printonlyused]{acronym}
-
-	%***** TEMP
-	%\usepackage{bibentry}
-	%\usepackage{hanging}
-	%\nobibliography*
-	%\newcommand\hangbibentry[1]{%
-			%\smallskip\par\hangpara{1em}{1}\bibentry{#1}\smallskip\par %{indent}{afterline}
-	%}
-	%\hangbibentry{<Key>}
-	%***** TEMP
 % ****************************************************************************************************
 % TABLES
 % ****************************************************************************************************
@@ -102,5 +91,5 @@
 % TikZ
 % ****************************************************************************************************
 \usepackage{tikz}
-\usetikzlibrary{arrows}
+\usetikzlibrary{calc,arrows}
 \usetikzlibrary{fit}

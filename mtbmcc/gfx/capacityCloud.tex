@@ -1,0 +1,17 @@
+% ****************************************************************************************************
+% Capacity Cloud
+% ****************************************************************************************************
+
+\begin{tikzpicture}[scale=0.75]
+
+\fill[fill=gray!20] (0,1.5) -- plot [domain=0:9.9](\x, {sin(10*(\x r)) + 1.5}) -- plot[domain=9.9:0] (\x, {sin(10*(\x r)) + 2}) (0,1.5);
+
+\draw[<->]  (10,0) node[below]{Time} -- (0,0) -- (0,3.5) node[left]{Resources};
+\draw [domain=0:9.9] plot (\x, {sin(10*(\x r)) + 1.5})node[right]{Demand};
+\draw [domain=0:9.9,dashed] plot (\x, {sin(10*(\x r)) + 2});
+\node(1) at (11.2,1.5){Capacity};
+
+
+\end{tikzpicture}
+
+

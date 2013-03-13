@@ -23,24 +23,59 @@ Within this chapter, the theoretical foundations of the thesis at hand are eluci
 
 \subsection{Cloud Computing}
 
+
+\begin{quote}{\slshape 
+"Cloud computing is a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e.g., networks, servers, storage, applications, and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction."}
+\vspace*{-5pt}
+\begin{flushright}
+	--- \citet[p. 2]{Mell2011}
+\end{flushright}
+\end{quote}
+
+\begin{quote}{\slshape 
+"Clouds are a large pool of easily usable and accessible virtualized resources (such as hardware, development platforms and/or services). These resources can be dynamically reconfigured to adjust to a variable load (scale), allowing also for an optimum resource utilization. This
+pool of resources is typically exploited by a pay-per-use model in which guarantees are offered by the Infrastructure Provider by means of customized \acs{SLA}s [\acl{SLA}s]."}
+\vspace*{-5pt}
+\begin{flushright}
+	--- \citet[p. 51]{Vaquero2009}
+\end{flushright}
+\end{quote}
+
+
+\begin{figure}[htb]
+	\centering
+	\input{gfx/cloudStack}
+	\caption{Cloud Computing Stack}
+	\label{fig:ccs}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\begin{subfigure}{.75\textwidth}
+		\centering
+		\input{gfx/capacityCloud}
+		\caption{On-Demand}\label{fig:rpc}
+	\end{subfigure}
+	\begin{subfigure}[b]{.75\textwidth}
+		\centering
+		\input{gfx/capacityStaticUnder}
+		\caption{Underprovisioning}\label{fig:rpu}
+	\end{subfigure}
+	\begin{subfigure}[b]{.75\textwidth}
+		\centering
+		\input{gfx/capacityStaticOver}
+		\caption{Overprovisioning}\label{fig:rpo}
+	\end{subfigure}
+	\caption[Resource Provisioning -- On-Demand vs. Static]{Resource Provisioning -- On-Demand vs. Static, adapted from \citet[p. 54]{Armbrust2010} and \citet[p. 127]{Iyer2010}}
+	\label{fig:rp}
+\end{figure}
+
+
 \subsection{Cloud Platforms}
 
-%\hangbibentry{Armbrust2010}
-%\hangbibentry{Mell2011a}
-%\hangbibentry{Karabek2011}
-%\hangbibentry{Vaquero2009}
-%\hangbibentry{Weinhardt2009}
-%\hangbibentry{Iyer2010}
-%PaaS Papers are missing (Def and so on)
+
 
 \section{Business Models}\label{ch:tf:bm}
-%\hangbibentry{Morris2005}
-%\hangbibentry{Osterwalder2005}
-%\hangbibentry{Zott2011}
-%\hangbibentry{Pateli2004}
-%\hangbibentry{Johnson2008}
-%Some Paper(s) form Chesbrough (~2)
-%\citep{Johnson2008}
 
 \begin{flushright}{\slshape    
 	There is nothing quite so useless,\\
@@ -61,7 +96,7 @@ Already 1954 Peter F. Drucker proposed the five following questions in order to 
 	\item What should it be?
 \end{enumerate}
 
-However, the term business models itself evolved noticeable within academic journals as late as during the nineties \mycite{Osterwalder2005}{pp. 3-4}{Zott2011}{p. 1022}. As of this writing this paper at hand, there is no generally accepted definition or uniform picture about this concept. According to \citet[p. 726]{Morris2005} and \citet[p. 1022]{Zott2011}, the term business models (at a meta level) has been referred to as an architecture, an assumption, a conceptual tool or model, a description, a design, a framework, a method, a pattern, a plan, a representation, a set, a statement, as well as a structural template. Therefore, a couple of widely used definitions with different points of view are presented below:
+However, the term business model itself evolved noticeable within academic journals as late as during the nineties \mycite{Osterwalder2005}{pp. 3-4}{Zott2011}{p. 1022}. As of this writing this paper at hand, there is no generally accepted definition or uniform picture about this concept. According to \citet[p. 726]{Morris2005} and \citet[p. 1022]{Zott2011}, the term business models (at a meta level) has been referred to as an architecture, an assumption, a conceptual tool or model, a description, a design, a framework, a method, a pattern, a plan, a representation, a set, a statement, as well as a structural template. Therefore, a couple of widely used definitions with different points of view are presented below:
 	
 \begin{quote}{\slshape 
 "[A business model is] an architecture for the product, service and information flows, including a description of the various business actors and their roles; and a description of the potential benefits for the various business actors; and a description of the sources of revenues."}
@@ -164,8 +199,7 @@ The two aspects value creation and value capture are further terminologies widel
 	\item What are the entrepreneur's time, scope, and size ambitions?
 \end{enumerate}
 
-Even though the concept of business models moves towards a more mature state, just a few enterprises are able to capture their current business model in a holistic view -- including strengths and weaknesses as well as interdependencies \citep[p. 52]{Johnson2008}. This lack of knowledge represents a critical competitive factor, due to the fact that the underlying business model is not less important than the product or technology itself, in some cases even the basis for success or failure \mycite{Chesbrough2007}{p. 12}{Johnson2008}{p. 52}. According to \citet[p. 50]{Johnson2008}, "One secret to maintaining a thriving business is recognizing when it needs a fundamental change." Among others, they described the need for a fundamental business model adjustment from Hilti, a Lichtenstein-based manufacturer of high-end power tools \citep[pp. 54-57]{Johnson2008}. In the past, Hilti was selling its power tools to contractors, however facing an intensified competition and pressure on margins, for instance with low-end power tools manufacturers. For this reason, Hilti decided to change their business model from scratch and sells now the use of the power tools for a monthly fee instead of the power tool itself.
-
+Even though the concept of business models moves towards a more mature state, just a few enterprises are able to capture their current business model in a holistic view -- including strengths and weaknesses as well as interdependencies \citep[p. 52]{Johnson2008}. This lack of knowledge represents a critical competitive factor, due to the fact that the underlying business model is not less important than the product or technology itself, in some cases even the basis for success or failure \mycite{Chesbrough2007}{p. 12}{Johnson2008}{p. 52}. According to \citet[p. 50]{Johnson2008}, "One secret to maintaining a thriving business is recognizing when it needs a fundamental change." Among others, they described the need for a fundamental business model adjustment experienced by Hilti, a Lichtenstein-based manufacturer of high-end power tools \citep[pp. 54-57]{Johnson2008}. In the past, Hilti was selling its power tools to contractors, however facing an intensified competition and pressure on margins, for instance with low-end power tools manufacturers. For this reason, Hilti decided to change their business model from scratch in such a way that Hilti is now selling the use of its power tools for a monthly fee instead of the power tools itself.
 
 \subsection{Conceptualization}\label{ch:sota:bmc}
 
@@ -173,17 +207,17 @@ Based on an analysis of definitions for business models in literature, the defin
 
 The \ac{CVP} is considered as the most crucial part based on its main objective to satisfy customer needs. In order to understand the customer needs, the following key questions should be answered: Who are my target customers?, What is their job to be done (problem)?, and How can their problems be solved (offering)? The interrelation between the job to be done and the corresponding offer as well as the value of the \ac{CVP} are described by  \citet[p. 52]{Johnson2008} in the following way, "The more important the job is to the customer, the lower the level of customer satisfaction with current options for getting the job done, and the better your solution is than existing alternatives at getting the job done (and, of course, the lower the price), the greater the CVP."'
 
-How a company is capturing value for itself based on the offering to its customer is another key element within each business model -- named here as profit formula, consisting of the sub elements revenue model, cost structure, margin model, and resource velocity.
+How a company is capturing value for itself based on the offering to its customers is another key element within each business model -- named here as profit formula, consisting of the sub-elements revenue model, cost structure, margin model, and resource velocity.
 
-Assets which are essential to create and deliver the above described customer value proposition are summarized as key resources. According to \citet[p. 53]{Johnson2008}, these key resources include people, technology, products, facilities, equipment, channels, as well as the company's brand respectively reputation.
+Assets which are essential to create and deliver the above described \ac{CVP} are summarized as key resources. According to \citet[p. 53]{Johnson2008}, these key resources include people, technology, products, facilities, equipment, channels, as well as the company's brand respectively reputation.
 
 Processes in combination with the assets (key resources) are necessary to deliver the value proposition to the company's customers. These processes need to be efficient, repeatable, and scalable. Key processes include repeating operations -- training, development, manufacturing, budgeting, planning, sales, and services -- as well as the company's rules, metrics, and norms \citep[p. 53]{Johnson2008}.
 
-In summary, within the business model conceptualization proposed by \citet[p. 54]{Johnson2008} the customer value proposition and the profit formula encompass the value description for both parties, the target customers as well as the company itself. The value creation and delivery is explained by the two business model elements key resources and key processes. In Table \ref{bm:concept} the business model conceptualization is graphical depicted.
+In summary, within the business model conceptualization proposed by \citet[p. 54]{Johnson2008} the \ac{CVP} and the profit formula encompass the value description for both parties, the target customers as well as the company itself. The value creation and delivery is explained by the two business model elements key resources and key processes. In Table \ref{bm:concept} the business model conceptualization is graphical depicted.
 
 \input{businessModels/bm_concept}
 
-Another well-known business model conceptualization respectively framework is the Business Model Canvas introduced by \citet{Osterwalder2010}. This framework consists of nine the so-called business model building blocks -- namely (1) Value Propositions, (2) Customer Segments, (3) Channels, (4) Customer Relationships, (5) Key Activities, (6) Key Resources, (7) Key Partners, (8) Cost Structure, and (9) Revenue Streams. Please find the proposed representation scheme in the appendix \ref{ch:app03} (cf. Figure \ref{fig:bmc}). In simplified terms, the bottom part of the Business Model Canvas -- Cost Structure and Revenue Streams -- deals with the value capture aspect or, in other words, why a company should perform (or is performing) the described business model. The remaining seven building blocks are representing the value creation aspect. Whereas the upper left side answers the how-, the center part (Value Propositions) the what-, and the right side the who- question. Although the business model conceptualizations of \citet{Johnson2008} and \citet{Osterwalder2010} differ in the defined total number of business model elements, they can be compared easily. In the following Table \ref{tab:bmcc}, the business model elements according to \citet{Johnson2008} and \citet{Osterwalder2010} are opposed:
+Another well-known business model conceptualization respectively framework is the Business Model Canvas introduced by \citet{Osterwalder2010}. This framework consists of nine the so-called business model building blocks -- namely (1) Value Propositions, (2) Customer Segments, (3) Channels, (4) Customer Relationships, (5) Key Activities, (6) Key Resources, (7) Key Partners, (8) Cost Structure, and (9) Revenue Streams. Please find the proposed representation scheme in the Appendix \ref{ch:app02} (cf. Figure \ref{fig:bmc}). In simplified terms, the bottom part of the Business Model Canvas -- Cost Structure and Revenue Streams -- deals with the value capture aspect or, in other words, why a company should perform (or is performing) the described business model. The remaining seven building blocks -- Value Propositions, Customer Segments, Channels, Customer Relationships, Key Activities, Key Resources, and Key Partners -- are representing the value creation aspect. Whereas the upper left side answers the how-, the center part (Value Propositions) the what-, and the right side the who-question. Although the business model conceptualizations by \citet{Johnson2008} and \citet{Osterwalder2010} differ in the total number of defined business model elements, they can be easily compared. In the following Table \ref{tab:bmcc}, the business model elements according to \citet{Johnson2008} and \citet{Osterwalder2010} are opposed.
 
 \begin{table}[h]
 	\centering
@@ -198,30 +232,4 @@ Another well-known business model conceptualization respectively framework is th
 	\label{tab:bmcc}
 \end{table}
 
-Platform-based business models are by nature two-sided or even multi-sided -- in respect of customer segments. Whereas the Business Model Canvas is appropriate to utilize for one-sided business models, in the domain of platform-based business models one major shortcoming restricts its utilization. In terms of \citet{Johnson2008}, each customer segments has its own problem (job to de done) and needs a corresponding offering (value proposition). Thus, it is crucial to differentiate between different customer segments in business models. The Business Model Canvas framework cannot easily be extended (the upper center and right side -- especially the two elements Value Proposition and Customer Segments) to take into account several disjoint customer segments. While the framework proposed by \citet{Johnson2008} can easily consider more than one customer segments, due to the fact that several \acp{CVP} are possible.
-
-The main focus at all conducted case studies was rather how the business model appears on the market and is experienced by customers than how the business model is implemented by a specific company or to describe the internal view of the business model. For this reason, the market view elements -- the \ac{CVP} and, in parts, the profit formula -- are mainly considered, even though the non-market view elements -- key resources and key processes -- are mentioned as far as possible. Moreover, the focus on market view elements allowed to solely utilize secondary data for the conducted analysis of \ac{PaaS} providers' business models -- for instance reliable, public data or documentations, both providing comprehensive information about the business model under investigation. Information concerning the internal business model elements -- key resources, key processes, and, in parts, the profit formula -- is difficult to obtain, due to the fact, that this information is in most cases kept confidential, for instance, the cost structure as well as process or workflow descriptions. Thus, the following presented business models mainly focus on the market view elements.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Platform-based business models are by nature two-sided or even multi-sided business models -- in respect of the customer segments and the corresponding value proposition. Whereas the Business Model Canvas is appropriate to utilize for one-sided business models, in the domain of platform-based business models one major shortcoming restricts its utilization. In terms of \citet{Johnson2008}, each customer segments has its own problem (job to de done) and needs a corresponding offering (value proposition). Thus, it is crucial to differentiate between different customer segments in platform-based business models. The Business Model Canvas framework cannot easily be extended (the upper center and right side -- especially the two elements Value Proposition and Customer Segments) to take into account several disjoint customer segments and their corresponding value proposition. While the framework proposed by \citet{Johnson2008} can easily consider more than one customer segment, due to the fact that several \acp{CVP} -- including the customer segment (target customer) and their value proposition (offering) -- are possible.
