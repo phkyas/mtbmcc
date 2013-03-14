@@ -9,71 +9,7 @@
 	--- Chinese Proverb
 \end{flushright}
 
-Within this chapter, the theoretical foundations of the thesis at hand are elucidated. At the beginning, the \ac{PaaS} domain, relations to other cloud computing components, as well as cloud computing itself are introduced. Afterwards, the term business model and various points of view in regards to business models are explained. Furthermore, one business model conceptualization which is used throughout this thesis is described at the end of this chapter in detail. 
-
-\section{Platform as a Service}\label{ch:tf:paas}
-\begin{flushright}{\slshape 
-	In pioneer days they used oxen for heavy pulling,\\
-	and when one ox couldn't budge a log,\\
-	they didn't try to grow a larger ox.\\
-	We shouldn't be trying for bigger computers,\\
-	but for more systems of computers.} \\ \medskip
-	--- Grace Hopper
-\end{flushright}
-
-\subsection{Cloud Computing}
-
-
-\begin{quote}{\slshape 
-"Cloud computing is a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e.g., networks, servers, storage, applications, and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction."}
-\vspace*{-5pt}
-\begin{flushright}
-	--- \citet[p. 2]{Mell2011}
-\end{flushright}
-\end{quote}
-
-\begin{quote}{\slshape 
-"Clouds are a large pool of easily usable and accessible virtualized resources (such as hardware, development platforms and/or services). These resources can be dynamically reconfigured to adjust to a variable load (scale), allowing also for an optimum resource utilization. This
-pool of resources is typically exploited by a pay-per-use model in which guarantees are offered by the Infrastructure Provider by means of customized \acs{SLA}s [\acl{SLA}s]."}
-\vspace*{-5pt}
-\begin{flushright}
-	--- \citet[p. 51]{Vaquero2009}
-\end{flushright}
-\end{quote}
-
-
-\begin{figure}[htb]
-	\centering
-	\input{gfx/cloudStack}
-	\caption{Cloud Computing Stack}
-	\label{fig:ccs}
-\end{figure}
-
-\begin{figure}[htb]
-	\centering
-	\begin{subfigure}{.75\textwidth}
-		\centering
-		\input{gfx/capacityCloud}
-		\caption{On-Demand}\label{fig:rpc}
-	\end{subfigure}
-	\begin{subfigure}[b]{.75\textwidth}
-		\centering
-		\input{gfx/capacityStaticUnder}
-		\caption{Underprovisioning}\label{fig:rpu}
-	\end{subfigure}
-	\begin{subfigure}[b]{.75\textwidth}
-		\centering
-		\input{gfx/capacityStaticOver}
-		\caption{Overprovisioning}\label{fig:rpo}
-	\end{subfigure}
-	\caption[Resource Provisioning -- On-Demand vs. Static]{Resource Provisioning -- On-Demand vs. Static, adapted from \citet[p. 54]{Armbrust2010} and \citet[p. 127]{Iyer2010}}
-	\label{fig:rp}
-\end{figure}
-
-
-\subsection{Cloud Platforms}
-
-
+Within this chapter, the theoretical foundations of the thesis at hand are elucidated. At the beginning, the term business model and various points of view in regards to business models are explained. Furthermore, one business model conceptualization which is used throughout this thesis is described at the end of this section in detail. Afterwards, the \ac{PaaS} domain, relations to other cloud computing components, as well as cloud computing itself are introduced.
 
 \section{Business Models}\label{ch:tf:bm}
 
@@ -100,7 +36,7 @@ However, the term business model itself evolved noticeable within academic journ
 	
 \begin{quote}{\slshape 
 "[A business model is] an architecture for the product, service and information flows, including a description of the various business actors and their roles; and a description of the potential benefits for the various business actors; and a description of the sources of revenues."}
-\vspace*{-5pt}
+\vspace*{-7pt}
 \begin{flushright}
 	--- \citet[p. 2]{Timmers1998}
 \end{flushright}
@@ -108,7 +44,7 @@ However, the term business model itself evolved noticeable within academic journ
 
 \begin{quote}{\slshape 
 "Business models are defined as summary of the value creation logic of an organization or a business network including assumptions about its partners, competitors and customers. They define the business and IS architecture, rules, potential benefits and the sources of revenue."}
-\vspace*{-5pt}
+\vspace*{-7pt}
 \begin{flushright}
 	--- \citet[p. 798]{Klueber2000}
 \end{flushright}
@@ -116,7 +52,7 @@ However, the term business model itself evolved noticeable within academic journ
 
 \begin{quote}{\slshape 
 "A business model depicts the content, structure, and governance of transactions designed so as to create value through the exploitation of business opportunities."}
-\vspace*{-5pt}
+\vspace*{-7pt}
 \begin{flushright}
 	--- \citet[p. 511]{Amit2001}
 \end{flushright}
@@ -124,7 +60,7 @@ However, the term business model itself evolved noticeable within academic journ
 
 \begin{quote}{\slshape 
 "[A business model is the] heuristic logic that connects technical potential with the realization of economic value."}
-\vspace*{-5pt}
+\vspace*{-7pt}
 \begin{flushright}
 	--- \citet[p. 529]{Chesbrough2002}
 \end{flushright}
@@ -132,7 +68,7 @@ However, the term business model itself evolved noticeable within academic journ
 
 \begin{quote}{\slshape 
 "[Business models are] stories that explain how enterprises work. A good business model answers Peter Drucker's age-old questions: Who is the customer? And what does the customer value? It also answers the fundamental questions every manager must ask: How do we make money in this business? What is the underlying economic logic that explains how we can deliver value to customers at an appropriate cost?"}
-\vspace*{-5pt}
+\vspace*{-7pt}
 \begin{flushright}
 	--- \citet[p. 2]{Magretta2002}
 \end{flushright}
@@ -140,7 +76,7 @@ However, the term business model itself evolved noticeable within academic journ
 
 \begin{quote}{\slshape 
 "A business model is a concise representation of how an interrelated set of decision variables in the areas of venture strategy, architecture, and economics are addressed to create sustainable competitive advantage in defined markets."}
-\vspace*{-5pt}
+\vspace*{-7pt}
 \begin{flushright}
 	--- \citet[p. 727]{Morris2005}
 \end{flushright}
@@ -148,7 +84,7 @@ However, the term business model itself evolved noticeable within academic journ
 
 \begin{quote}{\slshape 
 "A business model is a conceptual tool that contains a set of elements and their relationships and allows expressing the business logic of a specific firm. It is a description of the value a company offers to one or several segments of customers and of the architecture of the firm and its network of partners for creating, marketing, and delivering this value and relationship capital, to generate profitable and sustainable revenue streams."}
-\vspace*{-5pt}
+\vspace*{-7pt}
 \begin{flushright}
 	--- \citet[p. 10]{Osterwalder2005}
 \end{flushright}
@@ -156,7 +92,7 @@ However, the term business model itself evolved noticeable within academic journ
 	
 \begin{quote}{\slshape 
 "[A business model is] a representation of a firm's underlying core logic and strategic choices for creating and capturing value within a value network."}
-\vspace*{-5pt}
+\vspace*{-7pt}
 \begin{flushright}
 	--- \citet[p. 202]{Shafer2005}
 \end{flushright}
@@ -164,7 +100,7 @@ However, the term business model itself evolved noticeable within academic journ
 
 \begin{quote}{\slshape 
 "The particular business concept (or way of doing business) as reflected by the business's core value proposition(s) for customers; its configurated value network to provide that value, consisting of own strategic capabilities as well as other (e.g. outsourced/allianced) value networks; and its continued sustainability to reinvent itself and satisfy the multiple objectives of its various stakeholders."}
-\vspace*{-5pt}
+\vspace*{-7pt}
 \begin{flushright}
 	--- \citet[p. 40]{Voelpel2005}
 \end{flushright}
@@ -172,7 +108,7 @@ However, the term business model itself evolved noticeable within academic journ
 
 \begin{quote}{\slshape 
 "A business model \ldots consists of four interlocking elements [\ac{CVP}, profit formula, key resources, and key processes] that, taken together, create and deliver value."}
-\vspace*{-5pt}
+\vspace*{-7pt}
 \begin{flushright}
 	--- \citet[p. 52]{Johnson2008}
 \end{flushright}
@@ -180,7 +116,7 @@ However, the term business model itself evolved noticeable within academic journ
 
 \begin{quote}{\slshape 
 "A business model describes the rationale of how an organization creates, delivers and captures value."}
-\vspace*{-5pt}
+\vspace*{-7pt}
 \begin{flushright}
 	--- \citet[p. 14]{Osterwalder2010}
 \end{flushright}
@@ -233,3 +169,59 @@ Another well-known business model conceptualization respectively framework is th
 \end{table}
 
 Platform-based business models are by nature two-sided or even multi-sided business models -- in respect of the customer segments and the corresponding value proposition. Whereas the Business Model Canvas is appropriate to utilize for one-sided business models, in the domain of platform-based business models one major shortcoming restricts its utilization. In terms of \citet{Johnson2008}, each customer segments has its own problem (job to de done) and needs a corresponding offering (value proposition). Thus, it is crucial to differentiate between different customer segments in platform-based business models. The Business Model Canvas framework cannot easily be extended (the upper center and right side -- especially the two elements Value Proposition and Customer Segments) to take into account several disjoint customer segments and their corresponding value proposition. While the framework proposed by \citet{Johnson2008} can easily consider more than one customer segment, due to the fact that several \acp{CVP} -- including the customer segment (target customer) and their value proposition (offering) -- are possible.
+
+\section{Cloud Computing}\label{ch:tf:paas}
+\begin{flushright}{\slshape 
+	In pioneer days they used oxen for heavy pulling,\\
+	and when one ox couldn't budge a log,\\
+	they didn't try to grow a larger ox.\\
+	We shouldn't be trying for bigger computers,\\
+	but for more systems of computers.} \\ \medskip
+	--- Grace Hopper
+\end{flushright}
+
+\begin{quote}{\slshape 
+"Cloud computing is a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e.g., networks, servers, storage, applications, and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction."}
+\vspace*{-5pt}
+\begin{flushright}
+	--- \citet[p. 2]{Mell2011}
+\end{flushright}
+\end{quote}
+
+\begin{quote}{\slshape 
+"Clouds are a large pool of easily usable and accessible virtualized resources (such as hardware, development platforms and/or services). These resources can be dynamically reconfigured to adjust to a variable load (scale), allowing also for an optimum resource utilization. This
+pool of resources is typically exploited by a pay-per-use model in which guarantees are offered by the Infrastructure Provider by means of customized \acs{SLA}s [\acl{SLA}s]."}
+\vspace*{-5pt}
+\begin{flushright}
+	--- \citet[p. 51]{Vaquero2009}
+\end{flushright}
+\end{quote}
+
+
+\begin{figure}[htb]
+	\centering
+	\input{gfx/cloudStack}
+	\caption{Cloud Computing Stack}
+	\label{fig:ccs}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\begin{subfigure}{.75\textwidth}
+		\centering
+		\input{gfx/capacityCloud}
+		\caption{On-Demand}\label{fig:rpc}
+	\end{subfigure}
+	\begin{subfigure}[b]{.75\textwidth}
+		\centering
+		\input{gfx/capacityStaticUnder}
+		\caption{Underprovisioning}\label{fig:rpu}
+	\end{subfigure}
+	\begin{subfigure}[b]{.75\textwidth}
+		\centering
+		\input{gfx/capacityStaticOver}
+		\caption{Overprovisioning}\label{fig:rpo}
+	\end{subfigure}
+	\caption[Resource Provisioning -- On-Demand vs. Static]{Resource Provisioning -- On-Demand vs. Static, adapted from \citet[p. 54]{Armbrust2010} and \citet[p. 127]{Iyer2010}}
+	\label{fig:rp}
+\end{figure}
