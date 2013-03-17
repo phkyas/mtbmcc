@@ -1,0 +1,92 @@
+% ****************************************************************************************************
+% Business Model AWS OpsWorks NEW 
+% ****************************************************************************************************
+\begin{longtable}{L{\column}L{\column}L{\column}L{\column}}
+	
+	\toprule
+	\multicolumn{4}{l}{\textit{\nameref{bm:aws_ops}}}\\ 
+	\midrule
+	\endfirsthead
+	\toprule  
+	\multicolumn{4}{l}{\textit{continued from previous page (\nameref{bm:aws_ops})}}\\ 
+	\midrule
+	\endhead
+	\multicolumn{4}{r}{\textit{continued on next page}}\\
+	\bottomrule
+	\endfoot
+	\bottomrule
+	\caption[Business Model AWS OpsWorks]{Business Model AWS OpsWorks \citep{Amazon2013a}}
+	\label{bm:aws_ops}
+	\endlastfoot
+	
+	\multicolumn{4}{c}{ \textbf{Customer Value Proposition (CVP)}}\\ \midrule
+	
+	Target customer &
+	Job to be done &
+	\multicolumn{2}{L{\columnT}}{Offering} \\ \midrule
+	
+	% START CUSTOMERS
+	\small
+	Business End-Consumer &
+	\small
+	Deploy and manage diverse applications within the cloud \& retain control over all application lifecycle related operations
+ & 
+	\multicolumn{2}{L{\columnT}}{
+	\vspace{-5mm}
+	\small
+	\begin{itemize}[leftmargin=*, parsep=0pt, topsep=0pt, itemsep=0pt]
+				\item True pay as you go pricing
+				\item DevOps application management solution supporting the entire application lifecycle -- resource provisioning, configuration management, application deployment, software updates, monitoring, and access control
+				\item Three basic concepts:
+					\begin{itemize}[leftmargin=*, parsep=0pt, topsep=0pt, itemsep=0pt]
+						\item Stack: Set of Amazon EC2 instances, including one or more layers
+						\item Layer: Description (Chef recipe) how to configure an instance. \ac{AWS} provides built-in layers -- for instance for Rails, Ruby, Node.js, HAProxy, and Ganglia. However, also custom layers can be built. Furthermore, layers can be configured to scale-up as well as scale-down automatically, both, load- and time-based scaling is possible.
+						\item Application: \ac{AWS} OpsWorks receives the application from a repository (i.e. Git, SVN, HTTP, or Amazon S3) and deploys the source code as configured.
+					\end{itemize}
+				\item \ac{AWS} OpsWorks can be used via the \ac{AWS} Management Console, \ac{SDK}, or command line interface\vspace{-\baselineskip} 
+		\end{itemize}
+	} \\ \midrule
+	
+
+% END CUSTOMERS
+
+% KEY RESOURCES
+\multicolumn{2}{L{\columnT}}{ \textbf{Key Resources}
+\small
+\begin{itemize}[leftmargin=*, parsep=0pt, topsep=0pt, itemsep=0pt]
+				\item Infrastructure (datacenter)
+				\item Brand (Amazon resp. \ac{AWS})
+				\item Existing \ac{AWS} products, like Amazon Elastic Compute Cloud (Amazon EC2) and Amazon Simple Storage Service (Amazon S3)
+				\item \ac{AWS} OpsWorks
+				\item Tools in regards to \ac{AWS} OpsWorks: \ac{AWS} Management Console, \ac{SDK}, and command line interface\vspace{-\baselineskip} 
+	\end{itemize}
+} &
+% KEY PPROCESSES
+\multicolumn{2}{L{\columnT}}{ \textbf{Key Processes}
+\small
+\begin{itemize}[leftmargin=*, parsep=0pt, topsep=0pt, itemsep=0pt]
+				\item Infrastructure management
+				\item Enable usage of existing \ac{AWS} products and solutions within \ac{AWS} OpsWorks
+				\item Provide well-known software stacks, like Ruby and PHP 
+				\item Integrate the Chef configuration management framework and thereby allow Chef recipes
+				\item Easy to use self-service portal to create and manage applications build with \ac{AWS} OpsWorks\vspace{-\baselineskip} 
+\end{itemize}
+} \\ \midrule
+
+% PROFIT FORMULA
+\multicolumn{4}{L{\columnF}}{ \textbf{Profit Formula}
+	\small
+	\begin{itemize}[leftmargin=*, parsep=0pt, topsep=0pt, itemsep=0pt]
+				\item Transaction based revenue stream based on standard \ac{AWS} products like:
+					\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt]
+						\item Amazon Elastic Compute Cloud (Amazon EC2)
+						\item Amazon Simple Storage Service (Amazon S3)
+					\end{itemize}
+				\item No additional fees for \ac{AWS} OpsWorks\vspace{-\baselineskip} 
+	\end{itemize}
+} \\
+
+\end{longtable}
+
+
+
