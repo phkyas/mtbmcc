@@ -9,7 +9,7 @@
 	--- Chinese Proverb
 \end{flushright}
 
-Within this chapter, the theoretical foundations of the thesis at hand are elucidated. At the beginning, the term business model and various points of view in regards to business models are explained. Furthermore, one business model conceptualization which is used throughout this thesis is described at the end of this section in detail. Afterwards, the \ac{PaaS} domain, relations to other cloud computing components, as well as cloud computing itself are introduced.
+Within this chapter, the theoretical foundations of the thesis at hand are elucidated. At the beginning, the term business model and various points of view in regards to business models are explained. Furthermore, one business model conceptualization which is used throughout this thesis is described at the end of this section in detail. Afterwards, the \ac{PaaS} domain, relations to other cloud computing components, as well as the concept of cloud computing itself are introduced.
 
 \section{Business Models}\label{ch:tf:bm}
 
@@ -32,7 +32,7 @@ Already 1954 Peter F. Drucker proposed the five following questions in order to 
 	\item What should it be?
 \end{enumerate}
 
-However, the term business model itself evolved noticeable within academic journals as late as during the nineties \mycite{Osterwalder2005}{pp. 3-4}{Zott2011}{p. 1022}. As of writing this paper at hand, there is no generally accepted definition or uniform picture about this concept. According to \citet[p. 726]{Morris2005} and \citet[p. 1022]{Zott2011}, the term business models (at a meta level) has been referred to as an architecture, an assumption, a conceptual tool or model, a description, a design, a framework, a method, a pattern, a plan, a representation, a set, a statement, as well as a structural template. Therefore, a couple of widely used definitions with different points of view are presented below:
+However, the term business model itself evolved noticeable within academic journals as late as during the nineties \mycite{Osterwalder2005}{pp. 3-4}{Zott2011}{p. 1022}. As of writing this paper at hand, there is no general accepted definition or uniform picture about this concept. According to \citet[p. 726]{Morris2005} and \citet[p. 1022]{Zott2011}, the term business models (at a meta level) has been referred to as an architecture, an assumption, a conceptual tool or model, a description, a design, a framework, a method, a pattern, a plan, a representation, a set, a statement, as well as a structural template. Therefore, a couple of widely used definitions with different points of view are presented below:
 	
 \begin{quotation}\vspace*{-5pt}{\slshape 
 [A business model is] an architecture for the product, service and information flows, including a description of the various business actors and their roles; and a description of the potential benefits for the various business actors; and a description of the sources of revenues.}
@@ -147,7 +147,7 @@ How a company is capturing value for itself based on the offering to its custome
 
 Assets which are essential to create and deliver the above described \ac{CVP} are summarized as key resources. According to \citet[p. 53]{Johnson2008}, these key resources include people, technology, products, facilities, equipment, channels, as well as the company's brand respectively reputation.
 
-Processes in combination with the assets (key resources) are necessary to deliver the value proposition to the company's customers. These processes need to be efficient, repeatable, and scalable. Key processes include repeating operations -- training, development, manufacturing, budgeting, planning, sales, and services -- as well as the company's rules, metrics, and norms \citep[p. 53]{Johnson2008}.
+Processes in combination with these assets (key resources) are necessary to deliver the value proposition to the company's customers. These processes need to be efficient, repeatable, and scalable. Key processes include repeating operations -- training, development, manufacturing, budgeting, planning, sales, and services -- as well as the company's rules, metrics, and norms \citep[p. 53]{Johnson2008}.
 
 In summary, within the business model conceptualization proposed by \citet[p. 54]{Johnson2008} the \ac{CVP} and the profit formula encompass the value description for both parties, the target customers as well as the company itself. The value creation and delivery is explained by the two business model elements key resources and key processes. In Table \ref{bm:concept} the business model conceptualization is graphical depicted:
 
@@ -160,10 +160,15 @@ Another well-known business model conceptualization respectively framework is th
 	\begin{tabular}{lp{.4\textwidth}}
 			\toprule 
 			\citet{Johnson2008} & \citet{Osterwalder2010}\\ \midrule
-			\ac{CVP}	& Customer Segments \newline Value Propositions\\ \midrule
-			Profit Formula	& Cost Structure \newline	Revenue Streams\\ \midrule
-			Key Resources	& Key Resources \newline Key Partners \newline Channels\\ \midrule
-			Key Processes	& Key Activities \newline	Customer Relationships \\ \bottomrule
+			\multirow{2}{*}{\ac{CVP}}	& Customer Segments \\
+				& Value Propositions\\ \midrule
+			\multirow{2}{*}{Profit Formula}	& Cost Structure \\
+				& Revenue Streams\\ \midrule
+			\multirow{3}{*}{Key Resources} & Key Resources \\
+				& Key Partners \\
+				& Channels\\ \midrule
+			\multirow{2}{*}{Key Processes} & Key Activities \\
+				& Customer Relationships \\ \bottomrule
 	\end{tabular}
 	\caption{Business Model Conceptualization Comparison}
 	\label{tab:bmcc}
@@ -212,15 +217,15 @@ Inherent in the concept of cloud computing are three layers (\citealp[pp. 118-11
 	\label{fig:ccs}
 \end{figure}
 
-According to \citet[p. 3]{Mell2011}, four development models are commonly used. First, private clouds are solely for a dedicated entity and managed by the entity itself or a third-party. Second, several entities operate together a community cloud to support a shared goal or mission. Third, public clouds are owned by an organization and open to general public or a dedicated domain. And fourth, any combination of two or more the above mentioned clouds is denoted as a hybrid cloud.
+According to \citet[p. 3]{Mell2011}, four development models are commonly used. First, private clouds are solely for a dedicated entity and managed by the entity itself or a third-party. Second, several entities operate together a community cloud to support a shared goal or mission. Third, public clouds are owned by an organization and open to general public or a dedicated domain. And fourth, any combination of two or more of the above mentioned clouds is denoted as a hybrid cloud.
 
 Several authors have identified a number of features of the domain cloud computing, which are listed below to provide a broad overview. \citet[pp. 54-58]{Armbrust2010} identified ten obstacles for cloud computing -- three concerning the adaption (availability/business continuity, data lock-in, data confidentiality and auditability), the next five affecting the growth (data transfer bottlenecks, performance unpredictability, scalable storage, bugs in large distributed systems, and scaling quickly), and the last two are business obstacles (reputation fate sharing and software licensing). \citet[pp. 120-127]{Iyer2010} described seven cloud computing capabilities -- controlled interface, location independence, sourcing independence, ubiquitous access, virtual business environments, addressability and traceability, and rapid elasticity. And finally, \citet[p. 2]{Mell2011} highlighted five essential characteristics in this field -- on-demand self-service, broad network access, resource pooling, rapid elasticity, and measure service. 
 
 \citet{Smith2012} analyzed the cloud computing environment and reasoned that cloud computing with its various sub-concepts, like \ac{IaaS}, \ac{PaaS}, and \ac{SaaS}, is still an evolving area. However, the individual sub-concepts are at different stages of development. According to \citet[p. 5]{Smith2012}, the \ac{IaaS} and especially the \ac{SaaS} layer are already quite mature and will reach the so-called plateau of productivity in the near future. Whereas the \ac{PaaS} layer is currently at the labeled peak of inflated expectations and further research is necessary to determine the actually capabilities of this layer. Please find the complete picture of this study within Appendix \ref{ch:app03} (cf. Figure \ref{fig:cloudCycle}). Also \citet[p. 120]{Iyer2010} identified that the cloud computing area is still maturing, while the \ac{IaaS} layer is the prevalent sub-concept.
 
-Cloud computing is especially for \acp{SME} beneficial, based on limited IT in-house resources and knowledge associated with growing IT requirements and needs (\citealp[p. 398]{Weinhardt2009} and \citealp{Karabek2011}). Benefits inherent in cloud computing, regardless of the customer size, are an increased flexibility, reliability, as well as agility to respond to internal and external demands (\citealp[p. 51]{Vaquero2009} and \citealp[p. 129]{Iyer2010}). Moreover, the first steps into cloud computing are not accompanied by high entry costs or upfront investment costs and the use of cloud computing enables companies to convert capital expenses to operating expenses (CapEx to OpEx), or, in other words, to convert fixed costs into variable costs, hence gaining the possibility to focus on their core business \citep[pp. 51-53]{Armbrust2010}. At the current state, most of the cloud computing offers are not priced based on the classical license agreements, rather on a usage-based pricing, labeled as pay as you go or pay for use pricing (\citealp[pp. 50-54]{Vaquero2009}; \citealp[pp. 51-53,58]{Armbrust2010}; and \citealp[p. 2]{Iyer2010}). A comprehensive overview about pricing strategies of software vendors is provided by \citet{Lehmann2009}.
+Cloud computing is especially for \acp{SME} beneficial, based on limited IT in-house resources and knowledge associated with growing IT requirements and needs (\citealp[p. 398]{Weinhardt2009} and \citealp{Karabek2011}). Benefits inherent in cloud computing, regardless of the customer size, are an increased flexibility, reliability, as well as agility to respond to internal and external demands (\citealp[p. 51]{Vaquero2009} and \citealp[p. 129]{Iyer2010}). Moreover, the first steps into cloud computing are not accompanied by high entry or upfront investment costs and the use of cloud computing enables companies to convert capital expenses to operating expenses (CapEx to OpEx), or, in other words, to convert fixed costs into variable costs, hence gaining the possibility to focus on their core business \citep[pp. 51-53]{Armbrust2010}. At the current state, most of the cloud computing offers are not priced based on the classical license agreements, rather on a usage-based pricing, labeled as pay as you go or pay for use pricing (\citealp[pp. 50-54]{Vaquero2009}; \citealp[pp. 51-53,58]{Armbrust2010}; and \citealp[p. 2]{Iyer2010}). A comprehensive overview about pricing strategies of software vendors is provided by \citet{Lehmann2009}.
 
-One of the key features of cloud computing and its sub-concepts is the ability to scale according to the required demand, also referred to as elasticity (\citealp{Armbrust2010}; \citealp{Iyer2010}; and \citealp{Mell2011}). In order to provide a flexible utilization of resources, cloud providers use the concepts of virtualization and statistical multiplexing. By using these functionalities, a cloud service can scale up as well as scale down nearly in real-time, hereby allocate enough resources to cope with dynamic workloads (cf. Figure \ref{fig:rpc}). In contrast to cloud services, static on-premise systems cannot easily scale dynamically and by no means in real-time. For this kind of systems a managerial decision about the expected peak load is required to determine the computing capacity necessary to perform the peak load. Two common cases, both suboptimal, are typical in this kind of situation. First, the peak load is underestimated and consequently the available computing capacity is not capable to handle the actual peak loads (cf. Figure \ref{fig:rpu}). And second, the peak load is overestimated and hence a large part of the computing resources are always idle, in other words, the available resources are underutilized (cf. Figure \ref{fig:rpo}). Undoubtedly, these two cases represent risks for companies -- either systems with a high response times or a waste of money. The utilization of cloud services enables companies to shift these risks largely to the cloud provider and by this means staying able to act in a flexible manner.
+One of the key features of cloud computing and its sub-concepts is the ability to scale according to the required demand, also referred to as elasticity (\citealp[pp. 52-54]{Armbrust2010}; \citealp[p. 126]{Iyer2010}; and \citealp[p. 2]{Mell2011}). In order to provide a flexible utilization of resources, cloud providers use the concepts of virtualization and statistical multiplexing. By using these functionalities, a cloud service can scale up as well as scale down nearly in real-time, hereby allocate enough resources to cope with dynamic workloads (cf. Figure \ref{fig:rpc}). In contrast to cloud services, static on-premise systems cannot easily scale dynamically and by no means in real-time. For this kind of systems a managerial decision about the expected peak load is required to determine the computing capacity necessary to perform the defined peak load. Two common cases, both suboptimal, are typical in this kind of situation. First, the peak load is underestimated and consequently the available computing capacity is not capable to handle the actual peak loads (cf. Figure \ref{fig:rpu}). And second, the peak load is overestimated and hence a large part of the computing resources are always idle, in other words, the available resources are underutilized (cf. Figure \ref{fig:rpo}). Undoubtedly, these two cases represent risks for companies -- either systems with high response times or a waste of money. The utilization of cloud services enables companies to shift these risks largely to the cloud provider and by this means staying able to act in a flexible manner.
 
 \begin{figure}[bht]
 	\centering
@@ -245,7 +250,7 @@ One of the key features of cloud computing and its sub-concepts is the ability t
 
 \subsection{Platform as a Service}
 
-For a better understanding of platforms and the \ac{PaaS} layer, in the following a few more definitions are provided. These insights might be helpful in the sequel of this thesis. Product platforms are general defined by \citet{Halman2003} as follows:
+For a better understanding of platforms and in particular the \ac{PaaS} layer, in the following a few more definitions are provided. These insights might be helpful in the sequel of this thesis. Product platforms are general defined by \citet{Halman2003} as follows:
 
 \begin{quotation}{\slshape 
 A platform \ldots is neither the same as an individual product, nor is it the same as a product family; it is the common basis of all individual products within a product family. \ldots The leading principle behind the platform concept is to balance the commonality potential and differentiation needs within a product family. \ldots [Therefore, product platforms are considered] as a set of subsystems and interfaces that form a common structure from which a stream of related products can be developed and produced efficiently.}
@@ -265,6 +270,16 @@ Within the IT industry many (technical) platforms are prevalent -- for instance 
 \end{flushright}
 \end{quotation}
 
+Similar, but more dedicated to software platforms, \citet{Tiwana2010} defined the core concepts of these platforms as follows:
+
+\begin{quotation}{\slshape 
+[A software platform is] the extensible codebase of a software-based system that provides core functionality shared by the modules that interoperate with it and the interfaces through which they interoperate. [Whereas a module is] an add-on software subsystem that connects to the platform to add functionality to the platform. The collection of the platform and the modules specific to it [is labeled as ecosystem]. [Interfaces are] specifications and design rules that describe how the platform and modules interact and exchange information.}
+\vspace*{-7pt}
+\begin{flushright}
+	--- \citealp[p. 676]{Tiwana2010}
+\end{flushright}
+\end{quotation}
+
 Based on the above mentioned introductory platform definitions, hereafter two definitions dedicated to platforms within the area of cloud computing, also known as \ac{PaaS} layer, are listed below:
 
 \begin{quotation}{\slshape 
@@ -279,12 +294,12 @@ Based on the above mentioned introductory platform definitions, hereafter two de
 The capability provided to the consumer is to deploy onto the cloud infrastructure consumer-created or acquired applications created using programming languages, libraries, services, and tools supported by the provider. [Footnote in the original source: This capability does not necessarily preclude the use of compatible programming languages, libraries, services, and tools from other sources.] The consumer does not manage or control the underlying cloud infrastructure including network, servers, operating systems, or storage, but has control over the deployed applications and possibly configuration settings for the application-hosting environment.}
 \vspace*{-7pt}
 \begin{flushright}
-	--- \citealp[p. 2-3]{Mell2011}
+	--- \citealp[pp. 2-3]{Mell2011}
 \end{flushright}
 \end{quotation}
 
 In simplified terms, the \ac{PaaS} layer abstracts the \ac{IaaS} layer (inclusive the automated resource management) and provides a runtime environment where applications and services run on. Usually, these software platforms are open to external developers and offer a kind of development environment, either online (i.e. browser-based) or offline (i.e. \ac{SDK}), sometimes even both variants are provided. Furthermore, these development environments address different stakeholders, ranging from technical developers to business people, and thus vary from comprehensive \acp{IDE} to graphical drag and drop environments. A powerful dashboard -- including features to administrate and manage application as well as service related issues -- completes commonly the \ac{PaaS} offer.
-As mentioned earlier already, according to \citet[p. 5]{Smith2012} the \ac{PaaS} layer is currently located at the so-called peak of inflated expectations (cf. Appendix \ref{ch:app03}) and consequently some of the current \ac{PaaS} providers will be driven out of the market as well as new \ac{PaaS} providers will emerge. Furthermore, it can be expected that the competition between \ac{PaaS} providers will increase constantly. \citet[pp. 117,128-129]{Iyer2010} described those rivalry as ecosystem-based respectively network-based competiton.
+As mentioned earlier already, according to \citet[p. 5]{Smith2012} the \ac{PaaS} layer is currently located at the so-called peak of inflated expectations (cf. Appendix \ref{ch:app03}) and consequently some of the current \ac{PaaS} providers will be driven out of the market as well as new \ac{PaaS} providers will emerge. Furthermore, it can be expected that the competition between \ac{PaaS} providers will increase constantly. \citet[pp. 117,128-129]{Iyer2010} described those rivalry as ecosystem-based respectively network-based competiton. In the same vein, \citet[pp. 675-676]{Tiwana2010} noticed a shift of competition towards platform-centric ecosystems.
 
 
 
