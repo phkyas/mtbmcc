@@ -2,7 +2,7 @@
 % Capacity Static - Underprovisioning
 % ****************************************************************************************************
 
-\begin{tikzpicture}[scale=0.75]
+\begin{tikzpicture}[scale=0.6, every node/.style={scale=0.75}]
 
 \fill[fill=gray!20] (0,1.75) -- plot [domain=0:9.9](\x, {sin(10*(\x r)) + 1.5}) -- (9.9,1.75) -- (0,1.75);
 \fill[fill=white] (0,1.75) -- (9.9,1.75) -- (9.9,0) -- (0,0) -- (0,1.75);

@@ -2,14 +2,14 @@
 \chapter{Theoretical Foundations}\label{ch:tf}
 % ****************************************************************************************************
 
-\begin{flushright}{\slshape    
-	When the wind of change blows,\\
-	some people build walls,\\
-	others build windmills.} \\ \medskip
-	--- Chinese Proverb
-\end{flushright}
+%\begin{flushright}{\slshape    
+	%When the wind of change blows,\\
+	%some people build walls,\\
+	%others build windmills.} \\ \medskip
+	%--- Chinese Proverb
+%\end{flushright}
 
-Within this chapter, the theoretical foundations of the thesis at hand are elucidated. At the beginning, the term business model and various points of view in regards to business models are explained. Furthermore, one business model conceptualization which is used throughout this thesis is described at the end of this section in detail. Afterwards, the \ac{PaaS} domain, relations to other cloud computing components, as well as the concept of cloud computing itself are introduced.
+Within this chapter, the theoretical foundations of the thesis at hand are elucidated. At the beginning, the term business model and various points of view in regards to business models are explained. Furthermore, one business model conceptualization which is used throughout this thesis is described at the end of this section in detail. Afterwards, the concept of cloud computing, relations to other cloud computing components as well as the \ac{PaaS} domain are introduced.
 
 \section{Business Models}\label{ch:tf:bm}
 
@@ -24,7 +24,7 @@ Within this chapter, the theoretical foundations of the thesis at hand are eluci
 
 Already 1954 Peter F. Drucker proposed the five following questions in order to describe basic business strategies \citep[pp. 49-61]{Drucker1954}:
 
-\begin{enumerate}
+\begin{enumerate}[parsep=0pt, topsep=0pt, itemsep=0pt]
 	\item What is our business?
 	\item Who is the customer?
 	\item What is value to the customer?
@@ -59,20 +59,20 @@ A business model depicts the content, structure, and governance of transactions 
 \end{quotation}
 
 \begin{quotation}\vspace*{-5pt}{\slshape 
-[A business model is the] heuristic logic that connects technical potential with the realization of economic value.}
+pp. 533-534[A business model is the] heuristic logic that connects technical potential with the realization of economic value.}
 \vspace*{-7pt}
 \begin{flushright}
 	--- \citealp[p. 529]{Chesbrough2002}
 \end{flushright}
 \end{quotation}
 
-\begin{quotation}\vspace*{-5pt}{\slshape 
-[Business models are] stories that explain how enterprises work. A good business model answers Peter Drucker's age-old questions: Who is the customer? And what does the customer value? It also answers the fundamental questions every manager must ask: How do we make money in this business? What is the underlying economic logic that explains how we can deliver value to customers at an appropriate cost?}
-\vspace*{-7pt}
-\begin{flushright}
-	--- \citealp[p. 2]{Magretta2002}
-\end{flushright}
-\end{quotation}
+%\begin{quotation}\vspace*{-5pt}{\slshape 
+%[Business models are] stories that explain how enterprises work. A good business model answers Peter Drucker's age-old questions: Who is the customer? And what does the customer value? It also answers the fundamental questions every manager must ask: How do we make money in this business? What is the underlying economic logic that explains how we can deliver value to customers at an appropriate cost?}
+%\vspace*{-7pt}
+%\begin{flushright}
+%	--- \citealp[p. 2]{Magretta2002}
+%\end{flushright}
+%\end{quotation}
 
 \begin{quotation}\vspace*{-5pt}{\slshape 
 A business model is a concise representation of how an interrelated set of decision variables in the areas of venture strategy, architecture, and economics are addressed to create sustainable competitive advantage in defined markets.}
@@ -82,13 +82,13 @@ A business model is a concise representation of how an interrelated set of decis
 \end{flushright}
 \end{quotation}
 
-\begin{quotation}\vspace*{-5pt}{\slshape 
-A business model is a conceptual tool that contains a set of elements and their relationships and allows expressing the business logic of a specific firm. It is a description of the value a company offers to one or several segments of customers and of the architecture of the firm and its network of partners for creating, marketing, and delivering this value and relationship capital, to generate profitable and sustainable revenue streams.}
-\vspace*{-7pt}
-\begin{flushright}
-	--- \citealp[p. 10]{Osterwalder2005}
-\end{flushright}
-\end{quotation}
+%\begin{quotation}\vspace*{-5pt}{\slshape 
+%A business model is a conceptual tool that contains a set of elements and their relationships and allows expressing the business %logic of a specific firm. It is a description of the value a company offers to one or several segments of customers and of the architecture of the firm and its network of partners for creating, marketing, and delivering this value and relationship capital, to generate profitable and sustainable revenue streams.}
+%\vspace*{-7pt}
+%\begin{flushright}
+%	--- \citealp[p. 10]{Osterwalder2005}
+%\end{flushright}
+%\end{quotation}
 	
 \begin{quotation}\vspace*{-5pt}{\slshape 
 [A business model is] a representation of a firm's underlying core logic and strategic choices for creating and capturing value within a value network.}
@@ -98,16 +98,16 @@ A business model is a conceptual tool that contains a set of elements and their 
 \end{flushright}
 \end{quotation}
 
-\begin{quotation}\vspace*{-5pt}{\slshape 
-The particular business concept (or way of doing business) as reflected by the business's core value proposition(s) for customers; its configurated value network to provide that value, consisting of own strategic capabilities as well as other (e.g. outsourced/allianced) value networks; and its continued sustainability to reinvent itself and satisfy the multiple objectives of its various stakeholders.}
-\vspace*{-7pt}
-\begin{flushright}
-	--- \citealp[p. 40]{Voelpel2005}
-\end{flushright}
-\end{quotation}
+%\begin{quotation}\vspace*{-5pt}{\slshape 
+%The particular business concept (or way of doing business) as reflected by the business's core value proposition(s) for customers; its configurated value network to provide that value, consisting of own strategic capabilities as well as other (e.g. outsourced/allianced) value networks; and its continued sustainability to reinvent itself and satisfy the multiple objectives of its various stakeholders.}
+%\vspace*{-7pt}
+%\begin{flushright}
+%	--- \citealp[p. 40]{Voelpel2005}
+%\end{flushright}
+%\end{quotation}
 
 \begin{quotation}\vspace*{-5pt}{\slshape 
-A business model \ldots consists of four interlocking elements [\ac{CVP}, profit formula, key resources, and key processes] that, taken together, create and deliver value.}
+A business model \ldots consists of four interlocking elements [customer value proposition, profit formula, key resources, and key processes] that, taken together, create and deliver value.}
 \vspace*{-7pt}
 \begin{flushright}
 	--- \citealp[p. 52]{Johnson2008}
@@ -126,7 +126,7 @@ Most of the previously mentioned definitions of the term respectively concept bu
 
 The two aspects value creation and value capture are further terminologies widely used within the business model literature \mycite{Chesbrough2007}{p. 12}{Zott2011}{pp. 1019-1020}. Both parts are reflected in many business model definitions and conceptualizations, explicit as well as implicit. \citet[pp. 729-732]{Morris2005} identified, in alignment with \citet[pp. 49-61]{Drucker1954}, six key questions concerning basic business model components:
 
-\begin{enumerate}
+\begin{enumerate}[parsep=0pt, topsep=0pt, itemsep=0pt]
 	\item How will the firm create value?
 	\item For whom will the firm create value?
 	\item What is the firm's internal source of advantage?
@@ -141,7 +141,15 @@ Even though the concept of business models moves towards a more mature state, ju
 
 Based on an analysis of definitions for business models in literature, the definition of \citet{Johnson2008} was taken as a basis for the research presented in this paper. According to \citet[p. 52]{Johnson2008}, \textit{"A business model \ldots consists of four interlocking elements that, taken together, create and deliver value"}. These four elements are denoted as follows: \ac{CVP}, profit formula, key resources and key processes. In the following, these four elements are described in detail, shortly compared with the Business Model Canvas \citep{Osterwalder2010}, as well as discussed why the conceptualization by \citet{Johnson2008} is used for the thesis at hand.
 
-The \ac{CVP} is considered as the most crucial part based on its main objective to satisfy customer needs. In order to understand the customer needs, the following key questions should be answered: Who are my target customers?, What is their job to be done (problem)?, and How can their problems be solved (offering)? The interrelation between the job to be done and the corresponding offer as well as the value of the \ac{CVP} are described by  \citet[p. 52]{Johnson2008} in the following way, \textit{"The more important the job is to the customer, the lower the level of customer satisfaction with current options for getting the job done, and the better your solution is than existing alternatives at getting the job done (and, of course, the lower the price), the greater the CVP."}
+The \ac{CVP} is considered as the most crucial part based on its main objective to satisfy customer needs. In order to understand the customer needs, the following key questions should be answered: 
+
+\begin{enumerate}[parsep=0pt, topsep=0pt, itemsep=0pt]
+	\item Who are my target customers?
+	\item What is their job to be done (problem)?
+	\item How can their problems be solved (offering)? 
+\end{enumerate}
+
+The interrelation between the job to be done and the corresponding offer as well as the value of the \ac{CVP} are described by  \citet[p. 52]{Johnson2008} in the following way, \textit{"The more important the job is to the customer, the lower the level of customer satisfaction with current options for getting the job done, and the better your solution is than existing alternatives at getting the job done (and, of course, the lower the price), the greater the CVP."}
 
 How a company is capturing value for itself based on the offering to its customers is another key element within each business model -- named here as profit formula, consisting of the sub-elements revenue model, cost structure, margin model, and resource velocity.
 
@@ -149,7 +157,7 @@ Assets which are essential to create and deliver the above described \ac{CVP} ar
 
 Processes in combination with these assets (key resources) are necessary to deliver the value proposition to the company's customers. These processes need to be efficient, repeatable, and scalable. Key processes include repeating operations -- training, development, manufacturing, budgeting, planning, sales, and services -- as well as the company's rules, metrics, and norms \citep[p. 53]{Johnson2008}.
 
-In summary, within the business model conceptualization proposed by \citet[p. 54]{Johnson2008} the \ac{CVP} and the profit formula encompass the value description for both parties, the target customers as well as the company itself. The value creation and delivery is explained by the two business model elements key resources and key processes. In Table \ref{bm:concept} the business model conceptualization is graphical depicted:
+In summary, within the business model conceptualization proposed by \citet[p. 54]{Johnson2008} the \ac{CVP} represents the value description for the target customers. The value creation and delivery is explained by the two business model elements key resources and key processes. In Table \ref{bm:concept} the business model conceptualization is graphical depicted:
 
 \input{businessModels/bm_concept_NEW}
 
@@ -157,18 +165,18 @@ Another well-known business model conceptualization respectively framework is th
 
 \begin{table}[h]
 	\centering
-	\begin{tabular}{lp{.4\textwidth}}
+	\begin{tabular}{L{.2\textwidth}L{.2\textwidth}L{.2\textwidth}L{.2\textwidth}}
 			\toprule 
-			\citet{Johnson2008} & \citet{Osterwalder2010}\\ \midrule
-			\multirow{2}{*}{\ac{CVP}}	& Customer Segments \\
-				& Value Propositions\\ \midrule
-			\multirow{2}{*}{Profit Formula}	& Cost Structure \\
-				& Revenue Streams\\ \midrule
-			\multirow{3}{*}{Key Resources} & Key Resources \\
-				& Key Partners \\
-				& Channels\\ \midrule
-			\multirow{2}{*}{Key Processes} & Key Activities \\
-				& Customer Relationships \\ \bottomrule
+			\citet{Johnson2008} & \citet{Osterwalder2010} & \citet{Morris2005} & 4I \\ \midrule
+				\multirow{2}{*}{Customer Value\linebreak Proposition} & Customer Segments & & Who \\
+				 & Value Propositions & & What \\ \midrule
+			\multirow{2}{*}{Profit Formula}	& Cost Structure & & \multirow{2}{*}{Why}\\
+				& Revenue Streams & &\\ \midrule
+			\multirow{3}{*}{Key Resources} & Key Resources & & \multirow{3}{*}{How}\\
+				& Key Partners & &\\
+				& Channels & &\\ \midrule
+			\multirow{2}{*}{Key Processes} & Key Activities & & \multirow{2}{*}{How}\\
+				& Customer Relationships & &\\ \bottomrule
 	\end{tabular}
 	\caption{Business Model Conceptualization Comparison}
 	\label{tab:bmcc}
@@ -186,7 +194,7 @@ Platform-based business models are by nature two-sided or even multi-sided busin
 	--- Grace Hopper
 \end{flushright}
 
-\subsection{Terminology}
+\subsection{Origins and Definitions}
 
 In the recent past, a new computing paradigm in the IT industry has emerged -- cloud computing or also referred to as computing as a utility. Due to the fact that cloud computing is still maturing, there is up to this point no general accepted definition or even standardization, although a considerable amount of academic and applied research has been published. A well-established and widely used definition is provided by the National Institute of Standards and Technology (NIST), despite its general and broad character:
 
@@ -198,7 +206,7 @@ Cloud computing is a model for enabling ubiquitous, convenient, on-demand networ
 \end{flushright}
 \end{quotation}
 
-Based on a comprehensive literature review of current cloud computing definitions, \citet{Vaquero2009} identified ten essential cloud characteristics -- user friendliness, virtualization, internet centric, variety of resources, automatic adaptation, scalability, resource optimization, pay per use, service \acp{SLA}, and infrastructure \acp{SLA}. Not all of these characteristics are used throughout all the investigated definitions, however, a few of them are widely accepted and led \citet{Vaquero2009} derive a minimal cloud computing definition, encompassing \textit{"scalability, pay-per-use utility model and virtualization"} \citep[p. 51]{Vaquero2009}. Besides this minimal definition, a more comprehensive consensus definition has been extracted:
+Based on a comprehensive literature review of current cloud computing definitions, \citet{Vaquero2009} identified ten essential cloud characteristics -- user friendliness, virtualization, internet centric, variety of resources, automatic adaptation, scalability, resource optimization, pay per use, infrastructure \acp{SLA}, and service \acp{SLA}. Not all of these characteristics are used throughout all the investigated definitions, however, a few of them are widely accepted and led \citet{Vaquero2009} derive a minimal cloud computing definition, encompassing \textit{"scalability, pay-per-use utility model and virtualization"} \citep[p. 51]{Vaquero2009}. Besides this minimal definition, a more comprehensive consensus definition has been extracted:
 
 \begin{quotation}{\slshape 
 Clouds are a large pool of easily usable and accessible virtualized resources (such as hardware, development platforms and/or services). These resources can be dynamically reconfigured to adjust to a variable load (scale), allowing also for an optimum resource utilization. This pool of resources is typically exploited by a pay-per-use model in which guarantees are offered by the Infrastructure Provider by means of customized \acp{SLA}.}
@@ -219,13 +227,13 @@ Inherent in the concept of cloud computing are three layers (\citealp[pp. 118-11
 
 According to \citet[p. 3]{Mell2011}, four development models are commonly used. First, private clouds are solely for a dedicated entity and managed by the entity itself or a third-party. Second, several entities operate together a community cloud to support a shared goal or mission. Third, public clouds are owned by an organization and open to general public or a dedicated domain. And fourth, any combination of two or more of the above mentioned clouds is denoted as a hybrid cloud.
 
-Several authors have identified a number of features of the domain cloud computing, which are listed below to provide a broad overview. \citet[pp. 54-58]{Armbrust2010} identified ten obstacles for cloud computing -- three concerning the adaption (availability/business continuity, data lock-in, data confidentiality and auditability), the next five affecting the growth (data transfer bottlenecks, performance unpredictability, scalable storage, bugs in large distributed systems, and scaling quickly), and the last two are business obstacles (reputation fate sharing and software licensing). \citet[pp. 120-127]{Iyer2010} described seven cloud computing capabilities -- controlled interface, location independence, sourcing independence, ubiquitous access, virtual business environments, addressability and traceability, and rapid elasticity. And finally, \citet[p. 2]{Mell2011} highlighted five essential characteristics in this field -- on-demand self-service, broad network access, resource pooling, rapid elasticity, and measure service. 
+Several authors have identified a number of features of cloud computing, which are listed below to provide a broad overview. \citet[pp. 54-58]{Armbrust2010} identified ten obstacles for cloud computing -- three concerning the adaption (availability/business continuity, data lock-in, data confidentiality and auditability), the next five affecting the growth (data transfer bottlenecks, performance unpredictability, scalable storage, bugs in large distributed systems, and scaling quickly), and the last two are business obstacles (reputation fate sharing and software licensing). \citet[pp. 120-127]{Iyer2010} described seven cloud computing capabilities -- controlled interface, location independence, sourcing independence, ubiquitous access, virtual business environments, addressability and traceability, and rapid elasticity. And finally, \citet[p. 2]{Mell2011} highlighted five essential characteristics in this field -- on-demand self-service, broad network access, resource pooling, rapid elasticity, and measure service. 
 
 \citet{Smith2012} analyzed the cloud computing environment and reasoned that cloud computing with its various sub-concepts, like \ac{IaaS}, \ac{PaaS}, and \ac{SaaS}, is still an evolving area. However, the individual sub-concepts are at different stages of development. According to \citet[p. 5]{Smith2012}, the \ac{IaaS} and especially the \ac{SaaS} layer are already quite mature and will reach the so-called plateau of productivity in the near future. Whereas the \ac{PaaS} layer is currently at the labeled peak of inflated expectations and further research is necessary to determine the actually capabilities of this layer. Please find the complete picture of this study within Appendix \ref{ch:app03} (cf. Figure \ref{fig:cloudCycle}). Also \citet[p. 120]{Iyer2010} identified that the cloud computing area is still maturing, while the \ac{IaaS} layer is the prevalent sub-concept.
 
 Cloud computing is especially for \acp{SME} beneficial, based on limited IT in-house resources and knowledge associated with growing IT requirements and needs (\citealp[p. 398]{Weinhardt2009} and \citealp{Karabek2011}). Benefits inherent in cloud computing, regardless of the customer size, are an increased flexibility, reliability, as well as agility to respond to internal and external demands (\citealp[p. 51]{Vaquero2009} and \citealp[p. 129]{Iyer2010}). Moreover, the first steps into cloud computing are not accompanied by high entry or upfront investment costs and the use of cloud computing enables companies to convert capital expenses to operating expenses (CapEx to OpEx), or, in other words, to convert fixed costs into variable costs, hence gaining the possibility to focus on their core business \citep[pp. 51-53]{Armbrust2010}. At the current state, most of the cloud computing offers are not priced based on the classical license agreements, rather on a usage-based pricing, labeled as pay as you go or pay for use pricing (\citealp[pp. 50-54]{Vaquero2009}; \citealp[pp. 51-53,58]{Armbrust2010}; and \citealp[p. 2]{Iyer2010}). A comprehensive overview about pricing strategies of software vendors is provided by \citet{Lehmann2009}.
 
-One of the key features of cloud computing and its sub-concepts is the ability to scale according to the required demand, also referred to as elasticity (\citealp[pp. 52-54]{Armbrust2010}; \citealp[p. 126]{Iyer2010}; and \citealp[p. 2]{Mell2011}). In order to provide a flexible utilization of resources, cloud providers use the concepts of virtualization and statistical multiplexing. By using these functionalities, a cloud service can scale up as well as scale down nearly in real-time, hereby allocate enough resources to cope with dynamic workloads (cf. Figure \ref{fig:rpc}). In contrast to cloud services, static on-premise systems cannot easily scale dynamically and by no means in real-time. For this kind of systems a managerial decision about the expected peak load is required to determine the computing capacity necessary to perform the defined peak load. Two common cases, both suboptimal, are typical in this kind of situation. First, the peak load is underestimated and consequently the available computing capacity is not capable to handle the actual peak loads (cf. Figure \ref{fig:rpu}). And second, the peak load is overestimated and hence a large part of the computing resources are always idle, in other words, the available resources are underutilized (cf. Figure \ref{fig:rpo}). Undoubtedly, these two cases represent risks for companies -- either systems with high response times or a waste of money. The utilization of cloud services enables companies to shift these risks largely to the cloud provider and by this means staying able to act in a flexible manner.
+One of the key features of cloud computing and its sub-concepts is the ability to scale according to the required demand, also referred to as elasticity (\citealp[p. 4]{Foster2008}; \citealp[pp. 52-54]{Armbrust2010}; \citealp[p. 126]{Iyer2010}; \citealp[pp. 9-10]{Zhang2010}; and \citealp[p. 2]{Mell2011}). In order to provide a flexible utilization of resources, cloud providers use the concepts of virtualization and statistical multiplexing. By using these functionalities, a cloud service can scale up nearly in real-time, hereby allocate enough resources to cope with dynamic workloads (cf. Figure \ref{fig:rpc}). In contrast to cloud services, static on-premise systems cannot easily scale dynamically and by no means in real-time. For this kind of systems a managerial decision about the expected peak load is required to determine the computing capacity necessary to perform the defined peak load. Two common cases, both suboptimal, are typical in this kind of situation. First, the peak load is underestimated and consequently the available computing capacity is not capable to handle the actual peak loads (cf. Figure \ref{fig:rpu}). And second, the peak load is overestimated and hence a large part of the computing resources are always idle, in other words, the available resources are underutilized (cf. Figure \ref{fig:rpo}). Undoubtedly, these two cases represent risks for companies -- either systems with high response times or a waste of money. The utilization of cloud services enables companies to shift these risks largely to the cloud provider and by this means staying able to act in a flexible manner.
 
 \begin{figure}[bht]
 	\centering
@@ -300,10 +308,3 @@ The capability provided to the consumer is to deploy onto the cloud infrastructu
 
 In simplified terms, the \ac{PaaS} layer abstracts the \ac{IaaS} layer (inclusive the automated resource management) and provides a runtime environment where applications and services run on. Usually, these software platforms are open to external developers and offer a kind of development environment, either online (i.e. browser-based) or offline (i.e. \ac{SDK}), sometimes even both variants are provided. Furthermore, these development environments address different stakeholders, ranging from technical developers to business people, and thus vary from comprehensive \acp{IDE} to graphical drag and drop environments. A powerful dashboard -- including features to administrate and manage application as well as service related issues -- completes commonly the \ac{PaaS} offer.
 As mentioned earlier already, according to \citet[p. 5]{Smith2012} the \ac{PaaS} layer is currently located at the so-called peak of inflated expectations (cf. Appendix \ref{ch:app03}) and consequently some of the current \ac{PaaS} providers will be driven out of the market as well as new \ac{PaaS} providers will emerge. Furthermore, it can be expected that the competition between \ac{PaaS} providers will increase constantly. \citet[pp. 117,128-129]{Iyer2010} described those rivalry as ecosystem-based respectively network-based competiton. In the same vein, \citet[pp. 675-676]{Tiwana2010} noticed a shift of competition towards platform-centric ecosystems.
-
-
-
-
-
-
-

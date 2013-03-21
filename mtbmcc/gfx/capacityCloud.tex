@@ -2,7 +2,7 @@
 % Capacity Cloud
 % ****************************************************************************************************
 
-\begin{tikzpicture}[scale=0.75]
+\begin{tikzpicture}[scale=0.6, every node/.style={scale=0.75}]
 
 \fill[fill=gray!20] (0,1.5) -- plot [domain=0:9.9](\x, {sin(10*(\x r)) + 1.5}) -- plot[domain=9.9:0] (\x, {sin(10*(\x r)) + 2}) (0,1.5);
 
