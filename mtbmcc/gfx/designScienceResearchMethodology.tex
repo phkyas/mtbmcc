@@ -1,0 +1,37 @@
+% ****************************************************************************************************
+% Design Science Research
+% ****************************************************************************************************
+
+\begin{tikzpicture}[scale=0.75, every node/.style={scale=0.75}, node distance = 4.5cm]
+
+\node[draw,text width=8em,text centered,rectangle,rounded corners,minimum height=4em,thick,rotate=90] (a1) {Problem Identification and Motivation};
+\node[draw,text width=8em,text centered,rectangle,rounded corners,minimum height=4em,thick,rotate=90, right of=a1] (a2) {Define the Objectives for a Solution};
+\node[draw,text width=8em,text centered,rectangle,rounded corners,minimum height=4em,thick,rotate=90, right of=a2] (a3) {Design and development};
+\node[draw,text width=8em,text centered,rectangle,rounded corners,minimum height=4em,thick,rotate=90, right of=a3] (a4) {Demonstration};
+\node[draw,text width=8em,text centered,rectangle,rounded corners,minimum height=4em,thick,rotate=90, right of=a4] (a5) {Evaluation};
+\node[draw,text width=8em,text centered,rectangle,rounded corners,minimum height=4em,thick,rotate=90, right of=a5] (a6) {Communication};
+
+\node[draw,text width=5em,text centered,circle,rounded corners,minimum height=4em,thick,rotate=90, below of=a1] (e) {Problem-Centered Initiation};
+
+\node[rotate=90, above left=3.51em and 1cm of a6] (ao6) {};
+\node[rotate=90, above left=3.51em and 1cm of a5] (ao5) {};
+\node[rotate=90, above left=3.51em and 1cm of a3] (ao3) {};
+\node[rotate=90, above left=3.51em and 1cm of a2] (ao2) {};
+
+\path 
+	(a1.east) edge [->,thick,>=stealth'] node [rotate=180,above left=0.2cm and 0cm of a1]{Process Iteration} (a2.west)
+	(a2.east) edge [->,thick,>=stealth'] node [rotate=180,above left=0.26cm and 0cm of a2]{Theory} (a3.west)
+	(a3.east) edge [->,thick,>=stealth'] node [rotate=180,above left=0.26cm and 0cm of a3]{How to Knowledge} (a4.west)
+	(a4.east) edge [->,thick,>=stealth'] node [rotate=180,above left=0.26cm and 0cm of a4]{Metrics, Analysis Knowledge} (a5.west)
+	(a5.east) edge [->,thick,>=stealth'] node [rotate=180,above left=0.26cm and 0cm of a5]{Disciplinary Knowledge} (a6.west)
+	(e.north) edge [->,thick,>=stealth'] (a1.south)
+	
+	(a6.north) edge [-,thick,>=stealth'] (ao6.south)
+	(a5.north) edge [-,thick,>=stealth'] (ao5.south)
+	(a3.north) edge [-,thick,>=stealth'] (ao3.south)
+	(ao6.south) edge [-,thick,>=stealth'] node [rotate=90, above left=3.18em and 0.1cm of a4]{Process Iteration} (ao2.south)
+	(ao3.south) edge [->,thick,>=stealth'] (a3.north)
+	(ao2.south) edge [->,thick,>=stealth'] (a2.north);
+
+\end{tikzpicture}
+

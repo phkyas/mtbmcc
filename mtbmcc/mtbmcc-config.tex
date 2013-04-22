@@ -4,6 +4,7 @@
 \usepackage[left=3cm,right=3cm,top=3cm,bottom=2.5cm]{geometry}
 \usepackage[latin1]{inputenc}
 \usepackage{babel}
+\usepackage[thref,hyperref]{ntheorem}
 \usepackage{xspace} % to get the spacing after macros right
 \usepackage[sc]{mathpazo} % font Palatino
 \linespread{1.05}  % Palatino needs more leading (space between lines)
@@ -49,7 +50,11 @@
 \titleformat{\chapter}{\Large}{\textbf{\Large\thechapter}}{15pt}{\textbf}
 \titleformat{\section}{\large}{\textbf{\large\thesection}}{10pt}{\textbf}
 \titleformat{\subsection}{\normalsize}{\textbf{\normalsize\thesubsection}}{5pt}{\textbf}
-
+% ****************************************************************************************************
+% Theorem
+% ****************************************************************************************************
+\newtheorem*{MRQ}{Main Research Question}
+\newtheorem{SRQ}{Sub-Research Question}
 % ****************************************************************************************************
 % page numbering
 % ****************************************************************************************************
@@ -61,7 +66,6 @@
 \makeatletter
 \let\ps@plain\ps@fancy
 \makeatother
-
 % ****************************************************************************************************
 % hyperref
 % ****************************************************************************************************
@@ -94,3 +98,4 @@
 \usepackage{tikz}
 \usetikzlibrary{calc,arrows}
 \usetikzlibrary{fit}
+\usetikzlibrary{positioning}
