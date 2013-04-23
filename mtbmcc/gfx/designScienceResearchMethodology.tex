@@ -4,26 +4,84 @@
 
 \begin{tikzpicture}[scale=0.75, every node/.style={scale=0.75}, node distance = 4.5cm]
 
-\node[draw,text width=8em,text centered,rectangle,rounded corners,minimum height=4em,thick,rotate=90] (a1) {Problem Identification and Motivation};
-\node[draw,text width=8em,text centered,rectangle,rounded corners,minimum height=4em,thick,rotate=90, right of=a1] (a2) {Define the Objectives for a Solution};
-\node[draw,text width=8em,text centered,rectangle,rounded corners,minimum height=4em,thick,rotate=90, right of=a2] (a3) {Design and development};
-\node[draw,text width=8em,text centered,rectangle,rounded corners,minimum height=4em,thick,rotate=90, right of=a3] (a4) {Demonstration};
-\node[draw,text width=8em,text centered,rectangle,rounded corners,minimum height=4em,thick,rotate=90, right of=a4] (a5) {Evaluation};
-\node[draw,text width=8em,text centered,rectangle,rounded corners,minimum height=4em,thick,rotate=90, right of=a5] (a6) {Communication};
+\node[draw,text width=8em,text centered, rectangle,rounded corners,minimum height=4em,thick,rotate=90] (a1) {
+	\begin{minipage}{8em}\centering
+		Identify\\ Problem\\ \& Motivate\\
+		~\\
+		\textit{Emerging \ac{PaaS} Market\\~\\Importance of strategy and ecosystems for platform-based business models.}
+		~\\~\\~\\~\\~\\~\\~\\~\\
+		(cf. Chapter \ref{ch:intro:mo})
+		\\~
+	\end{minipage}
+};
 
-\node[draw,text width=5em,text centered,circle,rounded corners,minimum height=4em,thick,rotate=90, below of=a1] (e) {Problem-Centered Initiation};
+\node[draw,text width=8em,text centered,rectangle,rounded corners,minimum height=4em,thick,rotate=90, right of=a1] (a2) {
+\begin{minipage}{8em}\centering
+		Define\\ Objectives of\\ a Solution\\
+		~\\
+		\textit{Classify PaaS providers' business models and its main components. Reveal crucial interdependencies within PaaS business models elements with regards to the platform adoption, using the concept of system dynamics.}
+		~\\~\\
+		(cf. Chapter \ref{ch:intro:ro})
+		\\~
+	\end{minipage}
+};
+
+\node[draw,text width=8em,text centered,rectangle,rounded corners,minimum height=4em,thick,rotate=90, right of=a2] (a3) {
+\begin{minipage}{8em}\centering
+		Design \&\\ Development\\
+		~\\~\\
+		\textit{Elaboration of a classification scheme for \ac{PaaS} business models. Development of a system dynamics model to demonstrate the adoption of platform-based business models.}
+		~\\~\\~\\~\\~\\
+		(cf. Chapter \ref{ch:sota} and \ref{ch:sd})
+	\end{minipage}
+};
+
+\node[draw,text width=8em,text centered,rectangle,rounded corners,minimum height=4em,thick,rotate=90, right of=a3,] (a4) {
+\begin{minipage}{8em}\centering
+		Demonstration\\
+		~\\~\\~\\
+		\textit{By classifying several \ac{PaaS} business models the usability of the classification scheme is demonstrated. Through modeling actual\ldots}
+		~\\~\\~\\~\\~\\~\\~\\
+		(cf. Chapter \ref{ch:e})
+		\\~
+	\end{minipage}
+};
+
+\node[draw,text width=8em,text centered,rectangle,rounded corners,minimum height=4em,thick,rotate=90, right of=a4] (a5) {
+\begin{minipage}{8em}\centering
+		Evaluation\\
+		~\\~\\~\\
+		\textit{The developed classification scheme as well as the system dynamics model is evaluated in an interactive approach trough a focus group and expert interviews.}
+		~\\~\\~\\~\\~\\~\\
+		(cf. Chapter \ref{ch:e})
+		\\~
+	\end{minipage}
+};
+
+\node[draw,text width=8em,text centered,rectangle,rounded corners,minimum height=4em,thick,rotate=90, right of=a5] (a6) {
+\begin{minipage}{8em}\centering
+		Communication\\
+		~\\~\\~\\
+		\textit{As of writing this paper at hand, it is planned to write and submit a conference paper for the 47th \ac{HICSS}.}
+		~\\~\\~\\~\\~\\~\\
+	\end{minipage}
+};
+
+\node[draw,text width=5em,text centered,circle,rounded corners,minimum height=4em,thick,rotate=90, below of=a1,node distance=8cm] (e) {Problem-Centered Initiation};
 
 \node[rotate=90, above left=3.51em and 1cm of a6] (ao6) {};
 \node[rotate=90, above left=3.51em and 1cm of a5] (ao5) {};
 \node[rotate=90, above left=3.51em and 1cm of a3] (ao3) {};
 \node[rotate=90, above left=3.51em and 1cm of a2] (ao2) {};
 
+%(a4.east)+(-1,0)
+
 \path 
-	(a1.east) edge [->,thick,>=stealth'] node [rotate=180,above left=0.2cm and 0cm of a1]{Process Iteration} (a2.west)
-	(a2.east) edge [->,thick,>=stealth'] node [rotate=180,above left=0.26cm and 0cm of a2]{Theory} (a3.west)
-	(a3.east) edge [->,thick,>=stealth'] node [rotate=180,above left=0.26cm and 0cm of a3]{How to Knowledge} (a4.west)
-	(a4.east) edge [->,thick,>=stealth'] node [rotate=180,above left=0.26cm and 0cm of a4]{Metrics, Analysis Knowledge} (a5.west)
-	(a5.east) edge [->,thick,>=stealth'] node [rotate=180,above left=0.26cm and 0cm of a5]{Disciplinary Knowledge} (a6.west)
+	(a1.70) edge [->,thick,>=stealth'] node [rotate=180,above left=0.2cm and 0cm of a1]{Inference} (a2.110)
+	(a2.70) edge [->,thick,>=stealth'] node [rotate=180,above left=0.26cm and 0cm of a2]{Theory} (a3.110)
+	(a3.70) edge [->,thick,>=stealth'] node [rotate=180,above left=0.26cm and 0cm of a3]{How to Knowledge} (a4.110)
+	(a4.70) edge [->,thick,>=stealth'] node [rotate=180,above left=0.26cm and 0cm of a4]{Metrics, Analysis Knowledge} (a5.110)
+	(a5.70) edge [->,thick,>=stealth'] node [rotate=180,above left=0.26cm and 0cm of a5]{Disciplinary Knowledge} (a6.110)
 	(e.north) edge [->,thick,>=stealth'] (a1.south)
 	
 	(a6.north) edge [-,thick,>=stealth'] (ao6.south)
