@@ -15,52 +15,82 @@
 
 \section{Research Questions and Objectives}\label{ch:intro:ro}
 
-%Classify PaaS providers' business models and its main components. Reveal crucial interdependencies within PaaS business models elements with regards to the platform adoption, using the concept of system dynamics.
+Cloud computing represents one of the emerging domains in the information technology field. The \ac{PaaS} layer provides new possibilities especially how software is developed and deployed. Nevertheless, almost all \ac{PaaS} offers are characterized by two- or even multi-sided business models. Simplified, \ac{PaaS} providers' address the two disjunct customer segments service providers and service consumers. Flourishing platforms need to address both customer segments successful. This aspect is also often referred to as platform ecosystem respectively platform strategies. \textit{"Who wins and who loses \ldots [the competition among \ac{PaaS} providers'] is not simply a matter of who has the best technology or the first product. It is often who has the best platform strategy and the best ecosystem to back it up"} \citep[p. 34]{Cusumano2010}. Within this thesis it is researched how \ac{PaaS} platforms are adopted and what are high leverage policies in the platform adoption process. This aim leads to the following Main Research Question:
 
 \begin{MRQ}\label{mrq}
 How to design Platform as a Service business models in order to achieve a high adoption rate?
 \end{MRQ}
 
+In order to answer the Main Research Question, three Sub Research Questions have been derived which are more precisely and focus on a narrower domain:
+
 \begin{SRQ}\label{srq1}
 How can business models of Platform as a Service providers' be classified?
 \end{SRQ}
--> Classification scheme
+%-> Classification scheme
 
 \begin{SRQ}\label{srq2}
 How are the identified Platform as a Service business model elements -- especially in regards to the platform adoption -- interrelated?
 \end{SRQ}
--> Causal loop diagram
+%-> Causal loop diagram
 
 \begin{SRQ}\label{srq3}
 How can the revealed relationships between Platform as a Service business model elements be quantified and the platform adoption simulated?
 \end{SRQ}
--> Stock and flow diagram
+%-> Stock and flow diagram
 
-%\thref{mrq}\\
-%\thref{srq1}\\
-%\thref{srq2}
+The current \ac{PaaS} market is distinguished by its immature nature and a remarkable provider fluctuation. As a first step, it is therefore inevitable to assess the current state of \ac{PaaS} providers' business models by use of explorative case studies. The information gained through the case studies is used to identify key elements within these business models and develop a classification scheme for \ac{PaaS} providers. This classification scheme represents the desired outcome of the \thref{srq1}. 
+
+Based on the result of \thref{srq1}, the relationships between the identified classification criteria respectively characteristics are investigated. The focus during this process is how these interrelationships affect the platform adoption. A qualitative model -- also known as \ac{CLD} -- is designed to (graphically) feature these interrelations and constitute the answer for the \thref{srq2}.
+
+As a last step, the qualitative model is transformed into a quantitative model -- also known as \ac{SFD}. By means of this model, the platform adoption process as well as the impact of single variables for the overall model can be simulated. The quantitative model represents the answer for the \thref{srq3} and also enables, in combination with the outcomes of the \thref{srq1} and \thref{srq2}, to provide valuable information for various \ac{PaaS} business model design options (Main Research Question).
 	
 \section{Research Methodology and Structure}\label{ch:intro:met}
 
-Design Science Research:
-\begin{itemize}
-	\item \citet{March1995}
-	\item \citet{Hevner2004}
-	\item \citet{Hevner2007}
-	\item \citet{Peffers2007}
-\end{itemize}
+The thesis at hand follows a \ac{DSR} methodology (\citealp{March1995}; \citealp{Hevner2004}; \citealp{Hevner2007}; and \citealp{Peffers2007}). According to \citep[p. 77]{Hevner2004}, \textit{"[\ac{DSR}] creates and evaluates IT artifacts intended to solve identified organizational problems."} Whereas unsolved problems addressed in unique or innovative ways and improved artifacts are developed for solved problems \citep[p. 81]{Hevner2004}. The overall goal of \ac{DSR} is its utility \citep[p. 80]{Hevner2004}.
 
-\begin{figure}[htb]
+\citet[pp. 255-262]{March1995} defined a two dimensional framework for research in IT. The first dimension describes four different research activities: build, evaluate, theorize, and justify. Possible outcomes are characterized in the second dimension: representational constructs, models, methods, and instantiations. This framework was further developed by \citet[pp. 78-81]{Hevner2004} and seven corresponding \ac{DSR} guidelines were introduced \citep[pp. 82-90]{Hevner2004} which are depicted in Table \ref{tab:dsrg}. How these guidelines are addressed in the course of this thesis is described further below.
+
+\begin{table}[t]
 	\centering
-	\includegraphics[width=\textwidth]{gfx/researchMethodology}
-	\caption[Research Methodology]{Research Methodology adapted from \citet{Hevner2007}}
-	\label{fig:rm}
-\end{figure}
+	\begin{tabular}{L{.2\textwidth}L{.7\textwidth}}
+			\toprule 
+			Guideline & Description \\ \midrule
+			G1: Design as an Artifact & 
+			Design-science research must produce a viable artifact in the form of a construct, a model, a method, or an instantiation.\\ \midrule
+			G2: Problem Relevance&
+			The objective of design-science research is to develop technology-based solutions to important and relevant business problems.\\ \midrule
+			G3: Design Evaluation&
+			The utility, quality, and efficacy of a design artifact must be rigorously demonstrated via well-executed evaluation methods.\\ \midrule
+			G4: Research Contributions&
+			Effective design-science research must provide clear and verifiable contributions in the areas of the design artifact, design foundations, and/or design methodologies.\\ \midrule
+			G5: Research Rigor&
+			Design-science research relies upon the application of rigorous methods in both the construction and evaluation of the design artifact.\\ \midrule
+			G6: Design as a Search Process&
+			The search for an effective artifact requires utilizing available means to reach desired ends while satisfying laws in the problem environment.\\ \midrule
+			G7: Communication of Research&
+			Design-science research must be presented effectively both to technology-oriented as well as management-oriented audiences.\\ \bottomrule
+	\end{tabular}
+	\caption[Design Science Research Guidelines]{Design Science Research Guidelines adapted from \citet[p. 83]{Hevner2007}}
+	\label{tab:dsrg}
+\end{table}
+
+\citet[pp. 52-56]{Peffers2007} developed a six-stage \ac{DSR} process model for the purpose of conducting \ac{DSR} in a stringent manner. The six activities -- (1)Problem Identification \& Motivation, (2) Define Objectives of a Solution, (3) Design \& Development, (4) Demonstration, (5) Evaluation, and (6) Communication -- were applied as follows (cf. Figure \ref{fig:dsrm}):
+
+\begin{enumerate}
+	\item Problem Identification \& Motivation:
+	\item Define Objectives of a Solution:
+	\item Design \& Development:
+	\item Demonstration:
+	\item Evaluation:
+	\item Communication:
+\end{enumerate}
+
+
 
 \begin{figure}[tb]
 	\centering
 	\input{gfx/designScienceResearchMethodology}
-	\caption[Design Science Research Methodology -- Process Model]{Design Science Research Methodology -- Process Model, adapted from \citet{Peffers2007}}
+	\caption[Design Science Research Methodology -- Process Model]{Design Science Research Methodology -- Process Model adapted from \citet[p. 54]{Peffers2007}}
 	\label{fig:dsrm}
 \end{figure}
 
