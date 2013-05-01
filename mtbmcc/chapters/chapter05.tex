@@ -24,7 +24,64 @@ In the particaular case of $f(s) \in [0,1]$, the formula \ref{eq:ltg} can be sim
 	f(t) = b_{1} + s (b_{2}-b_{1}) \in [b_{1},b_{2}].
 \end{equation}
 
+\begin{equation}
+	\begin{split}
+		\mathit{GOV~for~AC} = &( DC * \mathit{Impact~of~DC~on~the~GOV~for~AC} +\\
+													& AbI * \mathit{Impact~of~AbI~on~the~GOV~for~AC} +\\
+													& DEV * \mathit{Impact~of~DEV~on~the~GOV~for~AC} +\\
+													& INT * \mathit{Impact~of~INT~on~the~GOV~for~AC}) * GOV_{i}
+	\end{split}
+\end{equation}
 
+\begin{equation}
+	\begin{split}
+		\mathit{TS~for~AC} = &( DC * \mathit{Impact~of~DC~on~the~TS~for~AC} +\\
+													& AbI * \mathit{Impact~of~AbI~on~the~TS~for~AC} +\\
+													& DEV * \mathit{Impact~of~DEV~on~the~TS~for~AC} +\\
+													& INT * \mathit{Impact~of~INT~on~the~TS~for~AC}) * TS_{i} * PI
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		\mathit{AS~for~AC} = &( DC * \mathit{Impact~of~DC~on~the~AS~for~AC} +\\
+													& AbI * \mathit{Impact~of~AbI~on~the~AS~for~AC} +\\
+													& DEV * \mathit{Impact~of~DEV~on~the~AS~for~AC} +\\
+													& INT * \mathit{Impact~of~INT~on~the~AS~for~AC}) * AS_{i} * PI
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		\mathit{CVP~for~AC} = &( DC * \mathit{Impact~of~DC~on~the~CVP~for~AC} +\\
+													& AbI * \mathit{Impact~of~AbI~on~the~CVP~for~AC} +\\
+													& DEV * \mathit{Impact~of~DEV~on~the~CVP~for~AC} +\\
+													& INT * \mathit{Impact~of~INT~on~the~CVP~for~AC}) * CVP_{i} * PI * PM\\
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		\mathit{Adoption~Rate~AC} = &~ \mathit{GOV~for~AC} + \mathit{TS~for~AC} +\\
+																& \mathit{AS~for~AC} + \mathit{CVP~for~AC}		
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\mathit{Adoption~from~VP~AC} = \mathit{Potential~AC} * \mathit{Adoption~Rate~AC}
+\end{equation}
+
+\begin{equation}
+	\mathit{Contacts~with~AC} = \frac{\mathit{Population~AC}}{\mathit{Population~AC}+\mathit{Potential~AC}}
+\end{equation}
+
+\begin{equation}
+	\mathit{Imitators~AC} = \mathit{Contacts~with~AC} * \mathit{Probability~of~Adoption~after~Contact~AC}
+\end{equation}
+
+\begin{equation}
+	\mathit{New~AC} = \mathit{Adoption~from~VP~AC} + \mathit{Imitators~AC}
+\end{equation}
 
 %\begin{equation*}
 %	s \in [a_{1},a_{2}]
