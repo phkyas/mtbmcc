@@ -171,6 +171,8 @@ In simplified terms, the bottom part of the Business Model Canvas -- cost struct
 right side the who-question. Also the previously mentioned six basic questions concerning business models from \citet[pp. 729-732]{Morris2005} can be ascribed to the four dimensions proposed by \citet{Frankenberger2013}. Solely the sixed question -- \textit{"What are the entrepreneur's time, scope, and size ambitions?"} -- can not be easily compared with the business model conceptualizations from \citet{Johnson2008}, \citet{Osterwalder2010}, and \citet{Frankenberger2013}, due to fact that this question concerns with strategic issues, i.e. growth or speculative model. Although the above mentioned business model conceptualizations (and also the prior introduced business model definitions) differ in the total number of defined business model elements respectively questions, they can be compared. In Table \ref{tab:bmcc}, the business model elements according to \citet{Johnson2008}, \citet{Osterwalder2010}, \citet{Morris2005}, and \citet{Frankenberger2013} are exemplary opposed.
 
 \begin{table}[t]
+	\caption{Business Model Conceptualization Comparison}
+	\label{tab:bmcc}
 	\centering
 	\begin{tabular}{L{.2\textwidth}L{.2\textwidth}L{.2\textwidth}L{.2\textwidth}}
 			\toprule 
@@ -185,8 +187,6 @@ right side the who-question. Also the previously mentioned six basic questions c
 			\small Key Processes & \small Key Activities & \small How will the & \small How\\
 				& \small Customer Relationships & \small firm position itself in the marketplace? &\\ \bottomrule
 	\end{tabular}
-	\caption{Business Model Conceptualization Comparison}
-	\label{tab:bmcc}
 \end{table}
 
 Platform-based business models are by nature two-sided or even multi-sided business models -- in respect of the customer segments and the corresponding value propositions. Whereas the Business Model Canvas is appropriate to utilize for one-sided business models, in the domain of platform-based business models one major shortcoming restricts its utilization. In terms of \citet{Johnson2008}, each customer segment has its own problem (job to de done) and needs a corresponding offering (value proposition). Thus, it is crucial to differentiate between different customer segments in platform-based business models. The Business Model Canvas framework cannot easily be extended (the upper center and right side -- especially the two elements value proposition and customer segments) to take into account several disjoint customer segments and their corresponding value propositions. While the framework proposed by \citet{Johnson2008} can easily consider more than one customer segment, due to the fact that several \acp{CVP} -- including the customer segment (target customer) and their value proposition (offering) -- are possible.
@@ -321,9 +321,9 @@ On the basis of the five presented quotations, the concept of platforms in gener
 In simplified terms, the \ac{PaaS} layer abstracts the \ac{IaaS} layer (inclusive the automated resource management) and provides a runtime environment where applications and services run on. Usually, these software platforms are open to external developers and offer a kind of development environment, either online (i.e. browser-based) or offline (i.e. \ac{SDK}), sometimes even both variants are provided. Furthermore, these development environments address different stakeholders, ranging from technical developers to business people, and thus vary from comprehensive \acp{IDE} to graphical drag and drop environments. A powerful dashboard -- including features to administrate and manage application as well as service related issues -- completes commonly the \ac{PaaS} offer.
 As mentioned earlier already, according to \citet[p. 5]{Smith2012} the \ac{PaaS} layer is currently located at the so-called peak of inflated expectations (cf. Appendix \ref{ch:app03}) and consequently some of the current \ac{PaaS} providers will be driven out of the market as well as new \ac{PaaS} providers will emerge. Furthermore, it can be expected that the competition between \ac{PaaS} providers will increase constantly. \citet[pp. 117,128-129]{Iyer2010} described those rivalry as ecosystem-based respectively network-based competiton. In the same vein, \citet[pp. 675-676]{Tiwana2010} noticed a shift of competition towards platform-centric ecosystems.
 
-\section{Related Work/ Research}\label{ch:tf:rw}
+\section{Related Research}\label{ch:tf:rw}
 
-%ca. 10 Seiten, pro Ansatz 0.5 bis 1 Seiten
+Subsequent related research within the wide area of platform strategies as well as in the business model domain, here especially the modeling of business models was considered, is presented.
 
 \subsection{Platform Strategies}\label{ch:tf:rw:ps}
 
@@ -335,10 +335,13 @@ As mentioned earlier already, according to \citet[p. 5]{Smith2012} the \ac{PaaS}
 
 \subsection{Modeling of Business Models}\label{ch:tf:rw:mbm}
 
+\citet{BenLagha2001} introduced the \ac{eBMF} and the corresponding e-Business Modelling Language \linebreak (\acs{eBML}). The \ac{eBMF} represents another business model conceptualization, by the authors also considered as ontology. As in common with other business model conceptualizations, the main idea is to provide a shared and common language, thereby enabling the communication and representation of business models. Moreover, utilizing the \ac{eBMF} helps to identify business opportunities, especially for networked firms -- according to \citet{BenLagha2001}. The proposed \ac{eBMF} consists of four core elements -- namely (1) product innovation, (2) customer relationship, (3) infrastructure management, and (4) financial aspects. Each of these four core elements is further specified by three sub-elements. First, the product innovation element is specified by the sub-elements value proposition, target customer, and capabilities. Second, customer relationships are further defined by information, feel and serve, as well as trust and loyalty. Third, the core element infrastructure management is described by the criteria resources and assets, activity and process configuration, as well as partner network. And fourth, the financial aspects are composed through the revenue structure, cost structure, and profit structure. For the above described \ac{eBMF} \citet{BenLagha2001} further developed the \acs{eBML} in order to provide a structured approach to model business models. The \acs{eBML} is based upon \ac{XML} and provides the functionality to describe business models by means of the \ac{eBMF} in a formal and re-usable way. In more detail, the \acs{eBML} is actually a \ac{XML} Schema (metalanguage) by which the structure and available elements are defined. Within the \acs{eBML} all prior mentioned \ac{eBMF} core elements as well as sub-elements are included and enable the description of business models at a high level of abstraction. In Listing \ref{lst:eBML} the general structure of a business model modeled with the \acs{eBML} is illustrated. At the end of their paper, \citet{BenLagha2001} proposed that business models encoded with the \acs{eBML} can be simulated and help to answer certain questions. However, the intention behind this research is slightly different compared to the thesis at hand and therefore the proposed \ac{eBMF} as well as \acs{eBML} cannot be used for this thesis.
+
+\lstinputlisting[caption=\acf{eBML} adapted from {\protect\citet[p. 10]{BenLagha2001}}, label=lst:eBML]{gfx/eBML.xml}
+
 \begin{itemize}
 	\item USING CAUSAL LOOP DIAGRAM TO ACHIEVE A BETTER UNDERSTANDING OF E-BUSINESS MODELS \citep{Kiani2009}
 	\item From Strategy to Business Models and onto Tactics \citep{Casadesus-Masanell2010}
 	\item "A useful way to represent business models is by means of a causal loop diagram, where choices and consequences are linked by arrows based on causality theories" \citep[p. 198]{Casadesus-Masanell2010}
 	\item Business model innovation: it's not just about technology anymore \citep{Chesbrough2007}
-	\item Modeling e-business with eBML (evtl. Osterwalder 2001)
 \end{itemize}
