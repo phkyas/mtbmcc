@@ -1,0 +1,22 @@
+<eBusinessModel>
+	<ProductInnovation>
+		<!-- ... -->
+	</ProductInnovation>
+	<CustomerRelationship>
+		<!-- ... -->
+	</CustomerRelationship>
+	<InfrastructureManagement>
+		<ResourcesAndAssets>
+			<!-- ... -->
+		</ResourcesAndAssets>
+		<ActivityAndProcessConfiguration>
+			<!-- ... -->
+		</ActivityAndProcessConfiguration>
+		<PartnerNetwork>
+			<!-- ... -->
+		</PartnerNetwork>
+	</InfrastructureManagement>
+	<FinancialAspects>
+		<!-- ... -->
+	</FinancialAspects>
+</eBusinessModel>
