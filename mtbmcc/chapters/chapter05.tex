@@ -2,6 +2,8 @@
 \chapter{Stock and Flow Diagram -- A quantitative Model}\label{ch:sfd}
 % ****************************************************************************************************
 
+\begin{comment}
+
 \begin{itemize}
 	\item vorerst keine CF (contact frequency) wie bei Sterman, kann im ersten versuch vernachlässig werden
 	\item additiv oder multiplikativ
@@ -383,17 +385,27 @@ Platform Improvements:
 	\label{tab:para}
 \end{table}
 
+\end{comment}
+
 % ****************************************************************************************************
 % New Formulas
 % ****************************************************************************************************
 
+%Acronyms
 \newpage
+\section{Acronyms}
 
-\begin{table}[t]
+\begin{table}[tbh]
 	\centering
 	\begin{tabular}{ll}
 			\toprule 
 			Acronym & Meaning \\ \midrule
+			AR & Adoption Rate \\ 
+			PoP & Probability of Potential \\ 
+			PoAaC & Probability~of~Adoption~after~Contact \\ 
+			UB & Upper Boundary (Transformation) \\
+			LB & Lower Boundary (Transformation) \\
+			I & Initial\\ \midrule
 			DC & Distribution Channel \\
 			AbI & Application-based Integration \\
 			DEV & Development \\
@@ -407,21 +419,302 @@ Platform Improvements:
 			TS & Technical Scope \\
 			AS & Additional Services \\
 			CVP & Customer Value Proposition \\ \midrule
-			$GOV_{i}$ & Initial GOV \\
-			$TS_{i}$ & Initial TS \\
-			$AS_{i}$ & Initial AS \\
-			$CVP\_ITS_{i}$ & Initial ITS CVP \\ 
-			$CVP\_SI_{i}$ & Initial SI CVP \\
-			$CVP\_ISV_{i}$ & Initial ISV CVP \\
-			$CVP\_PC_{i}$ & Initial PC CVP \\
-			$CVP\_AC_{i}$ & Initial AC CVP \\ \midrule
 			PI & Platform Improvements \\
-			PM & Platform Modules\\ \midrule
-			AC\_MP & AC Market Penetration \\
-			PC\_MP & PC Market Penetration \\
-			SI\_MP & SI Market Penetration \\ \bottomrule
+			PM & Platform Modules\\
+			MP & Market Penetration \\ \bottomrule
 	\end{tabular}
 	\caption{Acronyms}
 	\label{tab:acro}
 \end{table}
 
+\clearpage
+
+%Model Parameter
+\newpage
+\section{Model Parameter}
+\begin{table}[tbh]
+	\centering
+	\begin{tabular}{ll}
+			\toprule 
+			Parameter & Interval resp. Values\\ \midrule
+			PI & $[1,2]$ -> ($LB_{PI}$ = 1.0 and $UB_{PI}$ = 2.0) \\ 
+			PM & $[1,2]$ -> ($LB_{PM}$ = 1.0 and $UB_{PM}$ = 2.0) \\ \midrule
+			GOV & $[1,1.1]$ -> ($LB_{GOV}$ = 1.0 and $UB_{GOV}$ = 1.1) \\
+			TS & $[1,1.1]$ -> ($LB_{TS}$ = 1.0 and $UB_{TS}$ = 1.1) \\
+			AS & $[1,1.1]$ -> ($LB_{AS}$ = 1.0 and $UB_{AS}$ = 1.1) \\ \midrule
+			$MP_{ITS}$ & $[0,1]$ -> ($LB_{ITS}$ = 0.0 and $UB_{ITS}$ = 1.0) \\
+			$MP_{ISV}$ & $[0,1]$ -> ($LB_{ISV}$ = 0.0 and $UB_{ISV}$ = 1.0) \\
+			$MP_{AC}$ & $[1,2]$ -> ($LB_{AC}$ = 1.0 and $UB_{AC}$ = 2.0) \\
+			$MP_{SI}$ & $[1,1.1]$ -> ($LB_{SI}$ = 1.0 and $UB_{SI}$ = 1.1) \\
+			$MP_{PC}$ & $[1,1.2]$ -> ($LB_{PC}$ = 1.0 and $UB_{PC}$ = 1.2) \\ \bottomrule
+	\end{tabular}
+	\caption{Model Parameters}
+	\label{tab:mpara}
+\end{table}
+
+%Model Variables
+\newpage
+\section{Model Variables}
+\begin{table}[tbh]
+	\centering
+	\begin{tabular}{ll}
+			\toprule 
+			Variable & Interval\\ \midrule
+			$GOV_i$ & [0,1.0] \\
+			$TS_i$ & [0,1.0] \\
+			$AS_i$ & [0,1.0] \\ \midrule
+			$CVP_{ITS_i}$ & $[0,0.1]$ \\
+			$CVP_{ISV_i}$ & $[0,0.1]$ \\
+			$CVP_{AC_i}$ & $[0,0.1]$ \\
+			$CVP_{SI_i}$ & $[0,0.1]$ \\
+			$CVP_{PC_i}$ & $[0,0.1]$ \\ \midrule
+			$PoAaC_{ITS}$ & $[0,0.05]$ \\
+			$PoAaC_{ISV}$ & $[0,0.05]$ \\
+			$PoAaC_{AC}$ & $[0,0.05]$ \\
+			$PoAaC_{SI}$ & $[0,0.05]$ \\
+			$PoAaC_{PC}$ & $[0,0.05]$ \\ \bottomrule
+	\end{tabular}
+	\caption{Model Variables}
+	\label{tab:mvar}
+\end{table}
+
+%General Formulas
+\newpage
+\section{General Formulas}
+In order to map the values of the function $f(s) \in [a_{1},a_{2}]$ to the desired interval $[b_{1},b_{2}]$, the following generic linear transformation function is used:
+\begin{equation}\label{eq:ltg}
+	f(t) = b_{1} + \frac{(s-a_{1})(b_{2}-b_{1})}{(a_{2}-a_{1})} \in [b_{1},b_{2}]
+\end{equation}
+
+\begin{equation}
+	GOV = LB_{GOV} + GOV_{i} * (UB_{GOV} - LB_{GOV})
+\end{equation}
+
+\begin{equation}
+	TS = LB_{TS} +  \frac{(TS_{i} * PI) * (UB_{TS} - LB_{TS})}{UB_{PI}}
+\end{equation}
+
+\begin{equation}
+	AS = LB_{AS} +  \frac{(AS_{i} * PI) * (UB_{AS} - LB_{AS})}{UB_{PI}}
+\end{equation}
+
+\begin{equation}
+	\mathit{New~Customers} = \mathit{New~ITS} + \mathit{New~ISV} + \mathit{New~AC} + \mathit{New~SI} + \mathit{New~PC}
+\end{equation}
+
+\begin{equation}
+	\mathit{Customer~Base} = \mathit{Customer~Base} + \mathit{New~Customers}
+\end{equation}
+
+\begin{equation}
+	\mathit{Overall~MP} += \frac{\mathit{Customer~Base}}{\mathit{Customer~Base} + \sum \mathit{Potential~<ITS/ISV/AC/SI/PC>}}
+\end{equation}
+
+\begin{equation}
+	PI = LB_{PI} + \mathit{Overall~MP} * (UB_{PI} - LB_{PI})
+\end{equation}
+
+\begin{equation}
+	PM = LB_{PM} + \frac{(MP_{ISV} + MP_{ITS}) * (UB_{PM} - LB_{PM}))}{UB_{ITS} + UB_{ISV}}
+\end{equation}
+
+
+%ITS
+\newpage
+\section{ITS}
+
+\begin{equation}
+		CVP_{ITS} =  CVP_{ITS_{i}} * PI * MP_{AC}
+\end{equation}
+
+\begin{equation}
+		AR_{ITS} = CVP_{ITS} * GOV * TS * AS		
+\end{equation}
+
+\begin{equation}
+	PoP_{ITS} = \frac{\mathit{Population~ITS}}{\mathit{Population~ITS}+\mathit{Potential~ITS}}
+\end{equation}
+
+\begin{equation}
+	\mathit{Adoption~from~AR_{ITS}} = PoP_{ITS} * AR_{ITS}
+\end{equation}
+
+\begin{equation}
+	\mathit{Imitators~ITS} = PoP_{ITS} * PoAaC_{ITS}
+\end{equation}
+
+\begin{equation}
+	\mathit{New~ITS} = \mathit{Adoption~from~AR_{ITS}} + \mathit{Imitators~ITS}
+\end{equation}
+
+\begin{equation}
+	\mathit{Potential~ITS} = \mathit{Potential~ITS} - \mathit{New~ITS}
+\end{equation}
+
+\begin{equation}
+	\mathit{Population~ITS} = \mathit{Population~ITS} + \mathit{New~ITS}
+\end{equation}
+
+\begin{equation}
+	MP_{ITS} = LB_{MP_{ITS}} + PoP_{ITS} * (UB_{MP_{ITS}} - LB_{MP_{ITS}})
+\end{equation}
+
+%ISV
+\newpage
+\section{ISV}
+
+\begin{equation}
+		CVP_{ISV} =  CVP_{ISV_{i}} * PI * MP_{AC}
+\end{equation}
+
+\begin{equation}
+		AR_{ISV} = CVP_{ISV} * GOV * TS * AS		
+\end{equation}
+
+\begin{equation}
+	PoP_{ISV} = \frac{\mathit{Population~ISV}}{\mathit{Population~ISV}+\mathit{Potential~ISV}}
+\end{equation}
+
+\begin{equation}
+	\mathit{Adoption~from~AR_{ISV}} = PoP_{ISV} * AR_{ISV}
+\end{equation}
+
+\begin{equation}
+	\mathit{Imitators~ISV} = PoP_{ISV} * PoAaC_{ISV}
+\end{equation}
+
+\begin{equation}
+	\mathit{New~ISV} = \mathit{Adoption~from~AR_{ISV}} + \mathit{Imitators~ISV}
+\end{equation}
+
+\begin{equation}
+	\mathit{Potential~ISV} = \mathit{Potential~ISV} - \mathit{New~ISV}
+\end{equation}
+
+\begin{equation}
+	\mathit{Population~ISV} = \mathit{Population~ISV} + \mathit{New~ISV}
+\end{equation}
+
+\begin{equation}
+	MP_{ISV} = LB_{MP_{ISV}} + PoP_{ISV} * (UB_{MP_{ISV}} - LB_{MP_{ISV}})
+\end{equation}
+
+%AC
+\newpage
+\section{AC}
+
+\begin{equation}
+		CVP_{AC} =  CVP_{AC_{i}} * PI * PM
+\end{equation}
+
+\begin{equation}
+		AR_{AC} = CVP_{AC} * GOV * TS * AS		
+\end{equation}
+
+\begin{equation}
+	PoP_{AC} = \frac{\mathit{Population~AC}}{\mathit{Population~AC}+\mathit{Potential~AC}}
+\end{equation}
+
+\begin{equation}
+	\mathit{Adoption~from~AR_{AC}} = PoP_{AC} * AR_{AC}
+\end{equation}
+
+\begin{equation}
+	\mathit{Imitators~AC} = PoP_{AC} * PoAaC_{AC}
+\end{equation}
+
+\begin{equation}
+	\mathit{New~AC} = \mathit{Adoption~from~AR_{AC}} + \mathit{Imitators~AC}
+\end{equation}
+
+\begin{equation}
+	\mathit{Potential~AC} = \mathit{Potential~AC} - \mathit{New~AC}
+\end{equation}
+
+\begin{equation}
+	\mathit{Population~AC} = \mathit{Population~AC} + \mathit{New~AC}
+\end{equation}
+
+\begin{equation}
+	MP_{AC} = LB_{MP_{AC}} + PoP_{AC} * (UB_{MP_{AC}} - LB_{MP_{AC}})
+\end{equation}
+
+%SI
+\newpage
+\section{SI}
+
+\begin{equation}
+		CVP_{SI} =  CVP_{SI_{i}} * PI * MP_{AC} * MP_{PC}
+\end{equation}
+
+\begin{equation}
+		AR_{SI} = CVP_{SI} * GOV * TS * AS		
+\end{equation}
+
+\begin{equation}
+	PoP_{SI} = \frac{\mathit{Population~SI}}{\mathit{Population~SI}+\mathit{Potential~SI}}
+\end{equation}
+
+\begin{equation}
+	\mathit{Adoption~from~AR_{SI}} = PoP_{SI} * AR_{SI}
+\end{equation}
+
+\begin{equation}
+	\mathit{Imitators~SI} = PoP_{SI} * PoAaC_{SI}
+\end{equation}
+
+\begin{equation}
+	\mathit{New~SI} = \mathit{Adoption~from~AR_{SI}} + \mathit{Imitators~SI}
+\end{equation}
+
+\begin{equation}
+	\mathit{Potential~SI} = \mathit{Potential~SI} - \mathit{New~SI}
+\end{equation}
+
+\begin{equation}
+	\mathit{Population~SI} = \mathit{Population~SI} + \mathit{New~SI}
+\end{equation}
+
+\begin{equation}
+	MP_{SI} = LB_{MP_{SI}} + PoP_{SI} * (UB_{MP_{SI}} - LB_{MP_{SI}})
+\end{equation}
+
+%PC
+\newpage
+\section{PC}
+
+\begin{equation}
+		CVP_ {PC} =  CVP_{PC_{i}} * PI * PM * SI_{MP}
+\end{equation}
+
+\begin{equation}
+		AR_{PC} = CVP_{PC} * GOV * TS * AS		
+\end{equation}
+
+\begin{equation}
+	PoP_{PC} = \frac{\mathit{Population~PC}}{\mathit{Population~PC}+\mathit{Potential~PC}}
+\end{equation}
+
+\begin{equation}
+	\mathit{Adoption~from~AR_{PC}} = PoP_{PC} * AR_{PC}
+\end{equation}
+
+\begin{equation}
+	\mathit{Imitators~PC} = PoP_{PC} * PoAaC_{PC}
+\end{equation}
+
+\begin{equation}
+	\mathit{New~PC} = \mathit{Adoption~from~AR_{PC}} + \mathit{Imitators~PC}
+\end{equation}
+
+\begin{equation}
+	\mathit{Potential~PC} = \mathit{Potential~PC} - \mathit{New~PC}
+\end{equation}
+
+\begin{equation}
+	\mathit{Population~PC} = \mathit{Population~PC} + \mathit{New~PC}
+\end{equation}
+
+\begin{equation}
+	MP_{PC} = LB_{MP_{PC}} + PoP_{PC} * (UB_{MP_{PC}} - LB_{MP_{PC}})
+\end{equation}
