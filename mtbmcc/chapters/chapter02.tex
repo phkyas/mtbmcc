@@ -412,6 +412,55 @@ To sum up, the diversity within platform-based markets -- two- and multi-sided m
 
 \lstinputlisting[caption=\acf{eBML} adapted from {\protect\citet[p. 10]{BenLagha2001}}, label=lst:eBML, float=bt]{gfx/eBML.xml}
 
+\begin{table}[t]
+	\caption[Business Model Analysis Activities]{Business Model Analysis Activities adapted from \citet{Grasl2008}}
+	\label{tab:bmaa}
+	\centering
+	\begin{tabular}{L{.2\textwidth}L{.7\textwidth}}
+			\toprule 
+			\small \textbf{Activity} &
+			\small \textbf{Description} \\ \midrule
+			Initiation &
+			\vspace{-4mm}
+			\begin{itemize}[leftmargin=*, parsep=0pt, topsep=0pt, itemsep=0pt]
+				\item \small Informal definition of business model
+				\item \small Elaboration of strategic questions \vspace{-\baselineskip} 
+			\end{itemize}	\\ \midrule
+			Business Model Inception &
+			\vspace{-4mm}
+			\begin{itemize}[leftmargin=*, parsep=0pt, topsep=0pt, itemsep=0pt]
+				\item \small First model of business model
+				\item \small Specification of quantitative reference data needed \vspace{-\baselineskip} 
+			\end{itemize}	\\ \midrule
+			Business Model Elaboration &
+			\vspace{-4mm}
+			\begin{itemize}[leftmargin=*, parsep=0pt, topsep=0pt, itemsep=0pt]
+				\item \small Elaboration of business model
+				\item \small Calibration of simulation model using reference data \vspace{-\baselineskip} 
+			\end{itemize}	\\ \midrule
+			Scenario Analysis &
+			\vspace{-4mm}
+			\begin{itemize}[leftmargin=*, parsep=0pt, topsep=0pt, itemsep=0pt]
+				\item \small Analysis of various scenarios to answer strategic questions
+				\item \small Analysis of possible policy changes \vspace{-\baselineskip} 
+			\end{itemize}	\\ \midrule
+			Transfer &
+			\vspace{-4mm}
+			\begin{itemize}[leftmargin=*, parsep=0pt, topsep=0pt, itemsep=0pt]
+				\item \small Recommendations concerning strategic
+				\item \small Questions
+				\item \small Report Finalization \vspace{-\baselineskip} 
+			\end{itemize}	\\ \midrule
+			Transformation &
+			\vspace{-4mm}
+			\begin{itemize}[leftmargin=*, parsep=0pt, topsep=0pt, itemsep=0pt]
+				\item \small Monitor results \vspace{-\baselineskip} 
+			\end{itemize}	\\ \bottomrule
+	\end{tabular}
+\end{table}
+
+\citet{Grasl2008} developed a multi-method approach for the analysis of business models. This research was among other things initiated through the gain in importance of business model innovation compared to less important product innovation for successful businesses. Based on a comparison of business model definitions and related concepts a comprehensive business model working definition was defined. Seven core business model constructs have been identified -- namely (1) firm, (2) market, (3) product, (4) transaction, (5) channel, (6) asset, and (7) value. Crucial relationships between the above mentioned constructs are discussed and illustrated. Furthermore, the general economic ideas behind business models have been mathematical defined. Hereafter three different characteristics of complexity inherent in business models are discussed. First, the various stakeholders -- for instance partners and customers -- are related and represent structural complexity. Second, activities and transactions between those stakeholders lead to behavioral complexity. And third, behavioral complexity creates feedback which needs to be taken into account and leads to dynamic complexity. In order to analyze business models in these three problem areas two different techniques were applied. The structural and behavioral complexity is investigated through concepts of \ac{OOAD} using the notation of \ac{UML}. By using the concepts of system dynamics the dynamic complexity inherent in business models is analyzed. In this work the quantitative modeling aspect is emphasized and should state explicitly \textit{"the revenues the firm expects to make in selling its products and services, the cost of external resources needed to produce these products and services, the cost of developing and producing these cost (cost of goods sold), [and] the investments needed to keep the business model running"}\citep[p. 10]{Grasl2008}. The overall analysis process is composed of six activities which are briefly listed and explained in Table \ref{tab:bmaa}. As a result strategic questions, scenarios, recommendations, and most important the model of the business model is produced. This model of the business model is described by four distinct views -- namely (1) value network view -- structural nature, (2) product view -- structural nature, (3) business transaction view -- behavioral nature, and (4) value dynamics view -- dynamical nature. At the end of this paper the above described process and its activities is applied to a small case study to show its applicability.
+
 \citet{Klueber2000} developed an initial business model framework for eServices. This framework is build upon the business model definition of \citet[p. 4]{Timmers1998} who defined business models as (1) \textit{"an architecture for the product, service and information flows"}, (2) \textit{"a description of potential benefits"}, and (3) \textit{"a description of the sources of revenue"}. In order to include business models of networks, to consider the eService domain, and to add the underlying rules \citet{Klueber2000} extended the framework accordingly. Five broad areas have been indentified and added respectively adjusted -- namely (1) business architecture, (2) rules, (3) \ac{IS} architecture, (4) potential benefits, and (5) sources of revenue. To assess and highlight the interdependencies between the considered elements a generic impact diagram of eServices has been introduced (cf. Figure \ref{fig:cld_kl}). Heart of this model is the central, reinforcing circle of value of eService, network effect, critical mass, and efficiency. \citet{Klueber2000} claims that a further refinement of the framework as well as the model will lead to additional insights in the area of eServices. 
 
 \begin{figure}[tb]
@@ -431,5 +480,3 @@ To sum up, the diversity within platform-based markets -- two- and multi-sided m
 \end{figure}
 
 All previous presented work in the area of modeling business models has focused on transferring a business model framework respectively conceptualization into a formalized representation, whereas the first work used \ac{XML} and the last \texttt{two} qualitative modeling approaches. Also at the paper at hand is utilizing a thoroughly selected framework (cf. Subsection \ref{ch:tf:bmc}) to develop a qualitative model (cf. Chapter \ref{ch:cld}), based on a previous developed classification scheme for \ac{PaaS} business models (cf. Chapter \ref{ch:sota}). However, this research is aiming to go step further, namely to transfer the qualitative model into a quantitative model (cf. Chapter \ref{ch:sfd}). \citet{Kiani2009} proposed this task already as further research within their paper.
-
-% Buch + Website: A guide to model business models

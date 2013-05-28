@@ -1,19 +1,20 @@
 % ****************************************************************************************************
 % mtbmcc
 % ****************************************************************************************************
-\documentclass[12pt,a4paper,oneside,notitlepage,USenglish]{scrreprt}
+\documentclass[12pt,a4paper,notitlepage,USenglish,twoside,openright]{scrreprt}
 \input{mtbmcc-metadata}
 \input{mtbmcc-config}
+
 \begin{document}
 
 % ****************************************************************************************************
 % front matter
 % ****************************************************************************************************
 \titlespacing*{\chapter}{0pt}{3\baselineskip}{3\baselineskip}
-\include{frontBackMatter/titlepage}
-\include{frontBackMatter/abstract}
-\include{frontBackMatter/acknowledgments}
-\include{frontBackMatter/tables}
+\include{frontBackMatter/titlepage} \cleardoublepage
+\include{frontBackMatter/abstract} \cleardoublepage
+\include{frontBackMatter/acknowledgments} \cleardoublepage
+\include{frontBackMatter/tables} \cleardoublepage
 % ****************************************************************************************************
 % mchapters
 % ****************************************************************************************************
