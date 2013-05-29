@@ -460,9 +460,9 @@ Platform Improvements:
 	\begin{tabular}{ll}
 			\toprule 
 			Variable & Interval\\ \midrule
-			$GOV_i$ & [0,1.0] \\
-			$TS_i$ & [0,1.0] \\
-			$AS_i$ & [0,1.0] \\ \midrule
+			$GOV_i$ & $[0,1.0]$ \\
+			$TS_i$ & $[0,1.0]$ \\
+			$AS_i$ & $[0,1.0]$ \\ \midrule
 			$CVP_{ITS_i}$ & $[0,0.1]$ \\
 			$CVP_{ISV_i}$ & $[0,0.1]$ \\
 			$CVP_{AC_i}$ & $[0,0.1]$ \\
@@ -507,7 +507,7 @@ In order to map the values of the function $f(s) \in [a_{1},a_{2}]$ to the desir
 \end{equation}
 
 \begin{equation}
-	\mathit{Overall~MP} += \frac{\mathit{Customer~Base}}{\mathit{Customer~Base} + \sum \mathit{Potential~<ITS/ISV/AC/SI/PC>}}
+	\mathit{Overall~MP} = \frac{\mathit{Customer~Base}}{\mathit{Customer~Base} + \sum \mathit{Potential~<ITS/ISV/AC/SI/PC>}}
 \end{equation}
 
 \begin{equation}
@@ -515,7 +515,7 @@ In order to map the values of the function $f(s) \in [a_{1},a_{2}]$ to the desir
 \end{equation}
 
 \begin{equation}
-	PM = LB_{PM} + \frac{(MP_{ISV} + MP_{ITS}) * (UB_{PM} - LB_{PM}))}{UB_{ITS} + UB_{ISV}}
+	PM = LB_{PM} + \frac{(MP_{ISV} + MP_{ITS}) * (UB_{PM} - LB_{PM})}{UB_{ITS} + UB_{ISV}}
 \end{equation}
 
 
