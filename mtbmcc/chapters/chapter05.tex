@@ -1,5 +1,5 @@
 % ****************************************************************************************************
-\chapter{Stock and Flow Diagram -- A quantitative Model}\label{ch:sfd}
+\chapter{Simulating the Adoption Process of Platform as a Service Business Models}\label{ch:sfd}
 % ****************************************************************************************************
 
 \begin{comment}
@@ -445,7 +445,8 @@ Platform Improvements:
 			$MP_{ITS}$ & $[0,1]$ -> ($LB_{ITS}$ = 0.0 and $UB_{ITS}$ = 1.0) \\
 			$MP_{ISV}$ & $[0,1]$ -> ($LB_{ISV}$ = 0.0 and $UB_{ISV}$ = 1.0) \\
 			$MP_{AC}$ & $[1,2]$ -> ($LB_{AC}$ = 1.0 and $UB_{AC}$ = 2.0) \\
-			$MP_{SI}$ & $[1,1.1]$ -> ($LB_{SI}$ = 1.0 and $UB_{SI}$ = 1.1) \\
+			$MP_{SI_{PC}}$ & $[1,1.1]$ -> ($LB_{SI_{PC}}$ = 1.0 and $UB_{SI_{PC}}$ = 1.1) \\
+			$MP_{SI_{AC}}$ & $[1,1.05]$ -> ($LB_{SI_{AC}}$ = 1.0 and $UB_{SI_{AC}}$ = 1.05) \\
 			$MP_{PC}$ & $[1,1.2]$ -> ($LB_{PC}$ = 1.0 and $UB_{PC}$ = 1.2) \\ \bottomrule
 	\end{tabular}
 	\caption{Model Parameters}
@@ -507,11 +508,11 @@ In order to map the values of the function $f(s) \in [a_{1},a_{2}]$ to the desir
 \end{equation}
 
 \begin{equation}
-	\mathit{Overall~MP} = \frac{\mathit{Customer~Base}}{\mathit{Customer~Base} + \sum \mathit{Potential~<ITS/ISV/AC/SI/PC>}}
+	MP_{Overall} = \frac{\mathit{Customer~Base}}{\mathit{Customer~Base} + \sum \mathit{Potential~<ITS/ISV/AC/SI/PC>}}
 \end{equation}
 
 \begin{equation}
-	PI = LB_{PI} + \mathit{Overall~MP} * (UB_{PI} - LB_{PI})
+	PI = LB_{PI} + MP_{Overall} * (UB_{PI} - LB_{PI})
 \end{equation}
 
 \begin{equation}
@@ -524,7 +525,7 @@ In order to map the values of the function $f(s) \in [a_{1},a_{2}]$ to the desir
 \section{ITS}
 
 \begin{equation}
-		CVP_{ITS} =  CVP_{ITS_{i}} * PI * MP_{AC}
+		CVP_{ITS} =  CVP_{ITS_{i}} * PI * MP_{AC} * MP_{PC}
 \end{equation}
 
 \begin{equation}
@@ -564,7 +565,7 @@ In order to map the values of the function $f(s) \in [a_{1},a_{2}]$ to the desir
 \section{ISV}
 
 \begin{equation}
-		CVP_{ISV} =  CVP_{ISV_{i}} * PI * MP_{AC}
+		CVP_{ISV} =  CVP_{ISV_{i}} * PI * MP_{AC} * MP_{PC}
 \end{equation}
 
 \begin{equation}
@@ -604,7 +605,7 @@ In order to map the values of the function $f(s) \in [a_{1},a_{2}]$ to the desir
 \section{AC}
 
 \begin{equation}
-		CVP_{AC} =  CVP_{AC_{i}} * PI * PM
+		CVP_{AC} =  CVP_{AC_{i}} * PI * PM * MP_{SI_{AC}}
 \end{equation}
 
 \begin{equation}
@@ -644,7 +645,7 @@ In order to map the values of the function $f(s) \in [a_{1},a_{2}]$ to the desir
 \section{SI}
 
 \begin{equation}
-		CVP_{SI} =  CVP_{SI_{i}} * PI * MP_{AC} * MP_{PC}
+		CVP_{SI} =  CVP_{SI_{i}} * PI * PM * MP_{AC} * MP_{PC}
 \end{equation}
 
 \begin{equation}
@@ -676,7 +677,11 @@ In order to map the values of the function $f(s) \in [a_{1},a_{2}]$ to the desir
 \end{equation}
 
 \begin{equation}
-	MP_{SI} = LB_{MP_{SI}} + PoP_{SI} * (UB_{MP_{SI}} - LB_{MP_{SI}})
+	MP_{SI_{PC}} = LB_{MP_{SI_{PC}}} + PoP_{SI} * (UB_{MP_{SI_{PC}}} - LB_{MP_{SI_{PC}}})
+\end{equation}
+
+\begin{equation}
+	MP_{SI_{AC}} = LB_{MP_{SI_{AC}}} + PoP_{SI} * (UB_{MP_{SI_{AC}}} - LB_{MP_{SI_{AC}}})
 \end{equation}
 
 %PC
@@ -684,7 +689,7 @@ In order to map the values of the function $f(s) \in [a_{1},a_{2}]$ to the desir
 \section{PC}
 
 \begin{equation}
-		CVP_ {PC} =  CVP_{PC_{i}} * PI * PM * SI_{MP}
+		CVP_ {PC} =  CVP_{PC_{i}} * PI * PM * MP_{SI_{PC}}
 \end{equation}
 
 \begin{equation}
