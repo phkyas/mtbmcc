@@ -1,0 +1,98 @@
+% ****************************************************************************************************
+% Design Science Research
+% ****************************************************************************************************
+
+\begin{tikzpicture}[scale=0.67, every node/.style={scale=0.67}, node distance = 4.5cm]
+
+\node[draw,text width=8em,text centered, rectangle,rounded corners,minimum height=4em,thick,rotate=270] (a1) {
+	\begin{minipage}{8em}\centering
+		Identify\\ Problem\\ \& Motivate\\
+		~\\
+		\textit{Emerging \ac{PaaS} market.\\~\\Importance of platform strategies and ecosystems for platform-based business models.\\~\\Complex interdependencies which are not always trivially observable.}
+		\\~\\~\\~\\~\\~\\~\\
+		(cf. Section \ref{ch:intro:mo})
+		\\~\\~\\
+	\end{minipage}
+};
+
+\node[draw,text width=8em,text centered,rectangle,rounded corners,minimum height=4em,thick,rotate=270, right of=a1] (a2) {
+\begin{minipage}{8em}\centering
+		Define\\ Objectives of\\ a Solution\\
+		~\\
+		\textit{Classify PaaS providers' business models and its main components.\\~\\ Reveal crucial interdependencies within PaaS business models elements with regards to the platform adoption, using the concept of system dynamics.}
+		\\~\\~\\~\\~\\~\\
+		(cf. Section \ref{ch:intro:rq})
+		\\~\\~\\
+	\end{minipage}
+};
+
+\node[draw,text width=8em,text centered,rectangle,rounded corners,minimum height=4em,thick,rotate=270, right of=a2] (a3) {
+\begin{minipage}{8em}\centering
+		Design \&\\ Development\\
+		~\\~\\
+		\textit{Elaboration of a classification scheme for \ac{PaaS} business models based on explorative case studies.\\~\\ Development of a system dynamics model (qualitative and quantitative) to demonstrate and simulate the adoption of platform-based business models.}
+		\\~\\~\\~\\
+		(cf. Chapters \ref{ch:sota}-\ref{ch:sfd})
+		\\~\\~\\
+	\end{minipage}
+};
+
+\node[draw,text width=8em,text centered,rectangle,rounded corners,minimum height=4em,thick,rotate=270, right of=a3,] (a4) {
+\begin{minipage}{8em}\centering
+		Demonstration\\
+		~\\~\\~\\
+		%\textit{By classifying several \ac{PaaS} business models the usability of the classification scheme is demonstrated.\\~\\ The developed system dynamics model is applied and simulated for several \ac{PaaS} business models as \acf{PoC}.}
+		\textit{By classifying several \ac{PaaS} business models the usability of the classification scheme is demonstrated.\\~\\The system dynamics models -- qualitative (\ac{CLD}) as well as quantitative (\ac{SFD}) -- are illustrated, both in textual and graphical form.}
+		\\~\\~\\~\\~\\
+		(cf. Section \ref{ch:sota:cPaaS} as well as Chapters \ref{ch:cld} and \ref{ch:sfd})
+	\end{minipage}
+};
+
+\node[draw,text width=8em,text centered,rectangle,rounded corners,minimum height=4em,thick,rotate=270, right of=a4] (a5) {
+\begin{minipage}{8em}\centering
+		Evaluation\\
+		~\\~\\~\\
+		%\textit{The developed classification scheme as well as the model is evaluated in an iterative approach trough a focus group and expert interviews.}
+		\textit{The developed classification scheme as well as the models are evaluated in an iterative approach trough a focus group and expert interviews.\\~\\As a \acf{PoC} the developed quantitative system dynamics model is applied and simulated for \ac{PaaS} business models.}
+		\\~\\
+		(cf. Section \ref{ch:sota:cm} as well as Chapters \ref{ch:cld}-\ref{ch:poc})
+		%\\~\\
+	\end{minipage}
+};
+
+\node[draw,text width=8em,text centered,rectangle,rounded corners,minimum height=4em,thick,rotate=270, right of=a5] (a6) {
+\begin{minipage}{8em}\centering
+		Communication\\
+		~\\~\\~\\
+		%\textit{As of writing this paper at hand, it is planned to write and submit a conference paper, either for the 47th \acf{HICSS} or for the 5th \acf{ICOSB}.}
+		\textit{The thesis itself.\\~\\As of writing this paper at hand, it is planned to write and submit a conference paper, either for the 47th \acf{HICSS} or for the 5th \acf{ICOSB}.}
+		\\~\\~\\~\\~\\~\\
+	\end{minipage}
+};
+
+\node[draw,text width=5em,text centered,circle,rounded corners,minimum height=4em,thick,rotate=270, below of=a1,node distance=9.5cm] (e) {Problem-Centered Initiation};
+
+\node[rotate=270, above right=3.175em and 1cm of a6] (ao6) {};
+\node[rotate=270, above right=3.175em and 1cm of a5] (ao5) {};
+\node[rotate=270, above right=3.175em and 1cm of a3] (ao3) {};
+\node[rotate=270, above right=3.175em and 1cm of a2] (ao2) {};
+
+%(a4.east)+(-1,0)
+
+\path 
+	(a1.70) edge [->,thick,>=stealth'] node [above left=-0.2cm and 0cm of a1]{Inference} (a2.110)
+	(a2.70) edge [->,thick,>=stealth'] node [above left=-0.26cm and 0cm of a2]{Theory} (a3.110)
+	(a3.70) edge [->,thick,>=stealth'] node [above left=-0.26cm and 0cm of a3]{How to Knowledge} (a4.110)
+	(a4.70) edge [->,thick,>=stealth'] node [above left=-0.26cm and 0cm of a4]{Metrics, Analysis Knowledge} (a5.110)
+	(a5.70) edge [->,thick,>=stealth'] node [above left=-0.26cm and 0cm of a5]{Disciplinary Knowledge} (a6.110)
+	(e.north) edge [->,thick,>=stealth'] (a1.south)
+	
+	(a6.north) edge [-,thick,>=stealth'] (ao6.south)
+	(a5.north) edge [-,thick,>=stealth'] (ao5.south)
+	(a3.north) edge [-,thick,>=stealth'] (ao3.south)
+	(ao6.south) edge [-,thick,>=stealth'] node [rotate=270, above right=3.18em and 0.1cm of a4]{Process Iteration} (ao2.south)
+	(ao3.south) edge [->,thick,>=stealth'] (a3.north)
+	(ao2.south) edge [->,thick,>=stealth'] (a2.north);
+
+\end{tikzpicture}
+

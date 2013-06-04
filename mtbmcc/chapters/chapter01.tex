@@ -89,9 +89,23 @@ The thesis at hand follows a \ac{DSR} methodology (\citealp{March1995}; \citealp
 
 The big picture of this thesis is provided in the following Figure \ref{fig:dsrm} and illustrates the \ac{DSR} methodology process according to \citet{Peffers2007} as well as the structure of the thesis at hand.
 
-\begin{figure}[t]
-	\centering
-	\input{gfx/designScienceResearchMethodology}
-	\caption[Design Science Research Methodology -- Process Model]{Design Science Research Methodology -- Process Model adapted from \citet[p. 54]{Peffers2007}}
-	\label{fig:dsrm}
-\end{figure}
+\newpage
+
+\ifthenelse{
+	\isodd{\thepage}
+}{%odd
+	\begin{figure}[t]
+		\centering
+		\input{gfx/designScienceResearchMethodologyOdd}
+		\caption[Design Science Research Methodology -- Process Model]{Design Science Research Methodology -- Process Model adapted from \citet[p. 54]{Peffers2007}}
+		\label{fig:dsrm}
+	\end{figure}
+}{%even
+	\begin{figure}[t]
+		\centering
+		\input{gfx/designScienceResearchMethodologyEven}
+		\caption[Design Science Research Methodology -- Process Model]{Design Science Research Methodology -- Process Model adapted from \citet[p. 54]{Peffers2007}}
+		\label{fig:dsrm}
+	\end{figure}
+}
+
