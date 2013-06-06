@@ -1,0 +1,357 @@
+Platform Improvements:
+\begin{equation}
+	PI = \frac{Customer Base}{\sum\mathit{Potential~<Customer Segment>}}*\mathit{Transformation}
+\end{equation}
+
+
+%ITS
+\newpage
+%\section{ITS}
+\begin{equation}
+	\begin{split}
+		\mathit{GOV~for~ITS} = &( DC * \mathit{Impact~of~DC~on~the~GOV~for~ITS} +\\
+													& AbI * \mathit{Impact~of~AbI~on~the~GOV~for~ITS} +\\
+													& DEV * \mathit{Impact~of~DEV~on~the~GOV~for~ITS} +\\
+													& INT * \mathit{Impact~of~INT~on~the~GOV~for~ITS}) * GOV_{i}
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		\mathit{TS~for~ITS} = &( DC * \mathit{Impact~of~DC~on~the~TS~for~ITS} +\\
+													& AbI * \mathit{Impact~of~AbI~on~the~TS~for~ITS} +\\
+													& DEV * \mathit{Impact~of~DEV~on~the~TS~for~ITS} +\\
+													& INT * \mathit{Impact~of~INT~on~the~TS~for~ITS}) * TS_{i} * PI
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		\mathit{AS~for~ITS} = &( DC * \mathit{Impact~of~DC~on~the~AS~for~ITS} +\\
+													& AbI * \mathit{Impact~of~AbI~on~the~AS~for~ITS} +\\
+													& DEV * \mathit{Impact~of~DEV~on~the~AS~for~ITS} +\\
+													& INT * \mathit{Impact~of~INT~on~the~AS~for~ITS}) * AS_{i} * PI
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		\mathit{CVP~for~ITS} = &( DC * \mathit{Impact~of~DC~on~the~CVP~for~ITS} +\\
+													& AbI * \mathit{Impact~of~AbI~on~the~CVP~for~ITS} +\\
+													& DEV * \mathit{Impact~of~DEV~on~the~CVP~for~ITS} +\\
+													& INT * \mathit{Impact~of~INT~on~the~CVP~for~ITS}) *\\
+													& CVP\_ITS_{i} * PI * AC\_MP
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		\mathit{Adoption~Rate~ITS} = &~ \mathit{GOV~for~ITS} + \mathit{TS~for~ITS} +\\
+																& \mathit{AS~for~ITS} + \mathit{CVP~for~ITS}		
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\mathit{Adoption~from~VP~ITS} = \mathit{Potential~ITS} * \mathit{Adoption~Rate~ITS}
+\end{equation}
+
+\begin{equation}
+	\mathit{Contacts~with~ITS} = \frac{\mathit{Population~ITS}}{\mathit{Population~ITS}+\mathit{Potential~ITS}}
+\end{equation}
+
+\begin{equation}
+	\mathit{Imitators~ITS} = \mathit{Contacts~with~ITS} * \mathit{Probability~of~Adoption~after~Contact~ITS}
+\end{equation}
+
+\begin{equation}
+	\mathit{New~ITS} = \mathit{Adoption~from~VP~ITS} + \mathit{Imitators~ITS}
+\end{equation}
+
+%ISV
+\newpage
+%\section{ISV}
+\begin{equation}
+	\begin{split}
+		\mathit{GOV~for~ISV} = &( DC * \mathit{Impact~of~DC~on~the~GOV~for~ISV} +\\
+													& AbI * \mathit{Impact~of~AbI~on~the~GOV~for~ISV} +\\
+													& DEV * \mathit{Impact~of~DEV~on~the~GOV~for~ISV} +\\
+													& INT * \mathit{Impact~of~INT~on~the~GOV~for~ISV}) * GOV_{i}
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		\mathit{TS~for~ISV} = &( DC * \mathit{Impact~of~DC~on~the~TS~for~ISV} +\\
+													& AbI * \mathit{Impact~of~AbI~on~the~TS~for~ISV} +\\
+													& DEV * \mathit{Impact~of~DEV~on~the~TS~for~ISV} +\\
+													& INT * \mathit{Impact~of~INT~on~the~TS~for~ISV}) * TS_{i} * PI
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		\mathit{AS~for~ISV} = &( DC * \mathit{Impact~of~DC~on~the~AS~for~ISV} +\\
+													& AbI * \mathit{Impact~of~AbI~on~the~AS~for~ISV} +\\
+													& DEV * \mathit{Impact~of~DEV~on~the~AS~for~ISV} +\\
+													& INT * \mathit{Impact~of~INT~on~the~AS~for~ISV}) * AS_{i} * PI
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		\mathit{CVP~for~ISV} = &( DC * \mathit{Impact~of~DC~on~the~CVP~for~ISV} +\\
+													& AbI * \mathit{Impact~of~AbI~on~the~CVP~for~ISV} +\\
+													& DEV * \mathit{Impact~of~DEV~on~the~CVP~for~ISV} +\\
+													& INT * \mathit{Impact~of~INT~on~the~CVP~for~ISV}) *\\
+													& CVP\_ISV_{i} * PI * AC\_MP
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		\mathit{Adoption~Rate~ISV} = &~ \mathit{GOV~for~ISV} + \mathit{TS~for~ISV} +\\
+																& \mathit{AS~for~ISV} + \mathit{CVP~for~ISV}		
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\mathit{Adoption~from~VP~ISV} = \mathit{Potential~ISV} * \mathit{Adoption~Rate~ISV}
+\end{equation}
+
+\begin{equation}
+	\mathit{Contacts~with~ISV} = \frac{\mathit{Population~ISV}}{\mathit{Population~ISV}+\mathit{Potential~ISV}}
+\end{equation}
+
+\begin{equation}
+	\mathit{Imitators~ISV} = \mathit{Contacts~with~ISV} * \mathit{Probability~of~Adoption~after~Contact~ISV}
+\end{equation}
+
+\begin{equation}
+	\mathit{New~ISV} = \mathit{Adoption~from~VP~ISV} + \mathit{Imitators~ISV}
+\end{equation}
+
+%AC
+\newpage
+%\section{AC}
+\begin{equation}
+	\begin{split}
+		\mathit{GOV~for~AC} = &( DC * \mathit{Impact~of~DC~on~the~GOV~for~AC} +\\
+													& AbI * \mathit{Impact~of~AbI~on~the~GOV~for~AC} +\\
+													& DEV * \mathit{Impact~of~DEV~on~the~GOV~for~AC} +\\
+													& INT * \mathit{Impact~of~INT~on~the~GOV~for~AC}) * GOV_{i}
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		\mathit{TS~for~AC} = &( DC * \mathit{Impact~of~DC~on~the~TS~for~AC} +\\
+													& AbI * \mathit{Impact~of~AbI~on~the~TS~for~AC} +\\
+													& DEV * \mathit{Impact~of~DEV~on~the~TS~for~AC} +\\
+													& INT * \mathit{Impact~of~INT~on~the~TS~for~AC}) * TS_{i} * PI
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		\mathit{AS~for~AC} = &( DC * \mathit{Impact~of~DC~on~the~AS~for~AC} +\\
+													& AbI * \mathit{Impact~of~AbI~on~the~AS~for~AC} +\\
+													& DEV * \mathit{Impact~of~DEV~on~the~AS~for~AC} +\\
+													& INT * \mathit{Impact~of~INT~on~the~AS~for~AC}) * AS_{i} * PI
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		\mathit{CVP~for~AC} = &( DC * \mathit{Impact~of~DC~on~the~CVP~for~AC} +\\
+													& AbI * \mathit{Impact~of~AbI~on~the~CVP~for~AC} +\\
+													& DEV * \mathit{Impact~of~DEV~on~the~CVP~for~AC} +\\
+													& INT * \mathit{Impact~of~INT~on~the~CVP~for~AC}) *\\
+													& CVP\_AC_{i} * PI * PM
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		\mathit{Adoption~Rate~AC} = &~ \mathit{GOV~for~AC} + \mathit{TS~for~AC} +\\
+																& \mathit{AS~for~AC} + \mathit{CVP~for~AC}		
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\mathit{Adoption~from~VP~AC} = \mathit{Potential~AC} * \mathit{Adoption~Rate~AC}
+\end{equation}
+
+\begin{equation}
+	\mathit{Contacts~with~AC} = \frac{\mathit{Population~AC}}{\mathit{Population~AC}+\mathit{Potential~AC}}
+\end{equation}
+
+\begin{equation}
+	\mathit{Imitators~AC} = \mathit{Contacts~with~AC} * \mathit{Probability~of~Adoption~after~Contact~AC}
+\end{equation}
+
+\begin{equation}
+	\mathit{New~AC} = \mathit{Adoption~from~VP~AC} + \mathit{Imitators~AC}
+\end{equation}
+
+%SI
+\newpage
+%\section{SI}
+\begin{equation}
+	\begin{split}
+		\mathit{GOV~for~SI} = &( DC * \mathit{Impact~of~DC~on~the~GOV~for~SI} +\\
+													& AbI * \mathit{Impact~of~AbI~on~the~GOV~for~SI} +\\
+													& DEV * \mathit{Impact~of~DEV~on~the~GOV~for~SI} +\\
+													& INT * \mathit{Impact~of~INT~on~the~GOV~for~SI}) * GOV_{i}
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		\mathit{TS~for~SI} = &( DC * \mathit{Impact~of~DC~on~the~TS~for~SI} +\\
+													& AbI * \mathit{Impact~of~AbI~on~the~TS~for~SI} +\\
+													& DEV * \mathit{Impact~of~DEV~on~the~TS~for~SI} +\\
+													& INT * \mathit{Impact~of~INT~on~the~TS~for~SI}) * TS_{i} * PI
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		\mathit{AS~for~SI} = &( DC * \mathit{Impact~of~DC~on~the~AS~for~SI} +\\
+													& AbI * \mathit{Impact~of~AbI~on~the~AS~for~SI} +\\
+													& DEV * \mathit{Impact~of~DEV~on~the~AS~for~SI} +\\
+													& INT * \mathit{Impact~of~INT~on~the~AS~for~SI}) * AS_{i} * PI
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		\mathit{CVP~for~SI} = &( DC * \mathit{Impact~of~DC~on~the~CVP~for~SI} +\\
+													& AbI * \mathit{Impact~of~AbI~on~the~CVP~for~SI} +\\
+													& DEV * \mathit{Impact~of~DEV~on~the~CVP~for~SI} +\\
+													& INT * \mathit{Impact~of~INT~on~the~CVP~for~SI}) *\\
+													& CVP\_SI_{i} * PI * AC\_MP * PC\_MP
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		\mathit{Adoption~Rate~SI} = &~ \mathit{GOV~for~SI} + \mathit{TS~for~SI} +\\
+																& \mathit{AS~for~SI} + \mathit{CVP~for~SI}		
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\mathit{Adoption~from~VP~SI} = \mathit{Potential~SI} * \mathit{Adoption~Rate~SI}
+\end{equation}
+
+\begin{equation}
+	\mathit{Contacts~with~SI} = \frac{\mathit{Population~SI}}{\mathit{Population~SI}+\mathit{Potential~SI}}
+\end{equation}
+
+\begin{equation}
+	\mathit{Imitators~SI} = \mathit{Contacts~with~SI} * \mathit{Probability~of~Adoption~after~Contact~SI}
+\end{equation}
+
+\begin{equation}
+	\mathit{New~SI} = \mathit{Adoption~from~VP~SI} + \mathit{Imitators~SI}
+\end{equation}
+
+%PC
+\newpage
+%\section{PC}
+\begin{equation}
+	\begin{split}
+		\mathit{GOV~for~PC} = &( DC * \mathit{Impact~of~DC~on~the~GOV~for~PC} +\\
+													& AbI * \mathit{Impact~of~AbI~on~the~GOV~for~PC} +\\
+													& DEV * \mathit{Impact~of~DEV~on~the~GOV~for~PC} +\\
+													& INT * \mathit{Impact~of~INT~on~the~GOV~for~PC}) * GOV_{i}
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		\mathit{TS~for~PC} = &( DC * \mathit{Impact~of~DC~on~the~TS~for~PC} +\\
+													& AbI * \mathit{Impact~of~AbI~on~the~TS~for~PC} +\\
+													& DEV * \mathit{Impact~of~DEV~on~the~TS~for~PC} +\\
+													& INT * \mathit{Impact~of~INT~on~the~TS~for~PC}) * TS_{i} * PI
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		\mathit{AS~for~PC} = &( DC * \mathit{Impact~of~DC~on~the~AS~for~PC} +\\
+													& AbI * \mathit{Impact~of~AbI~on~the~AS~for~PC} +\\
+													& DEV * \mathit{Impact~of~DEV~on~the~AS~for~PC} +\\
+													& INT * \mathit{Impact~of~INT~on~the~AS~for~PC}) * AS_{i} * PI
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		\mathit{CVP~for~PC} = &( DC * \mathit{Impact~of~DC~on~the~CVP~for~PC} +\\
+													& AbI * \mathit{Impact~of~AbI~on~the~CVP~for~PC} +\\
+													& DEV * \mathit{Impact~of~DEV~on~the~CVP~for~PC} +\\
+													& INT * \mathit{Impact~of~INT~on~the~CVP~for~PC}) *\\
+													& CVP\_PC_{i} * PI * SI\_MP * PM
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		\mathit{Adoption~Rate~PC} = &~ \mathit{GOV~for~PC} + \mathit{TS~for~PC} +\\
+																& \mathit{AS~for~PC} + \mathit{CVP~for~PC}		
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\mathit{Adoption~from~VP~PC} = \mathit{Potential~PC} * \mathit{Adoption~Rate~PC}
+\end{equation}
+
+\begin{equation}
+	\mathit{Contacts~with~PC} = \frac{\mathit{Population~PC}}{\mathit{Population~PC}+\mathit{Potential~PC}}
+\end{equation}
+
+\begin{equation}
+	\mathit{Imitators~PC} = \mathit{Contacts~with~PC} * \mathit{Probability~of~Adoption~after~Contact~PC}
+\end{equation}
+
+\begin{equation}
+	\mathit{New~PC} = \mathit{Adoption~from~VP~PC} + \mathit{Imitators~PC}
+\end{equation}
+
+
+%\end{equation}
+
+\begin{table}[t]
+	\centering
+	\begin{tabular}{ll}
+			\toprule 
+			Parameters & Range \\ \midrule
+			$DC$ & $[0,1]$ \\ 
+			$AbI$ & $[0,1]$ \\ 
+			$DEV$ & $[0,1]$ \\ 
+			$INT$ & $[0,1]$ \\ \midrule
+			$GOV_{i}$ & $[0,1]$ \\ 
+			$TS_{i}$ & $[0,1]$ \\ 
+			$AS_{i}$ & $[0,1]$ \\
+			$CVP\_<Customer Segment>_{i}$ & $[0,1]$ \\ \midrule
+			$\mathit{GOV~for~<Customer Segment>}$ & $[0,???]$ \\ 
+			$\mathit{TS~for~<Customer Segment>}$ & $[0,???]$ \\ 
+			$\mathit{AS~for~<Customer Segment>}$ & $[0,???]$ \\
+			$\mathit{CVP~for~<Customer Segment>}$ & $[0,???]$ \\ \midrule
+			$\mathit{Adoption~Rate~<Customer Segment>}$ & $[0,???]$ \\ \midrule
+			$PI$ & $[1,???]$ \\ \midrule
+			$PM$ & $[???,???]$ \\ \midrule
+			$\mathit{<Customer Segment>~Market~Penetration}$ & $[1,???]$ \\ \midrule
+			$\mathit{Probability~of~Adoption~after~Contact~<Customer Segment>}$ & $[0,???]$ \\ \midrule
+			$\mathit{Impact~of~DC~on~the~GOV/TS/AS/CVP~for~<Customer Segment>}$ & $[0,1]$ \\ 
+			$\mathit{Impact~of~AbI~on~the~GOV/TS/AS/CVP~for~<Customer Segment>}$ & $[0,1]$ \\ 
+			$\mathit{Impact~of~DEV~on~the~GOV/TS/AS/CVP~for~<Customer Segment>}$ & $[0,1]$ \\ 
+			$\mathit{Impact~of~INT~on~the~GOV/TS/AS/CVP~for~<Customer Segment>}$ & $[0,1]$ 
+		
+			
+			\\ \bottomrule
+	\end{tabular}
+	\caption{Quantitative Model Parameters}
+	\label{tab:para}
+\end{table}
