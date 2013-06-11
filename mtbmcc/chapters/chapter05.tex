@@ -17,7 +17,7 @@ The two central concepts of the system dynamics theory are stocks and flows as w
 	\label{fig:sfd_b}
 \end{figure}
 
-In Figure \ref{fig:sfd_b} the general structure of stocks and flows is illustrated. Every stock increases through one or more inflows. These flows can either come from outside the model, thus representing a model boundary (denoted as cloud) or from another stock, hence this kind of flow is an in- and outflow simultaneous (an outflow for stock A and an inflow for stock B). Through one or more outflows stocks decrease over time. These outflows can either represent a model boundary (denoted as cloud) or flow in another stock.
+In Figure \ref{fig:sfd_b} the general structure of stocks and flows is illustrated. A stock increases through one or more inflows. These flows can either come from outside the model, thus representing a model boundary (denoted as cloud) or from another stock, hence this kind of flow is an in- and outflow simultaneous (an outflow for stock A and an inflow for stock B). Through one or more outflows stocks decrease over time. These outflows can either represent a model boundary (denoted as cloud) or flow into another stock.
 
 The size of a stock at any time is the accumulation of all its inflows less all its outflows. By using mathematical notation this states as follows: stocks integrate their flows. This leads to the following integral equation in line with \citet[p. 194]{Sterman2000} as shown in  Formula \ref{eq:int}:
 
@@ -27,7 +27,7 @@ The size of a stock at any time is the accumulation of all its inflows less all 
 
 Whereas the $Inflow(s)$ respectively $Outflow(s)$ represent the flow at any time $s$ between the initial time $t_0$ and the current time $t$ and the initial size of the stock is denoted by $Stock(t_0)$. 
 
-Another size of interest is the net rate of change of any stock, its derivative, is defined by the following differential equation in line with \citet[p. 194]{Sterman2000} as shown in Formula \ref{eq:dif}:
+Another size of interest is the net rate of change of any stock, its derivative, which is defined by the following differential equation in line with \citet[p. 194]{Sterman2000} as shown in Formula \ref{eq:dif}:
 
 \begin{equation}\label{eq:dif}
 		\frac{d(Stock)}{dt} = \mathit{Net~Change~in~Stock} = Inflow(t) - Outflow(t)
@@ -35,18 +35,9 @@ Another size of interest is the net rate of change of any stock, its derivative,
 
 Whereas the $Inflow(t)$ respectively $Ouflow(t)$ represent the flow at the current time $t$.
 
-By applying the above described concept of stocks and flows onto the previous developed \ac{CLD} 11 crucial stocks in the domain of \ac{PaaS} business models were revealed (cf. Figure \ref{fig:sfd_cs}). The number of all stakeholders using the platform is denoted as customer base and increases through the inflow new customer. However, within this study the time horizon of investigating the platform adoption is rather considered in a short-time horizon. Due to this assumption, the stock customer base does not decrease through a corresponding outflow and simplifies the \ac{SFD} thereby. The remaining ten stocks are dedicated to the five earlier defined customer segments. Each customer segment is modeled as a stock of potential customers (denoted as potential <customer segment> \footnote{The wildcard \texttt{<customer segment>} represents the five earlier identified customer segments.}) and as a second stock of the customer population (denoted as <customer segment> population). These two stocks are linked through the flow new customers (denoted as new <customer segment>), whereas this flow decreases the stock potential <customer segment> and increases the stock <customer segment> population. As with the stock customer base, also for the 10 stocks dedicated to the five customer segments corresponding model boundaries have been defined. The <customer segment> population stock does not decrease through an outflow due to the rather short-time horizon -- comparable with the stock customer base. All five potential <customer segment> stocks are defined -- in regards to the initial size -- beforehand the platform adoption simulation and decrease over time through the corresponding outflows. These stocks can be defined in two different ways. First, by analyzing the market opportunities of the platform under investigation the numbers of potential customers for the five customer segments can be calculated and used for the simulation. And second, the simulation can be run using relative values ($0\%$ - $100\%$) and thereby indicating that at any time $x\%$ of the customer segment (this holds obvious for all customer segments) are using the platform.
+By applying the above described concept of stocks and flows onto the previous developed \ac{CLD} 11 crucial stocks in the domain of \ac{PaaS} business models were revealed (cf. Figure \ref{fig:sfd_cs}). The number of all stakeholders using the platform is denoted as customer base and increases through the inflow new customer. However, within this study the time horizon of investigating the platform adoption is rather considered in a short-time horizon. Due to this assumption, the stock customer base does not decrease through a corresponding outflow and simplifies the \ac{SFD} thereby. The remaining ten stocks are dedicated to the five earlier defined customer segments. Each customer segment is modeled as a stock of potential customers (denoted as potential <customer segment> \footnote{The wildcard \texttt{<customer segment>} represents the five earlier identified customer segments.}) and as a second stock of the customer population (denoted as <customer segment> population). These two stocks are linked through the flow adoption rate <customer segment>, whereas this flow decreases the stock potential <customer segment> and increases the stock <customer segment> population. As with the stock customer base, also for the 10 stocks dedicated to the five customer segments corresponding model boundaries have been defined. The <customer segment> population stock does not decrease through an outflow due to the rather short-time horizon -- comparable with the stock customer base. All five potential <customer segment> stocks are defined -- in regards to the initial size -- beforehand the platform adoption simulation and decrease over time through the corresponding outflows. These stocks can be defined in two different ways. First, by analyzing the market opportunities of the platform under investigation the numbers of potential customers for the five customer segments can be calculated and used for the simulation. And second, the simulation can be run using relative values ($0\%$ - $100\%$) and thereby indicating that at any time $t$ $i\%$ of the customer segment (this holds obvious for all customer segments) are using the platform.
 
-The two above described flows -- new <customer segment> and new customer -- are influenced as follows. Literally the inflow new customer is the accumulation of the five customer segment inflows, denoted as new <customer segment> (cf. Formula \ref{eq:nc}).
-
-NEW <CUSTOMER SEGMENT> INFLOWS influenced through
-\begin{enumerate}
-	\item	Innovators
-	\item	Imitators
-	\item	Adoption from CVP
-\end{enumerate}
-
-In Figure \ref{fig:sfd_cs} the above describe stock and flow structure for the \ac{PaaS} domain is illustrated.
+The two above described flows -- new customer and adoption rate <customer segment>  -- are influenced as follows. Literally the inflow new customer is the accumulation of the five customer segment inflows (cf. Formula \ref{eq:nc}). Whereas the adoption rate <customer segment> is the sum of the innovators (cf. Formula \ref{eq:cs:in}), imitators (cf. Formula \ref{eq:cs:im}), as well as through the adoption from the customer value proposition (cf. Formula \ref{eq:cs:acvp}). The last two factors are mainly influenced by network effects. Imitators are among under things convinced through existing customers within the same customer segment, thus representing a same-sided network effect (cf. the feedback loops R\_1 and B\_1 within Figure \ref{fig:cld_cs}). In contrast to imitators, 'convinced' adopters (adoption from customer value proposition) are starting to use the platform due to the conclusive value proposition which is partly influenced through other customer segments, thus representing cross-sided network effects (cf. the feedback loops identified in Figure \ref{fig:cld_csi}). In Figure \ref{fig:sfd_cs} the above describe stock and flow structure for the \ac{PaaS} domain is generally illustrated.
 
 \begin{figure}[tb]
 	\centering
@@ -65,11 +56,6 @@ In the following the model foundations are introduced which are necessary so as 
 	\begin{tabular}{ll}
 			\toprule 
 			\footnotesize \textbf{Acronym} & \footnotesize \textbf{Meaning}	 \\ \midrule
-			\footnotesize \acs{AR} & \footnotesize \acl{AR} \\ 
-			\footnotesize \acs{PoP} & \footnotesize \acl{PoP}\\ 
-			\footnotesize \acs{PoAaC} & \footnotesize \acl{PoAaC}\\ 
-			\footnotesize \acs{UB} & \footnotesize \acl{UB} \\
-			\footnotesize \acs{LB} & \footnotesize \acl{LB}\\ \midrule
 			\footnotesize \acs{ITS} & \footnotesize \acl{ITS}\\
 			\footnotesize \acs{SI} & \footnotesize \acl{SI}\\
 			\footnotesize \acs{ISV} & \footnotesize \acl{ISV}\\
@@ -78,20 +64,27 @@ In the following the model foundations are introduced which are necessary so as 
 			\footnotesize \acs{CS} & \footnotesize \acl{CS}\\ \midrule
 			\footnotesize \acs{GOV} & \footnotesize \acl{GOV}\\
 			\footnotesize \acs{TS} & \footnotesize \acl{TS}\\
-			\footnotesize \acs{AS} & \footnotesize \acl{AS}\\
-			\footnotesize \acs{CVP} & \footnotesize \acl{CVP}\\ \midrule
+			\footnotesize \acs{AS} & \footnotesize \acl{AS}\\ \midrule
 			\footnotesize \acs{PI} & \footnotesize \acl{PI}\\
 			\footnotesize \acs{PM} & \footnotesize \acl{PM}\\
-			\footnotesize \acs{MP} & \footnotesize \acl{MP}\\ \bottomrule
+			\footnotesize \acs{MP} & \footnotesize \acl{MP}\\ \midrule
+			\footnotesize \acs{CVP} & \footnotesize \acl{CVP}\\
+			\footnotesize \acs{AR} & \footnotesize \acl{AR} \\ 
+			\footnotesize \acs{IN} & \footnotesize \acl{IN} \\ 
+			\footnotesize \acs{IM} & \footnotesize \acl{IM} \\ 
+			\footnotesize \acs{ACVP} & \footnotesize \acl{ACVP} \\ 
+			\footnotesize \acs{UB} & \footnotesize \acl{UB} \\
+			\footnotesize \acs{LB} & \footnotesize \acl{LB}\\
+			\footnotesize \acs{P} & \footnotesize \acl{P}\\ \bottomrule
 	\end{tabular}
-	\caption{Acronyms}
+	\caption{Simulation Model Acronyms}
 	\label{tab:acro}
 \end{table}
 
-As mentioned above, the flow $New~Customer(t)$ is the accumulation of the five customer segment inflows $New~CS(t)$ at any time $t$:
+As mentioned above, the flow $New~Customer(t)$ is the accumulation of the five customer segment inflows $Adoption~Rate~CS(t)$ at any time $t$:
 
 \begin{equation}\label{eq:nc}
-	\mathit{New~Customer(t)} = \sum{\mathit{New~CS(t)}}
+	\mathit{New~Customer(t)} = \sum{\mathit{Adoption~Rate~CS(t)}}
 \end{equation}
 
 The corresponding stock $Customer~Base(t)$ is simply the initial stock size $\mathit{Customer~Base(t_0)}$ increased by the inflow $New Customer(s)$:
@@ -118,7 +111,7 @@ In the particaular case of mapping the function $f(s) \in [0,1]$ to the interval
 	f(t) = b_{1} + s (b_{2}-b_{1}) \in [b_{1},b_{2}].
 \end{equation}
 
-For the following five formulas this two linear transformation -- as appropriate simplified -- are used in order to map the corresponding functions to the desired intervals.
+For the following five formulas this two linear transformation functions -- as appropriate simplified -- are used in order to map the corresponding functions to the desired intervals.
 
 During the investigation of \ac{PaaS} business models, the difference between the pursued governance model have been noticed and considered in the classification scheme as well as \ac{CLD}. In the quantitative model, the value of the governance is considered unalterable due to the short-time horizon as well as to the assumption that \ac{PaaS} providers' will not change their governance model basically new. Therefore the initial governance model value $GOV(t_0)$ is just mapped into the corresponding interval -- between the lower $LB_{GOV}$ and upper boundary $UP_{GOV}$ -- by applying the simplified transformation function as shown in Formula \ref{eq:lts}:
 
@@ -132,7 +125,7 @@ Within the overall \ac{CLD} it was reasoned that an increase in the customer bas
 	PI(t) = LB_{PI} + MP_{Overall}(t) * (UB_{PI} - LB_{PI}) \in [LB_{PI},UB_{PI}]
 \end{equation}
 
-The next two general values -- technical scope as well as additional services -- are further influencing factors which have been revealed and modeled previously. In contrast to the governance model, for this two factors it is considered that they improve over time through the variable platform improvements $PI(t)$ as calculated in Formula \ref{eq:pi}. Hence for any time $t$ the actually value for both is calculated by using the corresponding value of the last time step $t-1$ ($TS(t-1)$ respectively $ AS(t-1)$) and multiplying with the current platform improvements $PI(t)$. This intermediate value is then mapped to the desired interval. Due to specific intervals for this two variables, the denominator of the Formulas \ref{eq:ts} and \ref{eq:as} is equal to the upper boundary of the platform improvements $UB_{PI}$\footnote{Values for $TS(t_0)$ respectively $AS(t_0)$ are within the interval $[0.0,1.0]$ and for $PI(t)$ within the interval $[1.0,2.0]$ (cf. Section \ref{ch:sfd:mv} and \ref{ch:sfd:mp}). Thus the intermediate results ($TS(t-1)*PI(t)$ respectively $AS(t-1) *PI(t)$) are within the interval $[0.0,2.0]$ which represents the interval $[a_1,a_2]$ from Formula \ref{eq:lt}. Consequently the denominator for this linear transformation function is $2.0$ ($a_2 - a_1 = 2.0 - 0.0 = 2.0$), equals to $UB_{PI}$. This holds as long as $LB_{TS}$ respectively $LB_{AS}$ is equals to $0.0$.}:
+The next two general values -- technical scope as well as additional services -- are further influencing factors which have been revealed and modeled previously. In contrast to the governance model, for this two factors it is considered that they improve over time through the variable platform improvements $PI(t)$ as calculated in Formula \ref{eq:pi}. Hence for any time $t$ the actually value for both is calculated by using the initial value $TS(t_0)$ respectively $ AS(t_0)$ and multiplying with the current platform improvements $PI(t)$. This intermediate value is then mapped to the desired interval. Due to specific intervals for this two variables, the denominator of the Formulas \ref{eq:ts} and \ref{eq:as} is equal to the upper boundary of the platform improvements $UB_{PI}$\footnote{Values for $TS(t_0)$ respectively $AS(t_0)$ are within the interval $[0.0,1.0]$ and for $PI(t)$ within the interval $[1.0,2.0]$ (cf. Section \ref{ch:sfd:mv} and \ref{ch:sfd:mp}). Thus the intermediate results ($TS(t_0)*PI(t)$ respectively $AS(t_0) *PI(t)$) are within the interval $[0.0,2.0]$ which represents the interval $[a_1,a_2]$ from Formula \ref{eq:lt}. Consequently the denominator for this linear transformation function is $2.0$ ($a_2 - a_1 = 2.0 - 0.0 = 2.0$), equals to $UB_{PI}$. This holds as long as $LB_{TS}$ respectively $LB_{AS}$ is equals to $0.0$.}:
 
 \begin{equation}\label{eq:ts}
 	TS(t) = LB_{TS} +  \frac{(TS(t_0) * PI(t)) * (UB_{TS} - LB_{TS})}{UB_{PI}} \in [LB_{TS},UB_{TS}]
@@ -142,274 +135,148 @@ The next two general values -- technical scope as well as additional services --
 	AS(t) = LB_{AS} +  \frac{(AS(t_0) * PI(t)) * (UB_{AS} - LB_{AS})}{UB_{PI}} \in [LB_{AS},UB_{AS}]
 \end{equation} 
 
-Finally, the variable platform modules -- applications, services, components, or add-ons -- represent the last model foundation. As written above, platform modules are developed and deployed by complementors -- \acp{ISV} and \ac{IT} Startups -- and thus the values of the market penetration of these two customer segments ($MP_{ISV}(t)$ cf. Formula \ref{eq:mp:isv} respectively $MP_{ITS}(t)$ cf. Formula \ref{eq:mp:its}) are used in order to calculate the value of the platform modules. This approach was chosen again so as to avoid too many additional assumption -- parameter, variables, and the like. Therefore the two market penetration values are simply added and mapped to the desired interval by using the linear transformation formula (cf. Formula \ref{eq:lt}). In this particular case, the denominator of the Formula \ref{eq:pm} is equals to the sum of $UB_{ISV}$ and $UB_{ITS}$\footnote{Values for $MP_{ISV}(t)$ respectively $MP_{ITS}(t)$ are within the interval [0.0,1.0] (cf. Section \ref{ch:sfd:mp}). Thus the addition of $MP_{ISV}(t) + MP_{ITS}(t)$ results in the interval $[0.0,2.0]$ which represents the interval $[a_1,2_2]$ from Formula \ref{eq:lt}. Consequently the denominator for this linear transformation is $2.0$ ($a_2 - a_1 = 2.0 - 0.0 = 2.0$), equals to $UB_{ISV} + UB_{ITS}$.}:
+Finally, the variable platform modules -- applications, services, components, or add-ons -- represent the last model foundation. As written above, platform modules are developed and deployed by complementors -- \acp{ISV} and \ac{IT} Startups -- and thus the values of the market penetration of these two customer segments ($MP_{ISV}(t)$ cf. Formula \ref{eq:mp:isv} respectively $MP_{ITS}(t)$ cf. Formula \ref{eq:mp:its}) are used in order to calculate the value of the platform modules. This approach was chosen again so as to avoid too many additional assumption -- parameters, variables, and the like. Therefore the two market penetration values are simply added and mapped to the desired interval by using the linear transformation formula (cf. Formula \ref{eq:lt}). In this particular case, the denominator of the Formula \ref{eq:pm} is equals to the sum of $UB_{ISV}$ and $UB_{ITS}$\footnote{Values for $MP_{ISV}(t)$ respectively $MP_{ITS}(t)$ are within the interval [0.0,1.0] (cf. Section \ref{ch:sfd:mp}). Thus the addition of $MP_{ISV}(t) + MP_{ITS}(t)$ results in the interval $[0.0,2.0]$ which represents the interval $[a_1,a_2]$ from Formula \ref{eq:lt}. Consequently the denominator for this linear transformation is $2.0$ ($a_2 - a_1 = 2.0 - 0.0 = 2.0$), equals to $UB_{ISV} + UB_{ITS}$.}:
 
 \begin{eqnarray}\label{eq:pm}
 	PM(t) = LB_{PM} + \frac{(MP_{ISV}(t) + MP_{ITS}(t)) * (UB_{PM} - LB_{PM})}{UB_{ISV} + UB_{ITS}} \nonumber \\ \in [LB_{PM},UB_{PM}]
 \end{eqnarray}
 
 % ****************************************************************************************************
-\section{Customer-specific Formulas}\label{ch:sfd:csf}
+\section{Customer-Specific Formulas}\label{ch:sfd:csf}
 % ****************************************************************************************************
+
+Based on the two previously developed \acp{CLD} generic \ac{PaaS} customer segment (cf. Figure \ref{fig:cld_cs} and \ac{PaaS} customer segment interdependencies (cf. Figure \ref{fig:cld_csi}) hereafter the dedicated \acp{CVP} for all five customer segments are revealed.
+
+As indicated in Figure \ref{fig:cld_cs} the \ac{CVP} for each customer segment is influenced by six variables. The four variables governance model (cf. Formula \ref{eq:gov}), technical scope (cf. Formula \ref{eq:ts}), additional services (cf. Formula \ref{eq:as}), as well as platform improvements (cf. Formula \ref{eq:pi}) are common influencing factors and thus are included in all five corresponding \ac{CVP} functions (cf. Formulas \ref{eq:cvp:isv} - \ref{eq:cvp:pc}). Moreover, the \acp{CVP} are further influenced by the certain market penetrations (cf. Figure \ref{fig:cld_csi}), however this influencing factor differs for each customer segment as explained further below. And finally, the core value proposition -- distribution channel, application-based integration, development, and integration -- influences the \acp{CVP} as noted during the 23 explorative case studies. Due to missing data and for reason of intelligibility the core value proposition is in this first version of the quantitative model omitted. Adding this factor to the simulation model would be accompanied by at least 20 external variables\footnote{The impact of the four different core value propositions need to be modeled for all five customer segments, resulting in $4*5=20$ additional external model variables.} and thereby the model complexity would rise dramatically. To conclude, for all five \acp{CVP} a corresponding initial \ac{CVP} $CVP_{CS}()t_0$ is defined as model variable (cf. Section \ref{ch:sfd:mv}).u
+
+The \ac{CVP} for complementors -- \acp{ISV} and \ac{IT} startups -- is composed of the four general variables $GOV(t)$, $TS(t)$, $AS(t)$, and $PI(t)$, the initial \ac{CVP} -- $CVP_{ISV}(t_0)$ respectively $ CVP_{ITS}(t_0)$ -- as well as through the market penetration of the application $MP_{AC}(t)$ and platform customers $MP_{PC}(t)$:
+
+\begin{eqnarray}\label{eq:cvp:isv}
+		CVP_{ISV}(t) & = & CVP_{ISV}(t_0) * GOV(t) * TS(t) * AS(t) * \nonumber \\ & & PI(t) * MP_{AC}(t) * MP_{PC}(t)
+\end{eqnarray}
+
+\begin{eqnarray}\label{eq:cvp:its}
+		CVP_{ITS}(t) & = & CVP_{ITS}(t_0) * GOV(t) * TS(t) * AS(t) * \nonumber \\ & & PI(t) * MP_{AC}(t) * MP_{PC}(t)
+\end{eqnarray}
+
+As with the two previous customer segments, also the \ac{SI} \ac{CVP} is influenced by the four general variables $GOV(t)$, $TS(t)$, $AS(t)$, and $PI(t)$ and the initial \ac{CVP} ($CVP_{SI}(t_0)$). Due to the fact, that \acp{SI} offer consultancy services especially for the two customer segments application as well as platform customers, the \ac{SI} \ac{CVP} is influenced through this two corresponding market penetration values -- $MP_{AC}(t)$ and $MP_{PC}(t)$. Moreover, also the number of platform modules $PM(t)$ is an indicator for flourishing platform and therefore influences the \ac{SI} \ac{CVP}:
+
+\begin{eqnarray}\label{eq:cvp:si}
+		CVP_{SI}(t) & = & CVP_{SI}(t_0) * GOV(t) * TS(t) * AS(t) * \nonumber \\ & & PI(t) * PM(t) * MP_{AC}(t) * MP_{PC}(t)
+\end{eqnarray}
+
+The remaining two customer segments -- application and platform customers -- are also influenced by the four general variables $GOV(t)$, $TS(t)$, $AS(t)$, and $PI(t)$ and the initial \ac{CVP} ($CVP_{SI}(t_0)$). In alignment with the \ac{CVP} for \acp{SI}, the number of \acp{SI} offering consultancy services for a certain platform $MP_{SI}(t)$ positively effects the both corresponding \ac{CVP} -- $CVP_{AC}(t)$ as well as $CVP_{AC}(t)$. Moreover and quite important for these two customer segments is the number of available platform modules $PM(t)$ and thus this figure influences these \acp{CVP} accordingly:
+
+\begin{eqnarray}\label{eq:cvp:ac}
+		CVP_{AC}(t) & = & CVP_{AC}(t_0) * GOV(t) * TS(t) * AS(t) * \nonumber \\ & & PI(t) * PM(t) * MP_{SI}(t)
+\end{eqnarray}
+
+\begin{eqnarray}\label{eq:cvp:pc}
+		CVP_ {PC}(t) & = & CVP_{PC}(t_0) * GOV(t) * TS(t) * AS(t) * \nonumber \\ & & PI(t) * PM(t) * MP_{SI}(t)
+\end{eqnarray}
+
+Hereafter the residual customer-specific formulas are introduced. Due to fact that this functions are consistent for all five customer segments the generic notation $CS$ is used in the following and denotes the generic character of this functions. However, within Appendix \ref{ch:app04} all simulation functions are summarized including the specific functions for all five customer segments (cf. Appendix \ref{ch:app04:csf}).
+
+As written above, each customer segment is modeled with two stocks -- potential <customer segment> and <customer segment> population. The initial size $\mathit{Potential~CS(t_0)}$ of the potential customer stock $\mathit{Potential~CS(t)}$ decreases through the corresponding adoption rate $AR_{CS}(t)$ (cf. Formula \ref{eq:cs:ar}):
+
+\begin{equation}\label{eq:cs:pot}
+	\mathit{Potential~CS(t)} =\mathit{Potential~CS(t_0)} - \int\limits_{t_0}^t  [AR_{CS}(s)]ds
+\end{equation}
+
+Whereas the corresponding population stock $\mathit{Population~CS(t)}$ increases, on top of the initial stock size $\mathit{Population~CS(t_0)}$, through the adoption rate $AR_{CS}(t)$ (cf. Formula \ref{eq:cs:ar}):
+
+\begin{equation}\label{eq:cs:pop}
+	\mathit{Population~CS(t)} = \int\limits_{t_0}^t [AR_{CS}(s)]ds + \mathit{Population~CS(t_0)}
+\end{equation}
+
+Within this work, three different adopter groups have been identified. Thus the adoption rate $AR_{CS}(t)$ is the sum of the variables innovators $IN_{CS}$ (cf. Formula \ref{eq:cs:in}), imitators $IM_{CS}$ (cf. Formula \ref{eq:cs:im}), and adoption from the customer value proposition $ACVP_{CS}$ (cf. Formula \ref{eq:cs:acvp}):
+
+\begin{equation}\label{eq:cs:ar}
+		AR_{CS}(t) = IN_{CS}(t) + IM_{CS}(t) + ACVP_{CS}(t)	
+\end{equation}
+
+The ratio how many customers of a specific customer segment are using the platform is required for a few calculations below. For this purpose, the current customers $\mathit{Population~CS(t)}$ are divided by the size of customer segment $\mathit{Population~CS(t)} + \mathit{Potential~CS(t)}$:
+
+\begin{equation}\label{eq:cs:ratio}
+		RATIO_{CS}(t) = \frac{\mathit{Population~CS(t)}}{\mathit{Population~CS(t)} + \mathit{Potential~CS(t)}} \in [0.0,1.0]
+\end{equation}
+
+By using this ratio, which actually represent actually the plain market penetration within the interval $[0.0,1.0]$, the desired market penetration can be calculated by applying Formula \ref{eq:lts} and mapping $RATIO_{CS}(t)$ into the desired interval:
+
+\begin{eqnarray}\label{eq:cs:mp}
+	MP_{CS}(t) = LB_{MP_{CS}} + RATIO_{CS}(t) * (UB_{MP_{CS}} - LB_{MP_{CS}})  \nonumber \\ \in [LB_{MP_{CS}},UB_{MP_{CS}}]
+\end{eqnarray}
+
+The remaing three adopter groups are calculated as follows: Innovators are simply determined by the product of the probability of innovators $P_{IN}$ and the corresponding stock size $\mathit{Potential~CS(t)}$:
+
+\begin{equation}\label{eq:cs:in}
+		IN_{CS}(t) = \mathit{Potential~CS(t)} * P_{IN_{CS}}
+\end{equation}
+
+In order to calculate the imitators, the probability of imitators $P_{IM_{CS}}$ is multiplied with the corresponding customer segment ratio $RATIO_{CS}(t)$. This intermediate result is then further multiplied with the stock size $\mathit{Potential~CS(t)}$. By including $RATIO_{CS}(t)$ and $\mathit{Potential~CS(t)}$ into the imitator calculation, this function results in the desired s-shaped curve. Basically, the variable $RATIO_{CS}(t)$ increases and the variable $\mathit{Potential~CS(t)}$ decreases all the time and thus providing the s-shaped curve:
+
+\begin{equation}\label{eq:cs:im}
+		IM_{CS}(t) = \mathit{Potential~CS(t)} * P_{IM_{CS}} * RATIO_{CS}(t)
+\end{equation}
+
+And finally the adoption from the customer value proposition $ACVP_{CS}(t)$ is similarly to the imitator function the product of the $\mathit{Potential~CS(t)}$, customer segment ratio $RATIO_{CS}(t)$, and the corresponding $CVP_{CS}(t)$ (cf. Formulas \ref{eq:cvp:isv} - \ref{eq:cvp:pc}). Also this function results in a s-shaped curve:
+
+\begin{equation}\label{eq:cs:acvp}
+		ACVP_{CS}(t) = \mathit{Potential~CS(t)} * CVP_{CS}(t) * RATIO_{CS}(t)
+\end{equation}
 
 % ****************************************************************************************************
 \section{Model Variables}\label{ch:sfd:mv}
 % ****************************************************************************************************
 
-% ****************************************************************************************************
-\section{Model Parameters}\label{ch:sfd:mp}
-% ****************************************************************************************************
-
-%Model Parameter
-\newpage
-\section{Model Parameter}
-\begin{table}[tbh]
+\begin{table}[t]
 	\centering
 	\begin{tabular}{ll}
 			\toprule 
-			Parameter & Interval resp. Values\\ \midrule
-			PI & $[1,2]$ -> ($LB_{PI}$ = 1.0 and $UB_{PI}$ = 2.0) \\ 
-			PM & $[1,2]$ -> ($LB_{PM}$ = 1.0 and $UB_{PM}$ = 2.0) \\ \midrule
-			GOV & $[1,1.1]$ -> ($LB_{GOV}$ = 1.0 and $UB_{GOV}$ = 1.1) \\
-			TS & $[1,1.1]$ -> ($LB_{TS}$ = 1.0 and $UB_{TS}$ = 1.1) \\
-			AS & $[1,1.1]$ -> ($LB_{AS}$ = 1.0 and $UB_{AS}$ = 1.1) \\ \midrule
-			$MP_{ITS}$ & $[0,1]$ -> ($LB_{ITS}$ = 0.0 and $UB_{ITS}$ = 1.0) \\
-			$MP_{ISV}$ & $[0,1]$ -> ($LB_{ISV}$ = 0.0 and $UB_{ISV}$ = 1.0) \\
-			$MP_{AC}$ & $[1,2]$ -> ($LB_{AC}$ = 1.0 and $UB_{AC}$ = 2.0) \\
-			$MP_{SI_{PC}}$ & $[1,1.1]$ -> ($LB_{SI_{PC}}$ = 1.0 and $UB_{SI_{PC}}$ = 1.1) \\
-			$MP_{SI_{AC}}$ & $[1,1.05]$ -> ($LB_{SI_{AC}}$ = 1.0 and $UB_{SI_{AC}}$ = 1.05) \\
-			$MP_{PC}$ & $[1,1.2]$ -> ($LB_{PC}$ = 1.0 and $UB_{PC}$ = 1.2) \\ \bottomrule
-	\end{tabular}
-	\caption{Model Parameters}
-	\label{tab:mpara}
-\end{table}
-
-%Model Variables
-\newpage
-\section{Model Variables}
-\begin{table}[tbh]
-	\centering
-	\begin{tabular}{ll}
-			\toprule 
-			Variable & Interval\\ \midrule
-			$GOV_i$ & $[0,1.0]$ \\
-			$TS_i$ & $[0,1.0]$ \\
-			$AS_i$ & $[0,1.0]$ \\ \midrule
-			$CVP_{ITS_i}$ & $[0,0.1]$ \\
-			$CVP_{ISV_i}$ & $[0,0.1]$ \\
-			$CVP_{AC_i}$ & $[0,0.1]$ \\
-			$CVP_{SI_i}$ & $[0,0.1]$ \\
-			$CVP_{PC_i}$ & $[0,0.1]$ \\ \midrule
-			$PoAaC_{ITS}$ & $[0,0.05]$ \\
-			$PoAaC_{ISV}$ & $[0,0.05]$ \\
-			$PoAaC_{AC}$ & $[0,0.05]$ \\
-			$PoAaC_{SI}$ & $[0,0.05]$ \\
-			$PoAaC_{PC}$ & $[0,0.05]$ \\ \bottomrule
+			\footnotesize \textbf{Variable} & \footnotesize \textbf{Interval}\\ \midrule
+			\footnotesize $GOV(t_0)$ & \footnotesize $[0.0,1.0]$ \\
+			\footnotesize $TS(t_0)$ & \footnotesize $[0.0,1.0]$ \\
+			\footnotesize $AS(t_0)$ & \footnotesize $[0.0,1.0]$ \\ \midrule
+			\footnotesize $CVP_{ITS}(t_0)$ & \footnotesize $[0.0,0.1]$ \\
+			\footnotesize $CVP_{ISV}(t_0)$ & \footnotesize $[0.0,0.1]$ \\
+			\footnotesize $CVP_{AC}(t_0)$ & \footnotesize $[0.0,0.1]$ \\
+			\footnotesize $CVP_{SI}(t_0)$ & \footnotesize $[0.0,0.1]$ \\
+			\footnotesize $CVP_{PC}(t_0)$ & \footnotesize $[0.0,0.1]$ \\ \midrule
+			\footnotesize $P_{IN_{ITS}}$ & \footnotesize $[0.0,0.05]$ \\
+			\footnotesize $P_{IN_{ISV}}$ & \footnotesize $[0.0,0.05]$ \\
+			\footnotesize $P_{IN_{AC}}$ & \footnotesize $[0.0,0.05]$ \\
+			\footnotesize $P_{IN_{SI}}$ & \footnotesize $[0.0,0.05]$ \\
+			\footnotesize $P_{IN_{PC}}$ & \footnotesize $[0.0,0.05]$ \\ \midrule
+			\footnotesize $P_{IM_{ITS}}$ & \footnotesize $[0.0,0.05]$ \\
+			\footnotesize $P_{IM_{ISV}}$ & \footnotesize $[0.0,0.05]$ \\
+			\footnotesize $P_{IM_{AC}}$ & \footnotesize $[0.0,0.05]$ \\
+			\footnotesize $P_{IM_{SI}}$ & \footnotesize $[0.0,0.05]$ \\
+			\footnotesize $P_{IM_{PC}}$ & \footnotesize $[0.0,0.05]$ \\\bottomrule
 	\end{tabular}
 	\caption{Model Variables}
 	\label{tab:mvar}
 \end{table}
 
-%ITS
-\newpage
-\section{ITS}
+% ****************************************************************************************************
+\section{Model Parameters}\label{ch:sfd:mp}
+% ****************************************************************************************************
 
-\begin{equation}
-		CVP_{ITS} =  CVP_{ITS_{i}} * PI * MP_{AC} * MP_{PC}
-\end{equation}
-
-\begin{equation}
-		AR_{ITS} = CVP_{ITS} * GOV * TS * AS		
-\end{equation}
-
-\begin{equation}
-	PoP_{ITS} = \frac{\mathit{Population~ITS}}{\mathit{Population~ITS}+\mathit{Potential~ITS}}
-\end{equation}
-
-\begin{equation}
-	\mathit{Adoption~from~AR_{ITS}} = PoP_{ITS} * AR_{ITS}
-\end{equation}
-
-\begin{equation}
-	\mathit{Imitators~ITS} = PoP_{ITS} * PoAaC_{ITS}
-\end{equation}
-
-\begin{equation}
-	\mathit{New~ITS} = \mathit{Adoption~from~AR_{ITS}} + \mathit{Imitators~ITS}
-\end{equation}
-
-\begin{equation}
-	\mathit{Potential~ITS} = \mathit{Potential~ITS} - \mathit{New~ITS}
-\end{equation}
-
-\begin{equation}
-	\mathit{Population~ITS} = \mathit{Population~ITS} + \mathit{New~ITS}
-\end{equation}
-
-\begin{equation}\label{eq:mp:its}
-	MP_{ITS} = LB_{MP_{ITS}} + PoP_{ITS} * (UB_{MP_{ITS}} - LB_{MP_{ITS}})
-\end{equation}
-
-%ISV
-\newpage
-\section{ISV}
-
-\begin{equation}
-		CVP_{ISV} =  CVP_{ISV_{i}} * PI * MP_{AC} * MP_{PC}
-\end{equation}
-
-\begin{equation}
-		AR_{ISV} = CVP_{ISV} * GOV * TS * AS		
-\end{equation}
-
-\begin{equation}
-	PoP_{ISV} = \frac{\mathit{Population~ISV}}{\mathit{Population~ISV}+\mathit{Potential~ISV}}
-\end{equation}
-
-\begin{equation}
-	\mathit{Adoption~from~AR_{ISV}} = PoP_{ISV} * AR_{ISV}
-\end{equation}
-
-\begin{equation}
-	\mathit{Imitators~ISV} = PoP_{ISV} * PoAaC_{ISV}
-\end{equation}
-
-\begin{equation}
-	\mathit{New~ISV} = \mathit{Adoption~from~AR_{ISV}} + \mathit{Imitators~ISV}
-\end{equation}
-
-\begin{equation}
-	\mathit{Potential~ISV} = \mathit{Potential~ISV} - \mathit{New~ISV}
-\end{equation}
-
-\begin{equation}
-	\mathit{Population~ISV} = \mathit{Population~ISV} + \mathit{New~ISV}
-\end{equation}
-
-\begin{equation}\label{eq:mp:isv}
-	MP_{ISV} = LB_{MP_{ISV}} + PoP_{ISV} * (UB_{MP_{ISV}} - LB_{MP_{ISV}})
-\end{equation}
-
-%AC
-\newpage
-\section{AC}
-
-\begin{equation}
-		CVP_{AC} =  CVP_{AC_{i}} * PI * PM * MP_{SI_{AC}}
-\end{equation}
-
-\begin{equation}
-		AR_{AC} = CVP_{AC} * GOV * TS * AS		
-\end{equation}
-
-\begin{equation}
-	PoP_{AC} = \frac{\mathit{Population~AC}}{\mathit{Population~AC}+\mathit{Potential~AC}}
-\end{equation}
-
-\begin{equation}
-	\mathit{Adoption~from~AR_{AC}} = PoP_{AC} * AR_{AC}
-\end{equation}
-
-\begin{equation}
-	\mathit{Imitators~AC} = PoP_{AC} * PoAaC_{AC}
-\end{equation}
-
-\begin{equation}
-	\mathit{New~AC} = \mathit{Adoption~from~AR_{AC}} + \mathit{Imitators~AC}
-\end{equation}
-
-\begin{equation}
-	\mathit{Potential~AC} = \mathit{Potential~AC} - \mathit{New~AC}
-\end{equation}
-
-\begin{equation}
-	\mathit{Population~AC} = \mathit{Population~AC} + \mathit{New~AC}
-\end{equation}
-
-\begin{equation}
-	MP_{AC} = LB_{MP_{AC}} + PoP_{AC} * (UB_{MP_{AC}} - LB_{MP_{AC}})
-\end{equation}
-
-%SI
-\newpage
-\section{SI}
-
-\begin{equation}
-		CVP_{SI} =  CVP_{SI_{i}} * PI * PM * MP_{AC} * MP_{PC}
-\end{equation}
-
-\begin{equation}
-		AR_{SI} = CVP_{SI} * GOV * TS * AS		
-\end{equation}
-
-\begin{equation}
-	PoP_{SI} = \frac{\mathit{Population~SI}}{\mathit{Population~SI}+\mathit{Potential~SI}}
-\end{equation}
-
-\begin{equation}
-	\mathit{Adoption~from~AR_{SI}} = PoP_{SI} * AR_{SI}
-\end{equation}
-
-\begin{equation}
-	\mathit{Imitators~SI} = PoP_{SI} * PoAaC_{SI}
-\end{equation}
-
-\begin{equation}
-	\mathit{New~SI} = \mathit{Adoption~from~AR_{SI}} + \mathit{Imitators~SI}
-\end{equation}
-
-\begin{equation}
-	\mathit{Potential~SI} = \mathit{Potential~SI} - \mathit{New~SI}
-\end{equation}
-
-\begin{equation}
-	\mathit{Population~SI} = \mathit{Population~SI} + \mathit{New~SI}
-\end{equation}
-
-\begin{equation}
-	MP_{SI_{PC}} = LB_{MP_{SI_{PC}}} + PoP_{SI} * (UB_{MP_{SI_{PC}}} - LB_{MP_{SI_{PC}}})
-\end{equation}
-
-\begin{equation}
-	MP_{SI_{AC}} = LB_{MP_{SI_{AC}}} + PoP_{SI} * (UB_{MP_{SI_{AC}}} - LB_{MP_{SI_{AC}}})
-\end{equation}
-
-%PC
-\newpage
-\section{PC}
-
-\begin{equation}
-		CVP_ {PC} =  CVP_{PC_{i}} * PI * PM * MP_{SI_{PC}}
-\end{equation}
-
-\begin{equation}
-		AR_{PC} = CVP_{PC} * GOV * TS * AS		
-\end{equation}
-
-\begin{equation}
-	PoP_{PC} = \frac{\mathit{Population~PC}}{\mathit{Population~PC}+\mathit{Potential~PC}}
-\end{equation}
-
-\begin{equation}
-	\mathit{Adoption~from~AR_{PC}} = PoP_{PC} * AR_{PC}
-\end{equation}
-
-\begin{equation}
-	\mathit{Imitators~PC} = PoP_{PC} * PoAaC_{PC}
-\end{equation}
-
-\begin{equation}
-	\mathit{New~PC} = \mathit{Adoption~from~AR_{PC}} + \mathit{Imitators~PC}
-\end{equation}
-
-\begin{equation}
-	\mathit{Potential~PC} = \mathit{Potential~PC} - \mathit{New~PC}
-\end{equation}
-
-\begin{equation}
-	\mathit{Population~PC} = \mathit{Population~PC} + \mathit{New~PC}
-\end{equation}
-
-\begin{equation}
-	MP_{PC} = LB_{MP_{PC}} + PoP_{PC} * (UB_{MP_{PC}} - LB_{MP_{PC}})
-\end{equation}
+\begin{table}[t]
+	\centering
+	\begin{tabular}{ll}
+			\toprule 
+			\footnotesize \textbf{Parameter} & \footnotesize \textbf{Interval} \\ \midrule
+			\footnotesize PI & \footnotesize $[1.0,2.0] \implies LB_{PI} = 1.0$ and $UB_{PI}$ = 2.0 \\ 
+			\footnotesize PM & \footnotesize  $[1.0,2.0] \implies LB_{PM} = 1.0$ and $UB_{PM}$ = 2.0 \\ \midrule
+			\footnotesize GOV & \footnotesize $[1.0,1.1] \implies LB_{GOV} = 1.0$ and $UB_{GOV}$ = 1.1 \\
+			\footnotesize TS & \footnotesize $[1.0,1.1] \implies LB_{TS} = 1.0$ and $UB_{TS}$ = 1.1 \\
+			\footnotesize AS & \footnotesize $[1.0,1.1] \implies LB_{AS} = 1.0$ and $UB_{AS}$ = 1.1 \\ \midrule
+			\footnotesize $MP_{ITS}$ & \footnotesize $[0.0,1.0] \implies LB_{ITS} = 0.0$ and $UB_{ITS}$ = 1.0 \\
+			\footnotesize $MP_{ISV}$ & \footnotesize $[0.0,1.0] \implies LB_{ISV} = 0.0$ and $UB_{ISV}$ = 1.0 \\
+			\footnotesize $MP_{AC}$ & \footnotesize $[1.0,2.0] \implies LB_{AC} = 1.0$ and $UB_{AC}$ = 2.0 \\
+			\footnotesize $MP_{SI}$ & \footnotesize $[1.0,1.1] \implies LB_{SI} = 1.0$ and $UB_{SI}$ = 1.1 \\
+			\footnotesize $MP_{PC}$ & \footnotesize $[1.0,1.2] \implies LB_{PC} = 1.0$ and $UB_{PC}$ = 1.2 \\ \bottomrule
+	\end{tabular}
+	\caption{Model Parameters}
+	\label{tab:mpara}
+\end{table}
