@@ -9,7 +9,7 @@ In the following the formulas of the \ac{SFD} introduced in Chapter \ref{ch:sfd}
 % ****************************************************************************************************
 
 \begin{equation}
-	\mathit{New~Customer(t)} = \sum{\mathit{New~CS(t)}}
+	\mathit{New~Customer(t)} = \sum{\mathit{Adoption~Rate~CS(t)}}
 \end{equation}
 
 \begin{equation}
@@ -49,202 +49,198 @@ In the following the formulas of the \ac{SFD} introduced in Chapter \ref{ch:sfd}
 \subsection{IT Startup}\label{ch:app04:csf:its}
 % ****************************************************************************************************
 
+\begin{eqnarray}
+		CVP_{ITS}(t) & = & CVP_{ITS}(t_0) * GOV(t) * TS(t) * AS(t) * \nonumber \\ & & PI(t) * MP_{AC}(t) * MP_{PC}(t)
+\end{eqnarray}
+
 \begin{equation}
-		CVP_{ITS}(t) =  CVP_{ITS}(t_0) * PI(t) * MP_{AC}(t) * MP_{PC}(t)
+	\mathit{Potential~ITS(t)} =\mathit{Potential~ITS(t_0)} - \int\limits_{t_0}^t  [AR_{ITS}(s)]ds
 \end{equation}
 
 \begin{equation}
-		AR_{ITS} = CVP_{ITS} * GOV * TS * AS		
+	\mathit{Population~ITS(t)} = \int\limits_{t_0}^t [AR_{ITS}(s)]ds + \mathit{Population~ITS(t_0)}
 \end{equation}
 
 \begin{equation}
-	PoP_{ITS} = \frac{\mathit{Population~ITS}}{\mathit{Population~ITS}+\mathit{Potential~ITS}}
+		AR_{ITS}(t) = IN_{ITS}(t) + IM_{ITS}(t) + ACVP_{ITS}(t)	
 \end{equation}
 
 \begin{equation}
-	\mathit{Adoption~from~AR_{ITS}} = PoP_{ITS} * AR_{ITS}
+		RATIO_{ITS}(t) = \frac{\mathit{Population~ITS(t)}}{\mathit{Population~ITS(t)} + \mathit{Potential~ITS(t)}} \in [0.0,1.0]
+\end{equation}
+
+\begin{eqnarray}\label{eq:mp:its}
+	MP_{ITS}(t) = LB_{MP_{ITS}} + RATIO_{ITS}(t) * (UB_{MP_{ITS}} - LB_{MP_{ITS}})  \nonumber \\ \in [LB_{MP_{ITS}},UB_{MP_{ITS}}]
+\end{eqnarray}
+
+\begin{equation}
+		IN_{ITS}(t) = \mathit{Potential~ITS(t)} * P_{IN_{ITS}}
 \end{equation}
 
 \begin{equation}
-	\mathit{Imitators~ITS} = PoP_{ITS} * PoAaC_{ITS}
+		IM_{ITS}(t) = \mathit{Potential~ITS(t)} * P_{IM_{ITS}} * RATIO_{ITS}(t)
 \end{equation}
 
 \begin{equation}
-	\mathit{New~ITS} = \mathit{Adoption~from~AR_{ITS}} + \mathit{Imitators~ITS}
-\end{equation}
-
-\begin{equation}
-	\mathit{Potential~ITS(t)} =\mathit{Potential~ITS(t_0)} - \int\limits_{t_0}^t  [\mathit{New~ITS}(s)]ds
-\end{equation}
-
-\begin{equation}
-	\mathit{Population~ITS(t)} = \int\limits_{t_0}^t [\mathit{New~ITS}(s)]ds + \mathit{Population~ITS(t_0)}
-\end{equation}
-
-\begin{equation}\label{eq:mp:its}
-	MP_{ITS} = LB_{MP_{ITS}} + PoP_{ITS} * (UB_{MP_{ITS}} - LB_{MP_{ITS}})
+		ACVP_{ITS}(t) = \mathit{Potential~ITS(t)} * CVP_{ITS}(t) * RATIO_{ITS}(t)
 \end{equation}
 
 % ****************************************************************************************************
 \subsection{Systems Integrator}\label{ch:app04:csf:si}
 % ****************************************************************************************************
 
+\begin{eqnarray}
+		CVP_{SI}(t) & = & CVP_{SI}(t_0) * GOV(t) * TS(t) * AS(t) * \nonumber \\ & & PI(t) * PM(t) * MP_{AC}(t) * MP_{PC}(t)
+\end{eqnarray}
+
 \begin{equation}
-		CVP_{SI}(t) =  CVP_{SI}(t_0) * PI(t) * PM(t) * MP_{AC}(t) * MP_{PC}(t)
+	\mathit{Potential~SI(t)} =\mathit{Potential~SI(t_0)} - \int\limits_{t_0}^t  [AR_{SI}(s)]ds
 \end{equation}
 
 \begin{equation}
-		AR_{SI} = CVP_{SI} * GOV * TS * AS		
+	\mathit{Population~SI(t)} = \int\limits_{t_0}^t [AR_{SI}(s)]ds + \mathit{Population~SI(t_0)}
 \end{equation}
 
 \begin{equation}
-	PoP_{SI} = \frac{\mathit{Population~SI}}{\mathit{Population~SI}+\mathit{Potential~SI}}
+		AR_{SI}(t) = IN_{SI}(t) + IM_{SI}(t) + ACVP_{SI}(t)	
 \end{equation}
 
 \begin{equation}
-	\mathit{Adoption~from~AR_{SI}} = PoP_{SI} * AR_{SI}
+		RATIO_{SI}(t) = \frac{\mathit{Population~SI(t)}}{\mathit{Population~SI(t)} + \mathit{Potential~SI(t)}} \in [0.0,1.0]
+\end{equation}
+
+\begin{eqnarray}
+	MP_{SI}(t) = LB_{MP_{SI}} + RATIO_{SI}(t) * (UB_{MP_{SI}} - LB_{MP_{SI}})  \nonumber \\ \in [LB_{MP_{SI}},UB_{MP_{SI}}]
+\end{eqnarray}
+
+\begin{equation}
+		IN_{SI}(t) = \mathit{Potential~SI(t)} * P_{IN_{SI}}
 \end{equation}
 
 \begin{equation}
-	\mathit{Imitators~SI} = PoP_{SI} * PoAaC_{SI}
+		IM_{SI}(t) = \mathit{Potential~SI(t)} * P_{IM_{SI}} * RATIO_{SI}(t)
 \end{equation}
 
 \begin{equation}
-	\mathit{New~SI} = \mathit{Adoption~from~AR_{SI}} + \mathit{Imitators~SI}
-\end{equation}
-
-\begin{equation}
-	\mathit{Potential~SI(t)} =\mathit{Potential~SI(t_0)} - \int\limits_{t_0}^t  [\mathit{New~SI}(s)]ds
-\end{equation}
-
-\begin{equation}
-	\mathit{Population~SI(t)} = \int\limits_{t_0}^t [\mathit{New~SI}(s)]ds + \mathit{Population~SI(t_0)}
-\end{equation}
-
-\begin{equation}
-	MP_{SI_{PC}} = LB_{MP_{SI_{PC}}} + PoP_{SI} * (UB_{MP_{SI_{PC}}} - LB_{MP_{SI_{PC}}})
-\end{equation}
-
-\begin{equation}
-	MP_{SI_{AC}} = LB_{MP_{SI_{AC}}} + PoP_{SI} * (UB_{MP_{SI_{AC}}} - LB_{MP_{SI_{AC}}})
+		ACVP_{SI}(t) = \mathit{Potential~SI(t)} * CVP_{SI}(t) * RATIO_{SI}(t)
 \end{equation}
 
 % ****************************************************************************************************
 \subsection{Independent Software Vendor}\label{ch:app04:csf:isv}
 % ****************************************************************************************************
 
+\begin{eqnarray}
+		CVP_{ISV}(t) & = & CVP_{ISV}(t_0) * GOV(t) * TS(t) * AS(t) * \nonumber \\ & & PI(t) * MP_{AC}(t) * MP_{PC}(t)
+\end{eqnarray}
+
 \begin{equation}
-		CVP_{ISV}(t) =  CVP_{ISV}(t_0) * PI(t) * MP_{AC}(t) * MP_{PC}(t)
+	\mathit{Potential~ISV(t)} =\mathit{Potential~ISV(t_0)} - \int\limits_{t_0}^t  [AR_{ISV}(s)]ds
 \end{equation}
 
 \begin{equation}
-		AR_{ISV} = CVP_{ISV} * GOV * TS * AS		
+	\mathit{Population~ISV(t)} = \int\limits_{t_0}^t [AR_{ISV}(s)]ds + \mathit{Population~ISV(t_0)}
 \end{equation}
 
 \begin{equation}
-	PoP_{ISV} = \frac{\mathit{Population~ISV}}{\mathit{Population~ISV}+\mathit{Potential~ISV}}
+		AR_{ISV}(t) = IN_{ISV}(t) + IM_{ISV}(t) + ACVP_{ISV}(t)	
 \end{equation}
 
 \begin{equation}
-	\mathit{Adoption~from~AR_{ISV}} = PoP_{ISV} * AR_{ISV}
+		RATIO_{ISV}(t) = \frac{\mathit{Population~ISV(t)}}{\mathit{Population~ISV(t)} + \mathit{Potential~ISV(t)}} \in [0.0,1.0]
+\end{equation}
+
+\begin{eqnarray}\label{eq:mp:isv}
+	MP_{ISV}(t) = LB_{MP_{ISV}} + RATIO_{ISV}(t) * (UB_{MP_{ISV}} - LB_{MP_{ISV}})  \nonumber \\ \in [LB_{MP_{ISV}},UB_{MP_{ISV}}]
+\end{eqnarray}
+
+\begin{equation}
+		IN_{ISV}(t) = \mathit{Potential~ISV(t)} * P_{IN_{ISV}}
 \end{equation}
 
 \begin{equation}
-	\mathit{Imitators~ISV} = PoP_{ISV} * PoAaC_{ISV}
+		IM_{ISV}(t) = \mathit{Potential~ISV(t)} * P_{IM_{ISV}} * RATIO_{ISV}(t)
 \end{equation}
 
 \begin{equation}
-	\mathit{New~ISV} = \mathit{Adoption~from~AR_{ISV}} + \mathit{Imitators~ISV}
-\end{equation}
-
-\begin{equation}
-	\mathit{Potential~ISV(t)} =\mathit{Potential~ISV(t_0)} - \int\limits_{t_0}^t  [\mathit{New~ISV}(s)]ds
-\end{equation}
-
-\begin{equation}
-	\mathit{Population~ISV(t)} = \int\limits_{t_0}^t [\mathit{New~ISV}(s)]ds + \mathit{Population~ISV(t_0)}
-\end{equation}
-
-\begin{equation}\label{eq:mp:isv}
-	MP_{ISV} = LB_{MP_{ISV}} + PoP_{ISV} * (UB_{MP_{ISV}} - LB_{MP_{ISV}})
+		ACVP_{ISV}(t) = \mathit{Potential~ISV(t)} * CVP_{ISV}(t) * RATIO_{ISV}(t)
 \end{equation}
 
 % ****************************************************************************************************
 \subsection{Platform Customer}\label{ch:app04:csf:pc}
 % ****************************************************************************************************
 
+\begin{eqnarray}
+		CVP_ {PC}(t) & = & CVP_{PC}(t_0) * GOV(t) * TS(t) * AS(t) * \nonumber \\ & & PI(t) * PM(t) * MP_{SI}(t)
+\end{eqnarray}
+
 \begin{equation}
-		CVP_ {PC}(t) =  CVP_{PC}(t_0) * PI(t) * PM(t) * MP_{SI}(t)
+	\mathit{Potential~PC(t)} =\mathit{Potential~PC(t_0)} - \int\limits_{t_0}^t  [AR_{PC}(s)]ds
 \end{equation}
 
 \begin{equation}
-		AR_{PC} = CVP_{PC} * GOV * TS * AS		
+	\mathit{Population~PC(t)} = \int\limits_{t_0}^t [AR_{PC}(s)]ds + \mathit{Population~PC(t_0)}
 \end{equation}
 
 \begin{equation}
-	PoP_{PC} = \frac{\mathit{Population~PC}}{\mathit{Population~PC}+\mathit{Potential~PC}}
+		AR_{PC}(t) = IN_{PC}(t) + IM_{PC}(t) + ACVP_{PC}(t)	
 \end{equation}
 
 \begin{equation}
-	\mathit{Adoption~from~AR_{PC}} = PoP_{PC} * AR_{PC}
+		RATIO_{PC}(t) = \frac{\mathit{Population~PC(t)}}{\mathit{Population~PC(t)} + \mathit{Potential~PC(t)}} \in [0.0,1.0]
+\end{equation}
+
+\begin{eqnarray}
+	MP_{PC}(t) = LB_{MP_{PC}} + RATIO_{PC}(t) * (UB_{MP_{PC}} - LB_{MP_{PC}})  \nonumber \\ \in [LB_{MP_{PC}},UB_{MP_{PC}}]
+\end{eqnarray}
+
+\begin{equation}
+		IN_{PC}(t) = \mathit{Potential~PC(t)} * P_{IN_{PC}}
 \end{equation}
 
 \begin{equation}
-	\mathit{Imitators~PC} = PoP_{PC} * PoAaC_{PC}
+		IM_{PC}(t) = \mathit{Potential~PC(t)} * P_{IM_{PC}} * RATIO_{PC}(t)
 \end{equation}
 
 \begin{equation}
-	\mathit{New~PC} = \mathit{Adoption~from~AR_{PC}} + \mathit{Imitators~PC}
-\end{equation}
-
-\begin{equation}
-	\mathit{Potential~PC(t)} =\mathit{Potential~PC(t_0)} - \int\limits_{t_0}^t  [\mathit{New~PC}(s)]ds
-\end{equation}
-
-\begin{equation}
-	\mathit{Population~PC(t)} = \int\limits_{t_0}^t [\mathit{New~PC}(s)]ds + \mathit{Population~PC(t_0)}
-\end{equation}
-
-\begin{equation}
-	MP_{PC} = LB_{MP_{PC}} + PoP_{PC} * (UB_{MP_{PC}} - LB_{MP_{PC}})
+		ACVP_{PC}(t) = \mathit{Potential~PC(t)} * CVP_{PC}(t) * RATIO_{PC}(t)
 \end{equation}
 
 % ****************************************************************************************************
 \subsection{Application Customer}\label{ch:app04:csf:ac}
 % ****************************************************************************************************
 
+\begin{eqnarray}
+		CVP_{AC}(t) & = & CVP_{AC}(t_0) * GOV(t) * TS(t) * AS(t) * \nonumber \\ & & PI(t) * PM(t) * MP_{SI}(t)
+\end{eqnarray}
+
 \begin{equation}
-		CVP_{AC}(t) =  CVP_{AC}(t_0) * PI(t) * PM(t) * MP_{SI}(t_0)
+	\mathit{Potential~AC(t)} =\mathit{Potential~AC(t_0)} - \int\limits_{t_0}^t  [AR_{AC}(s)]ds
 \end{equation}
 
 \begin{equation}
-		AR_{AC} = CVP_{AC} * GOV * TS * AS		
+	\mathit{Population~AC(t)} = \int\limits_{t_0}^t [AR_{AC}(s)]ds + \mathit{Population~AC(t_0)}
 \end{equation}
 
 \begin{equation}
-	PoP_{AC} = \frac{\mathit{Population~AC}}{\mathit{Population~AC}+\mathit{Potential~AC}}
+		AR_{AC}(t) = IN_{AC}(t) + IM_{AC}(t) + ACVP_{AC}(t)	
 \end{equation}
 
 \begin{equation}
-	\mathit{Adoption~from~AR_{AC}} = PoP_{AC} * AR_{AC}
+		RATIO_{AC}(t) = \frac{\mathit{Population~AC(t)}}{\mathit{Population~AC(t)} + \mathit{Potential~AC(t)}} \in [0.0,1.0]
+\end{equation}
+
+\begin{eqnarray}
+	MP_{AC}(t) = LB_{MP_{AC}} + RATIO_{AC}(t) * (UB_{MP_{AC}} - LB_{MP_{AC}})  \nonumber \\ \in [LB_{MP_{AC}},UB_{MP_{AC}}]
+\end{eqnarray}
+
+\begin{equation}
+		IN_{AC}(t) = \mathit{Potential~AC(t)} * P_{IN_{AC}}
 \end{equation}
 
 \begin{equation}
-	\mathit{Imitators~AC} = PoP_{AC} * PoAaC_{AC}
+		IM_{AC}(t) = \mathit{Potential~AC(t)} * P_{IM_{AC}} * RATIO_{AC}(t)
 \end{equation}
 
 \begin{equation}
-	\mathit{New~AC} = \mathit{Adoption~from~AR_{AC}} + \mathit{Imitators~AC}
-\end{equation}
-
-\begin{equation}
-	\mathit{Potential~AC(t)} =\mathit{Potential~AC(t_0)} - \int\limits_{t_0}^t  [\mathit{New~AC}(s)]ds
-\end{equation}
-
-\begin{equation}
-	\mathit{Population~AC(t)} = \int\limits_{t_0}^t [\mathit{New~AC}(s)]ds + \mathit{Population~AC(t_0)}
-\end{equation}
-
-\begin{equation}
-	MP_{AC} = LB_{MP_{AC}} + PoP_{AC} * (UB_{MP_{AC}} - LB_{MP_{AC}})
+		ACVP_{AC}(t) = \mathit{Potential~AC(t)} * CVP_{AC}(t) * RATIO_{AC}(t)
 \end{equation}
