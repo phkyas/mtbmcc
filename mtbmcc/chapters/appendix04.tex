@@ -7,38 +7,19 @@ In the following the formulas of the \ac{SFD} introduced in Chapter \ref{ch:sfd}
 % ****************************************************************************************************
 \section{Model Foundations}\label{ch:app04:mf}
 % ****************************************************************************************************
-
-\begin{equation}
-	\mathit{New~Customer(t)} = \sum AR_{CS}(t)
-\end{equation}
-
-\begin{equation}
-	\mathit{Customer~Base(t)} = \int\limits_{t_0}^t \mathit{[New~Customers(s)]ds} + \mathit{Customer~Base(t_0)}
-\end{equation}
-
-\begin{equation}
-	MP_{Overall}(t) = \frac{\mathit{Customer~Base(t)}}{\mathit{Customer~Base(t)} + \sum \mathit{Potential~CS(t)}} \in [0.0,1.0]
-\end{equation}
-
-\begin{equation}
-	GOV(t) = LB_{GOV} + GOV(t_0) * (UB_{GOV} - LB_{GOV}) \in [LB_{GOV},UB_{GOV}]
-\end{equation}
-
-\begin{equation}
-	PI(t) = LB_{PI} + MP_{Overall}(t) * (UB_{PI} - LB_{PI}) \in [LB_{PI},UB_{PI}]
-\end{equation}
-
-\begin{equation}
-	TS(t) = LB_{TS} +  \frac{(TS(t_0) * PI(t)) * (UB_{TS} - LB_{TS})}{UB_{PI}} \in [LB_{TS},UB_{TS}]
-\end{equation}
-
-\begin{equation}
-	AS(t) = LB_{AS} +  \frac{(AS(t_0) * PI(t)) * (UB_{AS} - LB_{AS})}{UB_{PI}} \in [LB_{AS},UB_{AS}]
-\end{equation}
-
-\begin{eqnarray}
-	PM(t) = LB_{PM} + \frac{(MP_{ISV}(t) + MP_{ITS}(t)) * (UB_{PM} - LB_{PM})}{UB_{ISV} + UB_{ITS}} \nonumber \\ \in [LB_{PM},UB_{PM}]
-\end{eqnarray}
+\begin{align}
+	\mathit{New~Customer(t)} &= \sum AR_{CS}(t),\\
+	\mathit{Customer~Base(t)} &= \int\limits_{t_0}^t \mathit{[New~Customers(s)]ds} + \mathit{Customer~Base(t_0)},\\
+	MP_{Overall}(t) &= \frac{\mathit{Customer~Base(t)}}{\mathit{Customer~Base(t)} + \sum \mathit{Potential~CS(t)}},\\
+	GOV(t_0) &= LB_{GOV} + GOV(t_0) \cdot (UB_{GOV} - LB_{GOV}),\\
+	PI(t) &= LB_{PI} + MP_{Overall}(t) \cdot (UB_{PI} - LB_{PI}),\\
+	TS(t) &= LB_{TS} +  \frac{(TS(t_0) \cdot PI(t)) \cdot (UB_{TS} - LB_{TS})}{UB_{PI}},\\
+	AS(t) &= LB_{AS} +  \frac{(AS(t_0)  \cdot PI(t)) \cdot (UB_{AS} - LB_{AS})}{UB_{PI}},\\
+	PM(t) &= LB_{PM} + \frac{(MP_{ISV}(t) + MP_{ITS}(t)) \cdot (UB_{PM} - LB_{PM})}{UB_{ISV} + UB_{ITS}},
+\end{align}
+where $MP_{Overall} \in [0.0,1.0]$, $GOV \in [LB_{GOV},UB_{GOV}]$, $PI \in [LB_{PI},UB_{PI}]$, $TS \in [LB_{TS},UB_{TS}]$, $AS \in [LB_{AS},UB_{AS}]$, and $PM \in [LB_{PM},UB_{PM}]$.
+	
+\newpage
 
 % ****************************************************************************************************
 \section{Customer-Specific Formulas}\label{ch:app04:csf}
@@ -49,198 +30,83 @@ In the following the formulas of the \ac{SFD} introduced in Chapter \ref{ch:sfd}
 \subsection{IT Startup}\label{ch:app04:csf:its}
 % ****************************************************************************************************
 
-\begin{eqnarray}
-		CVP_{ITS}(t) & = & CVP_{ITS}(t_0) * GOV(t) * TS(t) * AS(t) * \nonumber \\ & & PI(t) * MP_{AC}(t) * MP_{PC}(t)
-\end{eqnarray}
-
-\begin{equation}
-	\mathit{Potential~ITS(t)} =\mathit{Potential~ITS(t_0)} - \int\limits_{t_0}^t  [AR_{ITS}(s)]ds
-\end{equation}
-
-\begin{equation}
-	\mathit{Population~ITS(t)} = \int\limits_{t_0}^t [AR_{ITS}(s)]ds + \mathit{Population~ITS(t_0)}
-\end{equation}
-
-\begin{equation}
-		AR_{ITS}(t) = IN_{ITS}(t) + IM_{ITS}(t) + ACVP_{ITS}(t)	
-\end{equation}
-
-\begin{equation}
-		RATIO_{ITS}(t) = \frac{\mathit{Population~ITS(t)}}{\mathit{Population~ITS(t)} + \mathit{Potential~ITS(t)}} \in [0.0,1.0]
-\end{equation}
-
-\begin{eqnarray}\label{eq:mp:its}
-	MP_{ITS}(t) = LB_{MP_{ITS}} + RATIO_{ITS}(t) * (UB_{MP_{ITS}} - LB_{MP_{ITS}})  \nonumber \\ \in [LB_{MP_{ITS}},UB_{MP_{ITS}}]
-\end{eqnarray}
-
-\begin{equation}
-		IN_{ITS}(t) = \mathit{Potential~ITS(t)} * P_{IN_{ITS}}
-\end{equation}
-
-\begin{equation}
-		IM_{ITS}(t) = \mathit{Potential~ITS(t)} * P_{IM_{ITS}} * RATIO_{ITS}(t)
-\end{equation}
-
-\begin{equation}
-		ACVP_{ITS}(t) = \mathit{Potential~ITS(t)} * CVP_{ITS}(t) * RATIO_{ITS}(t)
-\end{equation}
+\begin{align}
+		CVP_{ITS}(t) &= CVP_{ITS}(t_0) \cdot GOV(t) \cdot TS(t) \cdot AS(t) \cdot \nonumber \\ &\qquad PI(t) \cdot MP_{AC}(t) \cdot MP_{PC}(t),\\
+		\mathit{Potential~ITS(t)} &=\mathit{Potential~ITS(t_0)} - \int\limits_{t_0}^t  [AR_{ITS}(s)]ds,\\
+		\mathit{Population~ITS(t)} &= \int\limits_{t_0}^t [AR_{ITS}(s)]ds + \mathit{Population~ITS(t_0)},\\
+		AR_{ITS}(t) &= IN_{ITS}(t) + IM_{ITS}(t) + ACVP_{ITS}(t),\\
+		RATIO_{ITS}(t) &= \frac{\mathit{Population~ITS(t)}}{\mathit{Population~ITS(t)} + \mathit{Potential~ITS(t)}},\label{eq:its:ratio}\\
+		MP_{ITS}(t) &= LB_{MP_{ITS}} + RATIO_{ITS}(t) \cdot (UB_{MP_{ITS}} - LB_{MP_{ITS}}) \label{eq:mp:its},\\
+		IN_{ITS}(t) &= \mathit{Potential~ITS(t)} \cdot P_{IN_{ITS}},\\
+		IM_{ITS}(t) &= \mathit{Potential~ITS(t)} \cdot P_{IM_{ITS}} \cdot RATIO_{ITS}(t),\\
+		ACVP_{ITS}(t) &= \mathit{Potential~ITS(t)} \cdot CVP_{ITS}(t) \cdot RATIO_{ITS}(t),
+\end{align}
+where $RATIO_{ITS} \in [0.0,1.0]$ and $MP_{ITS} \in [LB_{MP_{ITS}},UB_{MP_{ITS}}]$.
 
 % ****************************************************************************************************
 \subsection{Systems Integrator}\label{ch:app04:csf:si}
 % ****************************************************************************************************
 
-\begin{eqnarray}
-		CVP_{SI}(t) & = & CVP_{SI}(t_0) * GOV(t) * TS(t) * AS(t) * \nonumber \\ & & PI(t) * PM(t) * MP_{AC}(t) * MP_{PC}(t)
-\end{eqnarray}
-
-\begin{equation}
-	\mathit{Potential~SI(t)} =\mathit{Potential~SI(t_0)} - \int\limits_{t_0}^t  [AR_{SI}(s)]ds
-\end{equation}
-
-\begin{equation}
-	\mathit{Population~SI(t)} = \int\limits_{t_0}^t [AR_{SI}(s)]ds + \mathit{Population~SI(t_0)}
-\end{equation}
-
-\begin{equation}
-		AR_{SI}(t) = IN_{SI}(t) + IM_{SI}(t) + ACVP_{SI}(t)	
-\end{equation}
-
-\begin{equation}
-		RATIO_{SI}(t) = \frac{\mathit{Population~SI(t)}}{\mathit{Population~SI(t)} + \mathit{Potential~SI(t)}} \in [0.0,1.0]
-\end{equation}
-
-\begin{eqnarray}
-	MP_{SI}(t) = LB_{MP_{SI}} + RATIO_{SI}(t) * (UB_{MP_{SI}} - LB_{MP_{SI}})  \nonumber \\ \in [LB_{MP_{SI}},UB_{MP_{SI}}]
-\end{eqnarray}
-
-\begin{equation}
-		IN_{SI}(t) = \mathit{Potential~SI(t)} * P_{IN_{SI}}
-\end{equation}
-
-\begin{equation}
-		IM_{SI}(t) = \mathit{Potential~SI(t)} * P_{IM_{SI}} * RATIO_{SI}(t)
-\end{equation}
-
-\begin{equation}
-		ACVP_{SI}(t) = \mathit{Potential~SI(t)} * CVP_{SI}(t) * RATIO_{SI}(t)
-\end{equation}
+\begin{align}
+		CVP_{SI}(t) &= CVP_{SI}(t_0) \cdot GOV(t) \cdot TS(t) \cdot AS(t) \cdot \nonumber \\ &\qquad PI(t) \cdot PM(t) \cdot MP_{AC}(t) \cdot MP_{PC}(t),\\
+		\mathit{Potential~SI(t)} &=\mathit{Potential~SI(t_0)} - \int\limits_{t_0}^t  [AR_{SI}(s)]ds,\\
+		\mathit{Population~SI(t)} &= \int\limits_{t_0}^t [AR_{SI}(s)]ds + \mathit{Population~SI(t_0)},\\
+		AR_{SI}(t) &= IN_{SI}(t) + IM_{SI}(t) + ACVP_{SI}(t),\\
+		RATIO_{SI}(t) &= \frac{\mathit{Population~SI(t)}}{\mathit{Population~SI(t)} + \mathit{Potential~SI(t)}},\\
+		MP_{SI}(t) &= LB_{MP_{SI}} + RATIO_{SI}(t) \cdot (UB_{MP_{SI}} - LB_{MP_{SI}}),\\
+		IN_{SI}(t) &= \mathit{Potential~SI(t)} \cdot P_{IN_{SI}},\\
+		IM_{SI}(t) &= \mathit{Potential~SI(t)} \cdot P_{IM_{SI}} \cdot RATIO_{SI}(t),\\
+		ACVP_{SI}(t) &= \mathit{Potential~SI(t)} \cdot CVP_{SI}(t) \cdot RATIO_{SI}(t),
+\end{align}
+where $RATIO_{SI} \in [0.0,1.0]$ and $MP_{SI} \in [LB_{MP_{SI}},UB_{MP_{SI}}]$.
 
 % ****************************************************************************************************
 \subsection{Independent Software Vendor}\label{ch:app04:csf:isv}
 % ****************************************************************************************************
 
-\begin{eqnarray}
-		CVP_{ISV}(t) & = & CVP_{ISV}(t_0) * GOV(t) * TS(t) * AS(t) * \nonumber \\ & & PI(t) * MP_{AC}(t) * MP_{PC}(t)
-\end{eqnarray}
-
-\begin{equation}
-	\mathit{Potential~ISV(t)} =\mathit{Potential~ISV(t_0)} - \int\limits_{t_0}^t  [AR_{ISV}(s)]ds
-\end{equation}
-
-\begin{equation}
-	\mathit{Population~ISV(t)} = \int\limits_{t_0}^t [AR_{ISV}(s)]ds + \mathit{Population~ISV(t_0)}
-\end{equation}
-
-\begin{equation}
-		AR_{ISV}(t) = IN_{ISV}(t) + IM_{ISV}(t) + ACVP_{ISV}(t)	
-\end{equation}
-
-\begin{equation}
-		RATIO_{ISV}(t) = \frac{\mathit{Population~ISV(t)}}{\mathit{Population~ISV(t)} + \mathit{Potential~ISV(t)}} \in [0.0,1.0]
-\end{equation}
-
-\begin{eqnarray}\label{eq:mp:isv}
-	MP_{ISV}(t) = LB_{MP_{ISV}} + RATIO_{ISV}(t) * (UB_{MP_{ISV}} - LB_{MP_{ISV}})  \nonumber \\ \in [LB_{MP_{ISV}},UB_{MP_{ISV}}]
-\end{eqnarray}
-
-\begin{equation}
-		IN_{ISV}(t) = \mathit{Potential~ISV(t)} * P_{IN_{ISV}}
-\end{equation}
-
-\begin{equation}
-		IM_{ISV}(t) = \mathit{Potential~ISV(t)} * P_{IM_{ISV}} * RATIO_{ISV}(t)
-\end{equation}
-
-\begin{equation}
-		ACVP_{ISV}(t) = \mathit{Potential~ISV(t)} * CVP_{ISV}(t) * RATIO_{ISV}(t)
-\end{equation}
+\begin{align}
+		CVP_{ISV}(t) &= CVP_{ISV}(t_0) \cdot GOV(t) \cdot TS(t) \cdot AS(t) \cdot \nonumber \\ &\qquad PI(t) \cdot MP_{AC}(t) \cdot MP_{PC}(t),\\
+		\mathit{Potential~ISV(t)} &= \mathit{Potential~ISV(t_0)} - \int\limits_{t_0}^t  [AR_{ISV}(s)]ds,\\
+		\mathit{Population~ISV(t)} &= \int\limits_{t_0}^t [AR_{ISV}(s)]ds + \mathit{Population~ISV(t_0)},\\
+		AR_{ISV}(t) &= IN_{ISV}(t) + IM_{ISV}(t) + ACVP_{ISV}(t),\\
+		RATIO_{ISV}(t) &= \frac{\mathit{Population~ISV(t)}}{\mathit{Population~ISV(t)} + \mathit{Potential~ISV(t)}},\label{eq:isv:ratio}\\
+		MP_{ISV}(t) &= LB_{MP_{ISV}} + RATIO_{ISV}(t) \cdot (UB_{MP_{ISV}} - LB_{MP_{ISV}}),\label{eq:mp:isv}\\
+		IN_{ISV}(t) &= \mathit{Potential~ISV(t)} \cdot P_{IN_{ISV}},\\
+		IM_{ISV}(t) &= \mathit{Potential~ISV(t)} \cdot P_{IM_{ISV}} \cdot RATIO_{ISV}(t),\\
+		ACVP_{ISV}(t) &= \mathit{Potential~ISV(t)} \cdot CVP_{ISV}(t) \cdot RATIO_{ISV}(t),
+\end{align}
+where $RATIO_{ISV} \in [0.0,1.0]$ and $MP_{ISV} \in [LB_{MP_{ISV}},UB_{MP_{ISV}}]$.
 
 % ****************************************************************************************************
 \subsection{Platform Customer}\label{ch:app04:csf:pc}
 % ****************************************************************************************************
 
-\begin{eqnarray}
-		CVP_ {PC}(t) & = & CVP_{PC}(t_0) * GOV(t) * TS(t) * AS(t) * \nonumber \\ & & PI(t) * PM(t) * MP_{SI}(t)
-\end{eqnarray}
-
-\begin{equation}
-	\mathit{Potential~PC(t)} =\mathit{Potential~PC(t_0)} - \int\limits_{t_0}^t  [AR_{PC}(s)]ds
-\end{equation}
-
-\begin{equation}
-	\mathit{Population~PC(t)} = \int\limits_{t_0}^t [AR_{PC}(s)]ds + \mathit{Population~PC(t_0)}
-\end{equation}
-
-\begin{equation}
-		AR_{PC}(t) = IN_{PC}(t) + IM_{PC}(t) + ACVP_{PC}(t)	
-\end{equation}
-
-\begin{equation}
-		RATIO_{PC}(t) = \frac{\mathit{Population~PC(t)}}{\mathit{Population~PC(t)} + \mathit{Potential~PC(t)}} \in [0.0,1.0]
-\end{equation}
-
-\begin{eqnarray}
-	MP_{PC}(t) = LB_{MP_{PC}} + RATIO_{PC}(t) * (UB_{MP_{PC}} - LB_{MP_{PC}})  \nonumber \\ \in [LB_{MP_{PC}},UB_{MP_{PC}}]
-\end{eqnarray}
-
-\begin{equation}
-		IN_{PC}(t) = \mathit{Potential~PC(t)} * P_{IN_{PC}}
-\end{equation}
-
-\begin{equation}
-		IM_{PC}(t) = \mathit{Potential~PC(t)} * P_{IM_{PC}} * RATIO_{PC}(t)
-\end{equation}
-
-\begin{equation}
-		ACVP_{PC}(t) = \mathit{Potential~PC(t)} * CVP_{PC}(t) * RATIO_{PC}(t)
-\end{equation}
+\begin{align}
+		CVP_ {PC}(t) &= CVP_{PC}(t_0) \cdot GOV(t) \cdot TS(t) \cdot AS(t) \cdot \nonumber \\ &\qquad PI(t) \cdot PM(t) \cdot MP_{SI}(t),\\
+		\mathit{Potential~PC(t)} &= \mathit{Potential~PC(t_0)} - \int\limits_{t_0}^t  [AR_{PC}(s)]ds,\\
+		\mathit{Population~PC(t)} &= \int\limits_{t_0}^t [AR_{PC}(s)]ds + \mathit{Population~PC(t_0)},\\
+		AR_{PC}(t) &= IN_{PC}(t) + IM_{PC}(t) + ACVP_{PC}(t),\\
+		RATIO_{PC}(t) &= \frac{\mathit{Population~PC(t)}}{\mathit{Population~PC(t)} + \mathit{Potential~PC(t)}},\\
+		MP_{PC}(t) &= LB_{MP_{PC}} + RATIO_{PC}(t) \cdot (UB_{MP_{PC}} - LB_{MP_{PC}}),\\
+		IN_{PC}(t) &= \mathit{Potential~PC(t)} \cdot P_{IN_{PC}},\\
+		IM_{PC}(t) &= \mathit{Potential~PC(t)} \cdot P_{IM_{PC}} \cdot RATIO_{PC}(t),\\
+		ACVP_{PC}(t) &= \mathit{Potential~PC(t)} \cdot CVP_{PC}(t) \cdot RATIO_{PC}(t),
+\end{align}
+where $RATIO_{PC} \in [0.0,1.0]$ and $MP_{PC} \in [LB_{MP_{PC}},UB_{MP_{PC}}]$.
 
 % ****************************************************************************************************
 \subsection{Application Customer}\label{ch:app04:csf:ac}
 % ****************************************************************************************************
 
-\begin{eqnarray}
-		CVP_{AC}(t) & = & CVP_{AC}(t_0) * GOV(t) * TS(t) * AS(t) * \nonumber \\ & & PI(t) * PM(t) * MP_{SI}(t)
-\end{eqnarray}
-
-\begin{equation}
-	\mathit{Potential~AC(t)} =\mathit{Potential~AC(t_0)} - \int\limits_{t_0}^t  [AR_{AC}(s)]ds
-\end{equation}
-
-\begin{equation}
-	\mathit{Population~AC(t)} = \int\limits_{t_0}^t [AR_{AC}(s)]ds + \mathit{Population~AC(t_0)}
-\end{equation}
-
-\begin{equation}
-		AR_{AC}(t) = IN_{AC}(t) + IM_{AC}(t) + ACVP_{AC}(t)	
-\end{equation}
-
-\begin{equation}
-		RATIO_{AC}(t) = \frac{\mathit{Population~AC(t)}}{\mathit{Population~AC(t)} + \mathit{Potential~AC(t)}} \in [0.0,1.0]
-\end{equation}
-
-\begin{eqnarray}
-	MP_{AC}(t) = LB_{MP_{AC}} + RATIO_{AC}(t) * (UB_{MP_{AC}} - LB_{MP_{AC}})  \nonumber \\ \in [LB_{MP_{AC}},UB_{MP_{AC}}]
-\end{eqnarray}
-
-\begin{equation}
-		IN_{AC}(t) = \mathit{Potential~AC(t)} * P_{IN_{AC}}
-\end{equation}
-
-\begin{equation}
-		IM_{AC}(t) = \mathit{Potential~AC(t)} * P_{IM_{AC}} * RATIO_{AC}(t)
-\end{equation}
-
-\begin{equation}
-		ACVP_{AC}(t) = \mathit{Potential~AC(t)} * CVP_{AC}(t) * RATIO_{AC}(t)
-\end{equation}
+\begin{align}
+		CVP_{AC}(t) &= CVP_{AC}(t_0) \cdot GOV(t) \cdot TS(t) \cdot AS(t) \cdot \nonumber \\ &\qquad PI(t) \cdot PM(t) \cdot MP_{SI}(t),\\
+		\mathit{Potential~AC(t)} &= \mathit{Potential~AC(t_0)} - \int\limits_{t_0}^t  [AR_{AC}(s)]ds,\\
+		\mathit{Population~AC(t)} &= \int\limits_{t_0}^t [AR_{AC}(s)]ds + \mathit{Population~AC(t_0)},\\
+		AR_{AC}(t) &= IN_{AC}(t) + IM_{AC}(t) + ACVP_{AC}(t),\\
+		RATIO_{AC}(t) &= \frac{\mathit{Population~AC(t)}}{\mathit{Population~AC(t)} + \mathit{Potential~AC(t)}},\\
+		MP_{AC}(t) &= LB_{MP_{AC}} + RATIO_{AC}(t) \cdot (UB_{MP_{AC}} - LB_{MP_{AC}}),\\
+		IN_{AC}(t) &= \mathit{Potential~AC(t)} \cdot P_{IN_{AC}},\\
+		IM_{AC}(t) &= \mathit{Potential~AC(t)} \cdot P_{IM_{AC}} \cdot RATIO_{AC}(t),\\
+		ACVP_{AC}(t) &= \mathit{Potential~AC(t)} \cdot CVP_{AC}(t) \cdot RATIO_{AC}(t),
+\end{align}
+where $RATIO_{AC} \in [0.0,1.0]$ and $MP_{AC} \in [LB_{MP_{AC}},UB_{MP_{AC}}]$.

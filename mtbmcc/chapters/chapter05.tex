@@ -118,29 +118,26 @@ For the following five formulas this two linear transformation functions -- as a
 During the investigation of \ac{PaaS} business models, the difference between the pursued governance model have been noticed and considered in the classification scheme as well as \ac{CLD}. In the quantitative model the value of the governance is considered unalterable due to the short-time horizon as well as to the assumption that \ac{PaaS} providers' will not change their governance model from scratch. Therefore the initial governance model value $GOV(t_0)$ is just mapped into the corresponding interval -- between the lower $LB_{GOV}$ and upper boundary $UP_{GOV}$ -- by applying the simplified transformation function as shown in Formula \ref{eq:lts}:
 
 \begin{equation}\label{eq:gov}
-	GOV(t) = LB_{GOV} + GOV(t_0) * (UB_{GOV} - LB_{GOV}) \in [LB_{GOV},UB_{GOV}]
+	GOV(t_0) = LB_{GOV} + GOV(t_0) \cdot (UB_{GOV} - LB_{GOV}) \in [LB_{GOV},UB_{GOV}]
 \end{equation}
 
 Within the overall \ac{CLD} it was reasoned that an increase in the customer base will increase the revenue above what it would otherwise have been. Furthermore, through the increased revenue the platform investments will increase subsequent and finally resulting in increased platform improvements. However, in the \ac{SFD} this set of facts is simplified for reasons of clarity and comprehensibility. In order to take the quantitative model understandable although its complexity and to avoid adding too many external variables -- assumptions -- to this model, for the variable  platform improvements $PI(t)$ the value of the variable $MP_{Overall}$ (cf. Formula \ref{eq:mpo}) is simply mapped to the desired platform improvements interval by applying Formula \ref{eq:lts}. Behind this simplification -- which is basically in line with \citet[p. 200]{Evans2003} -- was the idea that an increased customer base will finally lead to higher platform improvements:
 
 \begin{equation}\label{eq:pi}
-	PI(t) = LB_{PI} + MP_{Overall}(t) * (UB_{PI} - LB_{PI}) \in [LB_{PI},UB_{PI}]
+	PI(t) = LB_{PI} + MP_{Overall}(t) \cdot (UB_{PI} - LB_{PI}) \in [LB_{PI},UB_{PI}]
 \end{equation}
 
 The next two general values -- technical scope as well as additional services -- are further influencing factors which have been revealed and modeled previously. In contrast to the governance model, for this two factors it is considered that they improve over time through the variable platform improvements $PI(t)$ as calculated in Formula \ref{eq:pi}. Hence, for any time $t$ the actually value for both is calculated by using the initial value $TS(t_0)$ respectively $ AS(t_0)$ and multiplying with the current platform improvements $PI(t)$. This intermediate value is then mapped to the desired interval by applying Formula \ref{eq:lt}. Due to specific intervals for these two variables, the denominator of the Formulas \ref{eq:ts} and \ref{eq:as} is equal to the upper boundary of the platform improvements $UB_{PI}$\footnote{Values for $TS(t_0)$ respectively $AS(t_0)$ are within the interval $[0.0,1.0]$ and for $PI(t)$ within the interval $[1.0,2.0]$ (cf. Section \ref{ch:sfd:mv} and \ref{ch:sfd:mp}). Thus, the intermediate results ($TS(t_0)*PI(t)$ respectively $AS(t_0) *PI(t)$) are within the interval $[0.0,2.0]$ which represents the interval $[a_1,a_2]$ from Formula \ref{eq:lt}. Consequently the denominator for this linear transformation function is $2.0$ ($a_2 - a_1 = 2.0 - 0.0 = 2.0$), equals to $UB_{PI}$. This holds as long as $LB_{TS}$ respectively $LB_{AS}$ is equals to $0.0$.}:
 
-\begin{equation}\label{eq:ts}
-	TS(t) = LB_{TS} +  \frac{(TS(t_0) * PI(t)) * (UB_{TS} - LB_{TS})}{UB_{PI}} \in [LB_{TS},UB_{TS}]
-\end{equation}
-
-\begin{equation}\label{eq:as}
-	AS(t) = LB_{AS} +  \frac{(AS(t_0) * PI(t)) * (UB_{AS} - LB_{AS})}{UB_{PI}} \in [LB_{AS},UB_{AS}]
-\end{equation} 
+\begin{align}
+	TS(t) &= LB_{TS} +  \frac{(TS(t_0) \cdot PI(t)) \cdot (UB_{TS} - LB_{TS})}{UB_{PI}} \in [LB_{TS},UB_{TS}]\label{eq:ts}\\
+	AS(t) &= LB_{AS} +  \frac{(AS(t_0) \cdot PI(t)) \cdot (UB_{AS} - LB_{AS})}{UB_{PI}} \in [LB_{AS},UB_{AS}]\label{eq:as}
+\end{align} 
 
 Finally, the variable platform modules -- applications, services, components, or add-ons -- represents the last model foundation. As written above, platform modules are developed and deployed by complementors -- \acp{ISV} and \ac{IT} Startups -- and thus the values of the market penetration of these two customer segments ($MP_{ISV}(t)$ cf. Formula \ref{eq:mp:isv} respectively $MP_{ITS}(t)$ cf. Formula \ref{eq:mp:its}) are used in order to calculate the value of the variable platform modules. This approach was chosen again so as to avoid too many additional assumptions -- parameters, variables, and the like. Therefore the two market penetration values are simply added and mapped to the desired interval by using the linear transformation Formula \ref{eq:lt}. In this particular case, the denominator of the Formula \ref{eq:pm} is equals to the sum of $UB_{ISV}$ and $UB_{ITS}$\footnote{Values for $MP_{ISV}(t)$ respectively $MP_{ITS}(t)$ are within the interval [0.0,1.0] (cf. Section \ref{ch:sfd:mp}). Thus, the addition of $MP_{ISV}(t) + MP_{ITS}(t)$ results in the interval $[0.0,2.0]$ which represents the interval $[a_1,a_2]$ from Formula \ref{eq:lt}. Consequently the denominator for this linear transformation is $2.0$ ($a_2 - a_1 = 2.0 - 0.0 = 2.0$), equals to $UB_{ISV} + UB_{ITS}$.}:
 
 \begin{eqnarray}\label{eq:pm}
-	PM(t) = LB_{PM} + \frac{(MP_{ISV}(t) + MP_{ITS}(t)) * (UB_{PM} - LB_{PM})}{UB_{ISV} + UB_{ITS}} \nonumber \\ \in [LB_{PM},UB_{PM}]
+	PM(t) = LB_{PM} + \frac{(MP_{ISV}(t) + MP_{ITS}(t)) \cdot (UB_{PM} - LB_{PM})}{UB_{ISV} + UB_{ITS}} \nonumber \\ \in [LB_{PM},UB_{PM}]
 \end{eqnarray}
 
 % ****************************************************************************************************
@@ -153,29 +150,23 @@ As indicated in Figure \ref{fig:cld_cs} the \ac{CVP} for each customer segment i
 
 The \ac{CVP} for complementors -- \acp{ISV} and \ac{IT} startups -- is composed of the four general variables $GOV(t)$, $TS(t)$, $AS(t)$, and $PI(t)$, the initial \ac{CVP} -- $CVP_{ISV}(t_0)$ respectively $ CVP_{ITS}(t_0)$ -- as well as through the market penetration of the application ($MP_{AC}(t)$) and platform customers ($MP_{PC}(t)$):
 
-\begin{eqnarray}\label{eq:cvp:isv}
-		CVP_{ISV}(t) & = & CVP_{ISV}(t_0) * GOV(t) * TS(t) * AS(t) * \nonumber \\ & & PI(t) * MP_{AC}(t) * MP_{PC}(t)
-\end{eqnarray}
-
-\begin{eqnarray}\label{eq:cvp:its}
-		CVP_{ITS}(t) & = & CVP_{ITS}(t_0) * GOV(t) * TS(t) * AS(t) * \nonumber \\ & & PI(t) * MP_{AC}(t) * MP_{PC}(t)
-\end{eqnarray}
+\begin{align}
+		CVP_{ISV}(t) &= CVP_{ISV}(t_0) \cdot GOV(t) \cdot TS(t) \cdot AS(t) \cdot \nonumber \\ &\qquad PI(t) \cdot MP_{AC}(t) \cdot MP_{PC}(t)\label{eq:cvp:isv}\\
+		CVP_{ITS}(t) &= CVP_{ITS}(t_0) \cdot GOV(t) \cdot TS(t) \cdot AS(t) \cdot \nonumber \\ &\qquad PI(t) \cdot MP_{AC}(t) \cdot MP_{PC}(t)\label{eq:cvp:its}
+\end{align}
 
 As with the two previous discussed customer segments, also the \ac{SI} \ac{CVP} is influenced by the four general variables $GOV(t)$, $TS(t)$, $AS(t)$, and $PI(t)$ as well as through the initial \ac{CVP} ($CVP_{SI}(t_0)$). Due to the fact, that \acp{SI} offer consultancy services especially for the two customer segments application as well as platform customers, the \ac{SI} \ac{CVP} is influenced through this two corresponding market penetration values -- $MP_{AC}(t)$ and $MP_{PC}(t)$. Moreover, also the number of platform modules ($PM(t)$) is an indicator for flourishing platform and therefore influences the \ac{SI} \ac{CVP}:
 
-\begin{eqnarray}\label{eq:cvp:si}
-		CVP_{SI}(t) & = & CVP_{SI}(t_0) * GOV(t) * TS(t) * AS(t) * \nonumber \\ & & PI(t) * PM(t) * MP_{AC}(t) * MP_{PC}(t)
-\end{eqnarray}
+\begin{align}
+		CVP_{SI}(t) &= CVP_{SI}(t_0) \cdot GOV(t) \cdot TS(t) \cdot AS(t) \cdot \nonumber \\ &\qquad PI(t) \cdot PM(t) \cdot MP_{AC}(t) \cdot MP_{PC}(t)\label{eq:cvp:si}
+\end{align}
 
 The remaining two customer segments -- application and platform customers -- are also influenced by the four general variables $GOV(t)$, $TS(t)$, $AS(t)$, and $PI(t)$ as well as through the initial \ac{CVP} ($CVP_{SI}(t_0)$). In alignment with the \ac{CVP} for \acp{SI}, the number of \acp{SI} offering consultancy services for a certain platform ($MP_{SI}(t)$) positively effects both corresponding \acp{CVP} -- $CVP_{AC}(t)$ as well as $CVP_{PC}(t)$. Moreover and quite important for these two customer segments is the number of available platform modules ($PM(t)$) and thus this figure influences these \acp{CVP} accordingly:
 
-\begin{eqnarray}\label{eq:cvp:ac}
-		CVP_{AC}(t) & = & CVP_{AC}(t_0) * GOV(t) * TS(t) * AS(t) * \nonumber \\ & & PI(t) * PM(t) * MP_{SI}(t)
-\end{eqnarray}
-
-\begin{eqnarray}\label{eq:cvp:pc}
-		CVP_ {PC}(t) & = & CVP_{PC}(t_0) * GOV(t) * TS(t) * AS(t) * \nonumber \\ & & PI(t) * PM(t) * MP_{SI}(t)
-\end{eqnarray}
+\begin{align}
+		CVP_{AC}(t) &= CVP_{AC}(t_0) \cdot GOV(t) \cdot TS(t) \cdot AS(t) \cdot \nonumber \\ &\qquad PI(t) \cdot PM(t) \cdot MP_{SI}(t)\label{eq:cvp:ac}\\
+		CVP_ {PC}(t) &= CVP_{PC}(t_0) \cdot GOV(t) \cdot TS(t) \cdot AS(t) \cdot \nonumber \\ &\qquad PI(t) \cdot PM(t) \cdot MP_{SI}(t)\label{eq:cvp:pc}
+\end{align}
 
 Hereafter the residual customer-specific formulas are introduced. Due to fact that this functions are consistent for all five customer segments the generic notation $CS$ is used in the following and denotes the generic character of this functions. However, within Appendix \ref{ch:app04} all simulation functions are summarized including the specific functions for all five customer segments (cf. Appendix \ref{ch:app04:csf}).
 
@@ -206,25 +197,25 @@ The ratio how many customers of a specific customer segment are using the platfo
 By using this ratio, which actually represent the plain market penetration within the interval $[0.0,1.0]$, the desired market penetration can be calculated by applying Formula \ref{eq:lts} and mapping $RATIO_{CS}(t)$ into the desired interval:
 
 \begin{eqnarray}\label{eq:cs:mp}
-	MP_{CS}(t) = LB_{MP_{CS}} + RATIO_{CS}(t) * (UB_{MP_{CS}} - LB_{MP_{CS}})  \nonumber \\ \in [LB_{MP_{CS}},UB_{MP_{CS}}]
+	MP_{CS}(t) = LB_{MP_{CS}} + RATIO_{CS}(t) \cdot (UB_{MP_{CS}} - LB_{MP_{CS}})  \nonumber \\ \in [LB_{MP_{CS}},UB_{MP_{CS}}]
 \end{eqnarray}
 
 The remaing three adopter groups are calculated as follows: Innovators are simply determined by the product of the probability of innovators ($P_{IN_{CS}}$) and the corresponding potential customer stock size \linebreak ($\mathit{Potential~CS(t)}$):
 
 \begin{equation}\label{eq:cs:in}
-		IN_{CS}(t) = \mathit{Potential~CS(t)} * P_{IN_{CS}}
+		IN_{CS}(t) = \mathit{Potential~CS(t)} \cdot P_{IN_{CS}}
 \end{equation}
 
 In order to calculate the variable imitators, the probability of imitators ($P_{IM_{CS}}$) is multiplied with the corresponding customer segment ratio ($RATIO_{CS}(t)$). This intermediate result is then further multiplied with the potential customer stock size ($\mathit{Potential~CS(t)}$). By including the variavle $RATIO_{CS}(t)$ into the imitator calculation, this function results in the desired s-shaped curve. Basically, the variable $RATIO_{CS}(t)$ increases and the variable $\mathit{Potential~CS(t)}$ decreases all the time and thus providing the s-shaped curve:
 
 \begin{equation}\label{eq:cs:im}
-		IM_{CS}(t) = \mathit{Potential~CS(t)} * P_{IM_{CS}} * RATIO_{CS}(t)
+		IM_{CS}(t) = \mathit{Potential~CS(t)} \cdot P_{IM_{CS}} \cdot RATIO_{CS}(t)
 \end{equation}
 
 And finally the adoption from the customer value proposition \linebreak ($ACVP_{CS}(t)$) is similarly to the imitator function the product of the potential customers ($\mathit{Potential~CS(t)}$), the customer segment ratio ($RATIO_{CS}(t)$), and the corresponding customer segment \ac{CVP} ($CVP_{CS}(t)$, cf. Formulas \ref{eq:cvp:isv} - \ref{eq:cvp:pc}). Also this function results in line with Formula \ref{eq:cs:im} in a s-shaped curve:
 
 \begin{equation}\label{eq:cs:acvp}
-		ACVP_{CS}(t) = \mathit{Potential~CS(t)} * CVP_{CS}(t) * RATIO_{CS}(t)
+		ACVP_{CS}(t) = \mathit{Potential~CS(t)} \cdot CVP_{CS}(t) \cdot RATIO_{CS}(t)
 \end{equation}
 
 % ****************************************************************************************************
@@ -243,7 +234,7 @@ Within the first column in Table \ref{tab:mvar} three important model variables 
 	\centering
 	\begin{tabular}{llllllll}
 		\toprule 
-		\multicolumn{8}{c}{\footnotesize \textbf{Model Variables and their corresponding Codomains}} \\ \midrule
+		\multicolumn{8}{c}{\footnotesize \textbf{Variables and their corresponding Codomains}} \\ \midrule
 		\footnotesize $GOV(t_0)$ & \footnotesize $[0.0,1.0]$ & \footnotesize $CVP_{ITS}(t_0)$ & \footnotesize $[0.0,0.1]$ & \footnotesize $P_{IN_{ITS}}$ & \footnotesize $(0.0,0.025]$ & \footnotesize $P_{IM_{ITS}}$ & \footnotesize $[0.0,0.05]$ \\
 		\footnotesize $TS(t_0)$ & \footnotesize $[0.0,1.0]$ & \footnotesize $CVP_{SI}(t_0)$ & \footnotesize $[0.0,0.1]$ & \footnotesize $P_{IN_{SI}}$ & \footnotesize $(0.0,0.025]$ & \footnotesize $P_{IM_{SI}}$ & \footnotesize $[0.0,0.05]$ \\
 		\footnotesize $AS(t_0)$ & \footnotesize $[0.0,1.0]$ & \footnotesize $CVP_{ISV}(t_0)$ & \footnotesize $[0.0,0.1]$ & \footnotesize $P_{IN_{ISV}}$ & \footnotesize $(0.0,0.025]$ & \footnotesize $P_{IM_{ISV}}$ & \footnotesize $[0.0,0.05]$ \\
@@ -267,22 +258,41 @@ Finally, also the probability of innovators need to be defined for all five cust
 \section{Model Parameters}\label{ch:sfd:mp}
 % ****************************************************************************************************
 
+In addition to the previous introduced 18 model variables, 20 further model parameters (actually ten intervals and consequent ten lower as well as ten upper boundaries) are established so as to provide the possibility to adjust the model dynamics. By changing these parameters the impact of certain model variables but also the extent of specific network effects will alter according to the modifications. As with the model variables, also the model parameters were derived directly from the \ac{SFD} respectively simulation model. In Table \ref{tab:mpara} the proposed ten intervals and the resulting 20 parameters are illustrated. Moreover, also these initial suggested intervals have been discussed and evaluated iteratively in conformity with the \ac{DSR} design cycle \citep{Hevner2007}. In the following these model parameters and their corresponding intervals as well as their basic impacts are discussed.
+
+Platform improvements (cf. Formula \ref{eq:pi}) have been identified to enhance the \acp{CVP} (cf. Formulas \ref{eq:cvp:isv} - \ref{eq:cvp:pc}), the technical scope (cf. Formula \ref{eq:ts}), as well as the additional services (cf. Formula \ref{eq:as}) over time. In order to manage the impact of the platform improvements of these three variables, the corresponding platform improvements interval was designed. The interval $[1.0,2.0]$ is suggested initially for the first version of this simulation model, whereas the lower boundary with the value $1.0$ represents the case of no improvements at all and the upper boundary with the value $2.0$ the case of an improvement of $100\%$. Due to the fact the variable platform improvements is used multiplicative, this approach is suitable. Obvious, this interval (but clearly also the nine other intervals) can be adjusted so as to take specific characteristics of the examination object into account. For instance, by setting the lower boundary below one, the variable platform improvements affects the influenced factors negative. But also the overall impact of the variable platform improvements can be decreased respectively increased by decreasing respectively increasing the upper platform improvements boundary.
+
+Another important model component is the variable platform modules as particularly illustrated in Figure \ref{fig:cld_csi}. This factor influences the \acp{CVP} of application (cf. Formula \ref{eq:cvp:ac}) and platform customers (cf. Formula \ref{eq:cvp:pc}) as well as \acp{SI} (cf. Formula \ref{eq:cvp:si}). As shown in Formula \ref{eq:pm}, the variable platform modules is, for reasons of simplicity, calculated using the market penetrations of \acp{ISV} and \ac{IT} startups -- complementors -- and literally just mapped to the platform module interval $[1.0,2.0]$. Based on the admittedly simple calculation, this interval represents for $1.0$ the case of no platform modules at all and the value $2.0$ means basically just various platform modules. Also the variable platform modules is used multiplicative and therefore this interpretation. Setting the lower boundary below one would mean that in the case of no platform modules the influenced \acp{CVP} are effected negative. As with the platform improvements, the overall impact of the variable platform modules can be adjusted by changing the corresponding upper boundary.
+
 \begin{table}[t]
 	\centering
-	\begin{tabular}{ll}
+	\begin{tabular}{llll}
 			\toprule 
-			\footnotesize \textbf{Parameter} & \footnotesize \textbf{Interval} \\ \midrule
-			\footnotesize PI & \footnotesize $[1.0,2.0] \implies LB_{PI} = 1.0$ and $UB_{PI}$ = 2.0 \\ 
-			\footnotesize PM & \footnotesize  $[1.0,2.0] \implies LB_{PM} = 1.0$ and $UB_{PM}$ = 2.0 \\ \midrule
-			\footnotesize GOV & \footnotesize $[1.0,1.1] \implies LB_{GOV} = 1.0$ and $UB_{GOV}$ = 1.1 \\
-			\footnotesize TS & \footnotesize $[1.0,1.1] \implies LB_{TS} = 1.0$ and $UB_{TS}$ = 1.1 \\
-			\footnotesize AS & \footnotesize $[1.0,1.1] \implies LB_{AS} = 1.0$ and $UB_{AS}$ = 1.1 \\ \midrule
-			\footnotesize $MP_{ITS}$ & \footnotesize $[0.0,1.0] \implies LB_{ITS} = 0.0$ and $UB_{ITS}$ = 1.0 \\
-			\footnotesize $MP_{ISV}$ & \footnotesize $[0.0,1.0] \implies LB_{ISV} = 0.0$ and $UB_{ISV}$ = 1.0 \\
-			\footnotesize $MP_{AC}$ & \footnotesize $[1.0,2.0] \implies LB_{AC} = 1.0$ and $UB_{AC}$ = 2.0 \\
-			\footnotesize $MP_{SI}$ & \footnotesize $[1.0,1.1] \implies LB_{SI} = 1.0$ and $UB_{SI}$ = 1.1 \\
-			\footnotesize $MP_{PC}$ & \footnotesize $[1.0,1.2] \implies LB_{PC} = 1.0$ and $UB_{PC}$ = 1.2 \\ \bottomrule
+			\multicolumn{4}{c}{\footnotesize \textbf{Variables, Intervals, and the resulting Parameters}}\\ \midrule
+			\footnotesize $PI(t)$ & \footnotesize $[1.0,2.0]$ & \footnotesize $LB_{PI} = 1.0$ & \footnotesize $UB_{PI} = 2.0$ \\ 
+			\footnotesize $PM(t)$ & \footnotesize  $[1.0,2.0]$ & \footnotesize $LB_{PM} = 1.0$ & \footnotesize $UB_{PM} = 2.0$ \\ \midrule
+			\footnotesize $GOV(t_0)$ & \footnotesize $[1.0,1.1]$ & \footnotesize $LB_{GOV} = 1.0$ & \footnotesize $UB_{GOV} = 1.1$ \\
+			\footnotesize $TS(t)$ & \footnotesize $[1.0,1.1]$ & \footnotesize $LB_{TS} = 1.0$ & \footnotesize $UB_{TS} = 1.1$ \\
+			\footnotesize $AS(t)$ & \footnotesize $[1.0,1.1]$ & \footnotesize $LB_{AS} = 1.0$ & \footnotesize $UB_{AS} = 1.1$ \\ \midrule
+			\footnotesize $MP_{ITS}(t)$ & \footnotesize $[0.0,1.0]$ & \footnotesize $LB_{ITS} = 0.0$ & \footnotesize $UB_{ITS} = 1.0$ \\
+			\footnotesize $MP_{ISV}(t)$ & \footnotesize $[0.0,1.0]$ & \footnotesize $LB_{ISV} = 0.0$ & \footnotesize $UB_{ISV} = 1.0$ \\
+			\footnotesize $MP_{AC}(t)$ & \footnotesize $[1.0,2.0]$ & \footnotesize $LB_{AC} = 1.0$ & \footnotesize $UB_{AC} = 2.0$ \\
+			\footnotesize $MP_{SI}(t)$ & \footnotesize $[1.0,1.1]$ & \footnotesize $LB_{SI} = 1.0$ & \footnotesize $UB_{SI} = 1.1$ \\
+			\footnotesize $MP_{PC}(t)$ & \footnotesize $[1.0,1.5]$ & \footnotesize $LB_{PC} = 1.0$ & \footnotesize $UB_{PC} = 1.5$ \\ \bottomrule
 	\end{tabular}
 	\caption{Model Parameters}
 	\label{tab:mpara}
 \end{table}
+
+The next three factors in Table \ref{tab:mpara} affect the \acp{CVP} of all five customer segments (cf. Formulas \ref{eq:cvp:isv} - \ref{eq:cvp:pc}) as illustrated in Figure \ref{fig:cld_bp}. Due to missing data concerning customer preferences and the like, for these three model parameter the same interval $[1.0,1.1]$ is suggested initially. Whereas the lower boundary of $1.0$ represents no alternation of the influenced factor and the upper boundary of $1.1$ signifies an improvement of $10\%$ for the influenced factor. Once again, these variables are used multiplicative and thus this explanation. By changing the lower and upper boundary the impact of these three model variables can be adjusted as requested. Also here a lower boundary less than one would lead to a negative influence.
+
+The remaining five intervals are dedicated to manage the market penetration values of all customer segments. As mentioned above, \acp{ISV} and \ac{IT} startups -- complementors -- develop and deploy platform modules. Thus, their market penetration values are used for the platform modules calculation (cf. Formula \ref{eq:pm}). The market penetrations of these two customer segments are initially simply designed to be within the interval $[0.0,1.0]$. Actually, this interval represents the outcome of the corresponding ratio calculations (cf. Formulas \ref{eq:cs:ratio}, \ref{eq:isv:ratio}, and \ref{eq:its:ratio}) and hence is not required in this particular case. However, the impact of \acp{ISV} and \ac{IT} startups onto the platform modules differs most likely for each examination object. These circumstances can be taken into account through adjusting both intervals accordingly.
+
+Through the size of the application customer population the \acp{CVP} of \acp{ISV} (cf. Formula \ref{eq:cvp:isv}), \ac{IT} startups (cf. Formula \ref{eq:cvp:its}), and \acp{SI} (cf. Formula \ref{eq:cvp:si}) are positively influenced. Especially for complementors this influencing factor is rather important and therefore the interval for the application customer market penetration results in $[1.0,2.0]$. As previously mentioned, by changing this interval the actual impact of the application customer population size for the current simulation can be modeled.
+
+\acp{SI} support the implementation of applications as well as for whole systems and therefore the size of the \acp{SI} population affects the \acp{CVP} for application (cf. Formula \ref{eq:cvp:ac}) and platform customer (cf. Formula \ref{eq:cvp:pc}) positively. Anyway, this impact is rather small and thus the interval is initially designed to $[1.0,1.1]$.
+
+And finally, the market penetration of the platform customers influences, similar to the application customer market penetration, the \acp{CVP} of \acp{ISV} (cf. Formula \ref{eq:cvp:isv}), \ac{IT} startups (cf. Formula \ref{eq:cvp:its}), and \acp{SI} (cf. Formula \ref{eq:cvp:si}). Compared to application customer market penetration interval, a smaller interval have been chosen, due to the fact that platform customers are utilizing platform modules in addition to the actually used platform and not solely as the customer segment application customers. Hence, the interval for the market penetration of platform customers is initially designed to $[1.0,1.5]$.
+
+To sum up, all above presented intervals are suggestions which seem to be reasonable after evaluating and reviewing them. However, users of this simulation model are highly encouraged to adjust these intervals so as to take the characteristics of the examination object into account. Among other things, this simulation model is applied to an application example in the next chapter in order to show its direct applicability.
+
