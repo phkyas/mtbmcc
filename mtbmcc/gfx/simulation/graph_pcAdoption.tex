@@ -1,0 +1,36 @@
+% ****************************************************************************************************
+% Graph PC Adoption 
+% ****************************************************************************************************
+
+\begin{tikzpicture}[x=0.1cm,y=1cm]
+
+  \def\xmin{0}
+  \def\xmax{65}
+  \def\ymin{0}
+  \def\ymax{5.5}
+
+  % grid
+  \draw[style=help lines, ystep=1, xstep=10] (\xmin,\ymin) grid
+  (\xmax,\ymax);
+
+  % axes
+  \draw[->] (\xmin,\ymin) -- (\xmax,\ymin) node[right] {$Time~in~Months$};
+  \draw[->] (\xmin,\ymin) -- (\xmin,\ymax) node[above] {$New~Platform~Customer$};
+
+  \foreach \x in {0,10,...,60}
+    \node at (\x, \ymin) [below] {\scriptsize \x};
+  \foreach \y in {0,1,...,5}
+    \node at (\xmin,\y) [left] {\scriptsize \y};
+
+  %,mark=*,mark size=0.5pt
+	\draw[color=orange] plot[smooth] file {simulationData/PC/imitatorsPC.txt}
+			node [above=1cm, right] {\footnotesize $IM_{PC}$};
+	\draw[color=violet] plot[smooth] file {simulationData/PC/innovatorsPC.txt}
+			node [above=2cm, right] {\footnotesize $IN_{PC}$};	
+  \draw[color=blue] plot[smooth] file {simulationData/PC/adoptionCVPPC.txt}
+			node [above=3cm, right] {\footnotesize $ACVP_{PC}$};			
+	\draw[color=red] plot[smooth] file {simulationData/PC/adoptionPC.txt}
+			node [above=4cm, right] {\footnotesize $AR_{PC}$};
+			
+			
+\end{tikzpicture}

@@ -2,6 +2,8 @@
 \chapter{Proof of Concept -- Using the Example of SAP HANA Cloud}\label{ch:poc}
 % ****************************************************************************************************
 
+% zwei modellierungsarten: abolut und relative
+
 \begin{comment}
 
 	GOV 0.6
@@ -33,6 +35,22 @@
 \end{figure}
 
 
+\begin{table}[t]
+	\centering
+	\begin{tabular}{llllllll}
+		\toprule 
+		\multicolumn{8}{c}{\footnotesize \textbf{Variables and their corresponding Values}} \\ \midrule
+		\footnotesize $GOV(t_0)$ & \footnotesize $0.6$ & \footnotesize $CVP_{ITS}(t_0)$ & \footnotesize $0.04$ & \footnotesize $P_{IN_{ITS}}$ & \footnotesize $0.005$ & \footnotesize $P_{IM_{ITS}}$ & \footnotesize $0.01$ \\
+		\footnotesize $TS(t_0)$ & \footnotesize $0.5$ & \footnotesize $CVP_{SI}(t_0)$ & \footnotesize $0.03$ & \footnotesize $P_{IN_{SI}}$ & \footnotesize $0.0125$ & \footnotesize $P_{IM_{SI}}$ & \footnotesize $0.025$ \\
+		\footnotesize $AS(t_0)$ & \footnotesize $0.4$ & \footnotesize $CVP_{ISV}(t_0)$ & \footnotesize $0.05$ & \footnotesize $P_{IN_{ISV}}$ & \footnotesize $0.005$ & \footnotesize $P_{IM_{ISV}}$ & \footnotesize $0.01$ \\
+		& & \footnotesize $CVP_{PC}(t_0)$ & \footnotesize $0.07$ & \footnotesize $P_{IN_{PC}}$ & \footnotesize $0.0125$ & \footnotesize $P_{IM_{PC}}$ & \footnotesize $0.025$ \\
+		& & \footnotesize $CVP_{AC}(t_0)$ & \footnotesize $0.01$ & \footnotesize $P_{IN_{AC}}$ & \footnotesize $0.01$ & \footnotesize $P_{IM_{AC}}$ & \footnotesize $0.02$ \\ \bottomrule
+	\end{tabular}
+	\caption{Proof of Concept Model Variables}
+	\label{tab:mvar:sap}
+\end{table}
+
+
 In conformity with the design cycle of [29], our model has been evaluated against the real world by its reapplication in the context of PaaS business models. In this section, we present a proof of concept study using the 4CaaSt platform . The EU-funded research project 4CaaSt aims to create an advanced PaaS cloud platform which supports the optimized and flexible hosting of Internet-scale multi-tier applications. Hence, the 4CaaSt platform is a development-focused PaaS solution that mainly focuses on the customer segments IT startups, independent software vendors and platform customers. Although 4CaaSt provides an electronic marketplace for cloud-based services, the potential customer segment of application customers is not in direct focus of 4CaaSt, since most services offered on the marketplace consist in software components rather than ready to use applications. This is also indicated in Figure 6, where the main design elements of the 4CaaSt business model are highlighted.
 
 Large parts of the platform are available under open source licenses, hence 4CaaSt pursue an open governance model. 4CaaSt offers extensive technical capabilities by implementing concepts like real application container and bring-your-own-container. As already mentioned, currently large parts of the platform are open source. Nevertheless, a provider of the 4CaaSt platform might charge its customers transaction-based fees.
@@ -49,8 +67,30 @@ The application of our developed artifacts in the real world scenario of 4CaaSt 
 
 \begin{figure}[t]
 	\centering
-	\input{gfx/graphTest}
-	\caption{Graph}
-	\label{fig:gt}
+	\input{gfx/simulation/graph_customerBase}
+	\caption{Customer Base}
+	\label{fig:g:cb}
 \end{figure}
+
+\begin{figure}[t]
+	\centering
+	\input{gfx/simulation/graph_newCustomer}
+	\caption{New Customers}
+	\label{fig:g:nc}
+\end{figure}
+
+\begin{figure}[t]
+	\centering
+	\input{gfx/simulation/graph_itsAdoption}
+	\caption{ITS Adoption}
+	\label{fig:g:itsa}
+\end{figure}
+
+\begin{figure}[t]
+	\centering
+	\input{gfx/simulation/graph_itsStocks}
+	\caption{ITS Stocks}
+	\label{fig:g:itss}
+\end{figure}
+
 

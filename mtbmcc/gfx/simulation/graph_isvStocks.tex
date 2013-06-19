@@ -1,0 +1,33 @@
+% ****************************************************************************************************
+% Graph ISV Stocks
+% ****************************************************************************************************
+
+\begin{tikzpicture}[x=0.1cm,y=0.05cm]
+
+  \def\xmin{0}
+  \def\xmax{65}
+  \def\ymin{0}
+  \def\ymax{105}
+
+  % grid
+  \draw[style=help lines, ystep=10, xstep=10] (\xmin,\ymin) grid
+  (\xmax,\ymax);
+
+  % axes
+  \draw[->] (\xmin,\ymin) -- (\xmax,\ymin) node[right] {$Time~in~Months$};
+  \draw[->] (\xmin,\ymin) -- (\xmin,\ymax) node[above] {$Independent~Software~Vendor~Stocks$};
+
+  \foreach \x in {0,10,...,60}
+    \node at (\x, \ymin) [below] {\scriptsize \x};
+  \foreach \y in {0,10,...,100}
+    \node at (\xmin,\y) [left] {\scriptsize \y};
+
+  %,mark=*,mark size=0.5pt
+	\draw[color=red] plot[smooth] file {simulationData/ISV/potentialISV.txt}
+			node [above=0.3cm, right] {\footnotesize $Potential~ISV$};
+	\draw[color=blue] plot[smooth] file {simulationData/ISV/populationISV.txt}
+			node [right] {\footnotesize $Population~ISV$};	
+
+			
+			
+\end{tikzpicture}
