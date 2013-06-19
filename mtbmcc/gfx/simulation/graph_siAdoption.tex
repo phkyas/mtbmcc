@@ -7,15 +7,15 @@
   \def\xmin{0}
   \def\xmax{65}
   \def\ymin{0}
-  \def\ymax{5.5}
+  \def\ymax{5.25}
 
   % grid
-  \draw[style=help lines, ystep=1, xstep=10] (\xmin,\ymin) grid
+  \draw[style=help lines, ystep=0.5, xstep=10] (\xmin,\ymin) grid
   (\xmax,\ymax);
 
   % axes
-  \draw[->] (\xmin,\ymin) -- (\xmax,\ymin) node[right] {$Time~in~Months$};
-  \draw[->] (\xmin,\ymin) -- (\xmin,\ymax) node[above] {$New~Systems~Integrator$};
+  \draw[->] (\xmin,\ymin) -- (\xmax,\ymin) node[right] {\footnotesize $Time~in~Months$};
+  \draw[->] (\xmin,\ymin) -- (\xmin,\ymax) node[above] {\footnotesize $New~Systems~Integrator$};
 
   \foreach \x in {0,10,...,60}
     \node at (\x, \ymin) [below] {\scriptsize \x};
@@ -24,13 +24,13 @@
 
   %,mark=*,mark size=0.5pt
 	\draw[color=orange] plot[smooth] file {simulationData/SI/imitatorsSI.txt}
-			node [above=1cm, right] {\footnotesize $IM_{SI}$};
+			node [above=0.3cm, right] {\scriptsize $IM_{SI}$};
 	\draw[color=violet] plot[smooth] file {simulationData/SI/innovatorsSI.txt}
-			node [above=2cm, right] {\footnotesize $IN_{SI}$};	
+			node [above=0.7cm, right] {\scriptsize $IN_{SI}$};	
   \draw[color=blue] plot[smooth] file {simulationData/SI/adoptionCVPSI.txt}
-			node [above=3cm, right] {\footnotesize $ACVP_{SI}$};			
+			node [above=1.1cm, right] {\scriptsize $ACVP_{SI}$};			
 	\draw[color=red] plot[smooth] file {simulationData/SI/adoptionSI.txt}
-			node [above=4cm, right] {\footnotesize $AR_{SI}$};
+			node [above=1.5cm, right] {\scriptsize $AR_{SI}$};
 			
 			
 \end{tikzpicture}

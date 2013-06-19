@@ -7,30 +7,30 @@
   \def\xmin{0}
   \def\xmax{65}
   \def\ymin{0}
-  \def\ymax{5.5}
+  \def\ymax{5.25}
 
   % grid
-  \draw[style=help lines, ystep=1, xstep=10] (\xmin,\ymin) grid
+  \draw[style=help lines, ystep=0.5, xstep=10] (\xmin,\ymin) grid
   (\xmax,\ymax);
 
   % axes
-  \draw[->] (\xmin,\ymin) -- (\xmax,\ymin) node[right] {$Time~in~Months$};
-  \draw[->] (\xmin,\ymin) -- (\xmin,\ymax) node[above] {$New~IT~Startup$};
+  \draw[->] (\xmin,\ymin) -- (\xmax,\ymin) node[right] {\footnotesize $Time~in~Months$};
+  \draw[->] (\xmin,\ymin) -- (\xmin,\ymax) node[above] {\footnotesize $New~IT~Startup$};
 
   \foreach \x in {0,10,...,60}
     \node at (\x, \ymin) [below] {\scriptsize \x};
-  \foreach \y in {0,1,...,5}
+  \foreach \y in {0,1,...,5.0}
     \node at (\xmin,\y) [left] {\scriptsize \y};
 
   %,mark=*,mark size=0.5pt
 	\draw[color=orange] plot[smooth] file {simulationData/ITS/imitatorsITS.txt}
-			node [above=1cm, right] {\footnotesize $IM_{ITS}$};
+			node [above=0.3cm, right] {\scriptsize $IM_{ITS}$};
 	\draw[color=violet] plot[smooth] file {simulationData/ITS/innovatorsITS.txt}
-			node [above=2cm, right] {\footnotesize $IN_{ITS}$};	
+			node [above=0.7cm, right] {\scriptsize $IN_{ITS}$};	
   \draw[color=blue] plot[smooth] file {simulationData/ITS/adoptionCVPITS.txt}
-			node [above=3cm, right] {\footnotesize $ACVP_{ITS}$};			
+			node [above=1.1cm, right] {\scriptsize $ACVP_{ITS}$};			
 	\draw[color=red] plot[smooth] file {simulationData/ITS/adoptionITS.txt}
-			node [above=4cm, right] {\footnotesize $AR_{ITS}$};
+			node [above=1.5cm, right] {\scriptsize $AR_{ITS}$};
 			
 			
 \end{tikzpicture}

@@ -2,7 +2,7 @@
 % Graph Customer Base
 % ****************************************************************************************************
 
-\begin{tikzpicture}[x=0.1cm,y=0.008cm]
+\begin{tikzpicture}[x=0.1cm,y=0.01cm]
 
   \def\xmin{0}
   \def\xmax{65}
@@ -14,16 +14,17 @@
   (\xmax,\ymax);
 
   % axes
-  \draw[->] (\xmin,\ymin) -- (\xmax,\ymin) node[right] {$Time~in~Months$};
-  \draw[->] (\xmin,\ymin) -- (\xmin,\ymax) node[above] {$Customers~in~\%$};
+  \draw[->] (\xmin,\ymin) -- (\xmax,\ymin) node[right] {\footnotesize $Time~in~Months$};
+  \draw[->] (\xmin,\ymin) -- (\xmin,\ymax) node[above] {\footnotesize $Customers~in~\%$};
 
   \foreach \x in {0,10,...,60}
     \node at (\x, \ymin) [below] {\scriptsize \x};
-  \foreach \y in {0,10,...,100}
+  \foreach \y in {0,20,...,100}
     \node at (\xmin,\y*5) [left] {\scriptsize \y};
 
   %,mark=*,mark size=0.5pt
   \draw[color=blue] plot[smooth] file {simulationData/customerBase.txt}
-   node [right] {};
+   node [right] {\scriptsize $Customer~Base$};
+
 
 \end{tikzpicture}

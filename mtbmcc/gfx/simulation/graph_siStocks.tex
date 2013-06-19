@@ -14,19 +14,19 @@
   (\xmax,\ymax);
 
   % axes
-  \draw[->] (\xmin,\ymin) -- (\xmax,\ymin) node[right] {$Time~in~Months$};
-  \draw[->] (\xmin,\ymin) -- (\xmin,\ymax) node[above] {$Systems~Integrator~Stocks$};
+  \draw[->] (\xmin,\ymin) -- (\xmax,\ymin) node[right] {\footnotesize $Time~in~Months$};
+  \draw[->] (\xmin,\ymin) -- (\xmin,\ymax) node[above] {\footnotesize $Systems~Integrator~Stocks$};
 
   \foreach \x in {0,10,...,60}
     \node at (\x, \ymin) [below] {\scriptsize \x};
-  \foreach \y in {0,10,...,100}
+  \foreach \y in {0,20,...,100}
     \node at (\xmin,\y) [left] {\scriptsize \y};
 
   %,mark=*,mark size=0.5pt
 	\draw[color=red] plot[smooth] file {simulationData/SI/potentialSI.txt}
-			node [above=0.3cm, right] {\footnotesize $Potential~SI$};
+			node [above=0.3cm, right] {\scriptsize $Potential~SI$};
 	\draw[color=blue] plot[smooth] file {simulationData/SI/populationSI.txt}
-			node [right] {\footnotesize $Population~SI$};	
+			node [right] {\scriptsize $Population~SI$};	
 
 			
 			

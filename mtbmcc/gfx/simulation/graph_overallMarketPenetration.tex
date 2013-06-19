@@ -1,33 +1,30 @@
 % ****************************************************************************************************
-% Graph AC Stocks
+% Graph Overall Market Penetration
 % ****************************************************************************************************
 
-\begin{tikzpicture}[x=0.1cm,y=0.05cm]
+\begin{tikzpicture}[x=0.1cm,y=5cm]
 
   \def\xmin{0}
   \def\xmax{65}
   \def\ymin{0}
-  \def\ymax{105}
+  \def\ymax{1.05}
 
   % grid
-  \draw[style=help lines, ystep=10, xstep=10] (\xmin,\ymin) grid
+  \draw[style=help lines, ystep=0.1, xstep=10] (\xmin,\ymin) grid
   (\xmax,\ymax);
 
   % axes
   \draw[->] (\xmin,\ymin) -- (\xmax,\ymin) node[right] {\footnotesize $Time~in~Months$};
-  \draw[->] (\xmin,\ymin) -- (\xmin,\ymax) node[above] {\footnotesize $Application~Customer~Stocks$};
+  \draw[->] (\xmin,\ymin) -- (\xmin,\ymax) node[above] {\footnotesize $MP_{Overall}~in~\%$};
 
   \foreach \x in {0,10,...,60}
     \node at (\x, \ymin) [below] {\scriptsize \x};
   \foreach \y in {0,20,...,100}
-    \node at (\xmin,\y) [left] {\scriptsize \y};
+    \node at (\xmin,\y/100) [left] {\scriptsize \y};
 
   %,mark=*,mark size=0.5pt
-	\draw[color=red] plot[smooth] file {simulationData/AC/potentialAC.txt}
-			node [right] {\scriptsize $Potential~AC$};
-	\draw[color=blue] plot[smooth] file {simulationData/AC/populationAC.txt}
-			node [right] {\scriptsize $Population~AC$};	
+  \draw[color=blue] plot[smooth] file {simulationData/overallMarketPenetration.txt}
+   node [right] {\scriptsize $MP_{Overall}$};
 
-			
-			
+
 \end{tikzpicture}

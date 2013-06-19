@@ -1,29 +1,32 @@
 % ****************************************************************************************************
-% Graph New Customer
+% Graph PI and PM
 % ****************************************************************************************************
 
-\begin{tikzpicture}[x=0.1cm,y=0.25cm]
+\begin{tikzpicture}[x=0.1cm,y=5cm]
 
   \def\xmin{0}
   \def\xmax{65}
-  \def\ymin{0}
-  \def\ymax{21}
+  \def\ymin{1.0}
+  \def\ymax{2.05}
 
   % grid
-  \draw[style=help lines, ystep=2, xstep=10] (\xmin,\ymin) grid
+  \draw[style=help lines, ystep=0.1, xstep=10] (\xmin,\ymin) grid
   (\xmax,\ymax);
 
   % axes
   \draw[->] (\xmin,\ymin) -- (\xmax,\ymin) node[right] {\footnotesize $Time~in~Months$};
-  \draw[->] (\xmin,\ymin) -- (\xmin,\ymax) node[above] {\footnotesize $New~Customer$};
+  \draw[->] (\xmin,\ymin) -- (\xmin,\ymax) node[above] {\footnotesize $PI/~PM$};
 
   \foreach \x in {0,10,...,60}
     \node at (\x, \ymin) [below] {\scriptsize \x};
-  \foreach \y in {0,4,...,20}
+  \foreach \y in {1.0,1.2,1.4,1.6,1.8,2.0}
     \node at (\xmin,\y) [left] {\scriptsize \y};
 
   %,mark=*,mark size=0.5pt
-  \draw[color=blue] plot[smooth] file {simulationData/newCustomer.txt}
-   node [above=0.2cm, right] {\scriptsize $New~Customer$};
+  \draw[color=blue] plot[smooth] file {simulationData/pi.txt}
+		node [below=0.1cm, right] {\scriptsize $PI$};
+	\draw[color=red] plot[smooth] file {simulationData/pm.txt}
+		node [above=0.1cm, right] {\scriptsize $PM$};
+
 
 \end{tikzpicture}

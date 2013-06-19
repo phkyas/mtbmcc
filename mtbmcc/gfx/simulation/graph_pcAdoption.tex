@@ -7,15 +7,15 @@
   \def\xmin{0}
   \def\xmax{65}
   \def\ymin{0}
-  \def\ymax{5.5}
+  \def\ymax{5.25}
 
   % grid
-  \draw[style=help lines, ystep=1, xstep=10] (\xmin,\ymin) grid
+  \draw[style=help lines, ystep=0.5, xstep=10] (\xmin,\ymin) grid
   (\xmax,\ymax);
 
   % axes
-  \draw[->] (\xmin,\ymin) -- (\xmax,\ymin) node[right] {$Time~in~Months$};
-  \draw[->] (\xmin,\ymin) -- (\xmin,\ymax) node[above] {$New~Platform~Customer$};
+  \draw[->] (\xmin,\ymin) -- (\xmax,\ymin) node[right] {\footnotesize $Time~in~Months$};
+  \draw[->] (\xmin,\ymin) -- (\xmin,\ymax) node[above] {\footnotesize $New~Platform~Customer$};
 
   \foreach \x in {0,10,...,60}
     \node at (\x, \ymin) [below] {\scriptsize \x};
@@ -24,13 +24,13 @@
 
   %,mark=*,mark size=0.5pt
 	\draw[color=orange] plot[smooth] file {simulationData/PC/imitatorsPC.txt}
-			node [above=1cm, right] {\footnotesize $IM_{PC}$};
+			node [above=0.3cm, right] {\scriptsize $IM_{PC}$};
 	\draw[color=violet] plot[smooth] file {simulationData/PC/innovatorsPC.txt}
-			node [above=2cm, right] {\footnotesize $IN_{PC}$};	
+			node [above=0.7cm, right] {\scriptsize $IN_{PC}$};	
   \draw[color=blue] plot[smooth] file {simulationData/PC/adoptionCVPPC.txt}
-			node [above=3cm, right] {\footnotesize $ACVP_{PC}$};			
+			node [above=1.1cm, right] {\scriptsize $ACVP_{PC}$};			
 	\draw[color=red] plot[smooth] file {simulationData/PC/adoptionPC.txt}
-			node [above=4cm, right] {\footnotesize $AR_{PC}$};
+			node [above=1.5cm, right] {\scriptsize $AR_{PC}$};
 			
 			
 \end{tikzpicture}
