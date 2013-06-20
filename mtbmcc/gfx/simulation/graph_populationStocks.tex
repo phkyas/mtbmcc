@@ -1,0 +1,37 @@
+% ****************************************************************************************************
+% Graph Population Customer Segments Stocks
+% ****************************************************************************************************
+
+\begin{tikzpicture}[x=0.1cm,y=0.05cm]
+
+  \def\xmin{0}
+  \def\xmax{65}
+  \def\ymin{0}
+  \def\ymax{105}
+
+  % grid
+  \draw[style=help lines, ystep=10, xstep=10] (\xmin,\ymin) grid
+  (\xmax,\ymax);
+
+  % axes
+  \draw[->] (\xmin,\ymin) -- (\xmax,\ymin) node[right] {\footnotesize $Time~in~Months$};
+  \draw[->] (\xmin,\ymin) -- (\xmin,\ymax) node[above] {\footnotesize $Customer~Segment~Population~in~\%$};
+
+  \foreach \x in {0,10,...,60}
+    \node at (\x, \ymin) [below] {\scriptsize \x};
+  \foreach \y in {0,20,...,100}
+    \node at (\xmin,\y) [left] {\scriptsize \y};
+
+  %,mark=*,mark size=0.5pt
+	\draw[color=magenta] plot[smooth] file {simulationData/AC/populationAC.txt}
+			node [below=0.65cm,right] {\scriptsize $AC$};
+	\draw[color=blue] plot[smooth] file {simulationData/ITS/populationITS.txt}
+			node [below=0.9cm,right] {\scriptsize $ITS$};	
+	\draw[color=red] plot[smooth] file {simulationData/ISV/populationISV.txt}
+			node [below=0.6cm,right] {\scriptsize $ISV$};	
+	\draw[color=orange] plot[smooth] file {simulationData/SI/populationSI.txt}
+			node [below=0.3cm,right] {\scriptsize $SI$};	
+	\draw[color=violet] plot[smooth] file {simulationData/PC/populationPC.txt}
+			node [right] {\scriptsize $PC$};	
+												
+\end{tikzpicture}

@@ -15,7 +15,7 @@
 
   % axes
   \draw[->] (\xmin,\ymin) -- (\xmax,\ymin) node[right] {\footnotesize $Time~in~Months$};
-  \draw[->] (\xmin,\ymin) -- (\xmin,\ymax) node[above] {\footnotesize $TS/~AS$};
+  \draw[->] (\xmin,\ymin) -- (\xmin,\ymax) node[above] {\footnotesize $TS/~AS/~GOV$};
 
   \foreach \x in {0,10,...,60}
     \node at (\x, \ymin) [below] {\scriptsize \x};
@@ -27,6 +27,7 @@
 		node [right] {\scriptsize $TS$};
 	\draw[color=red] plot[smooth] file {simulationData/as.txt}
 		node [right] {\scriptsize $AS$};
-
+	\draw[color=orange] plot[smooth] file {simulationData/gov.txt}
+		node [right] {\scriptsize $GOV$};
 
 \end{tikzpicture}

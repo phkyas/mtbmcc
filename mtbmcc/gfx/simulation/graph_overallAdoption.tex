@@ -1,0 +1,37 @@
+% ****************************************************************************************************
+% Graph Overall Adoption 
+% ****************************************************************************************************
+
+\begin{tikzpicture}[x=0.1cm,y=1cm]
+
+  \def\xmin{0}
+  \def\xmax{65}
+  \def\ymin{0}
+  \def\ymax{5.25}
+
+  % grid
+  \draw[style=help lines, ystep=0.5, xstep=10] (\xmin,\ymin) grid
+  (\xmax,\ymax);
+
+  % axes
+  \draw[->] (\xmin,\ymin) -- (\xmax,\ymin) node[right] {\footnotesize $Time~in~Months$};
+  \draw[->] (\xmin,\ymin) -- (\xmin,\ymax) node[above] {\footnotesize $New~Customer$};
+
+  \foreach \x in {0,10,...,60}
+    \node at (\x, \ymin) [below] {\scriptsize \x};
+  \foreach \y in {0,1,...,5}
+    \node at (\xmin,\y) [left] {\scriptsize \y};
+
+  %,mark=*,mark size=0.5pt
+	\draw[color=orange] plot[smooth] file {simulationData/SI/adoptionSI.txt}
+			node [above=0.5cm, right] {\scriptsize $SI$};
+	\draw[color=violet] plot[smooth] file {simulationData/PC/adoptionPC.txt}
+			node [above=0.2cm, right] {\scriptsize $PC$};
+	\draw[color=magenta] plot[smooth] file {simulationData/AC/adoptionAC.txt}
+			node [above=0.65cm, right] {\scriptsize $AC$};
+	\draw[color=red] plot[smooth] file {simulationData/ISV/adoptionISV.txt}
+			node [above=0.8cm, right] {\scriptsize $ISV$};
+	\draw[color=blue] plot[smooth] file {simulationData/ITS/adoptionITS.txt}
+			node [above=1.1cm, right] {\scriptsize $ITS$};										
+		
+\end{tikzpicture}
