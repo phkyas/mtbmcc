@@ -15,7 +15,7 @@
 
   % axes
   \draw[->] (\xmin,\ymin) -- (\xmax,\ymin) node[right] {\footnotesize $Time~in~Months$};
-  \draw[->] (\xmin,\ymin) -- (\xmin,\ymax) node[above] {\footnotesize $New~Customer$};
+  \draw[->] (\xmin,\ymin) -- (\xmin,\ymax) node[above] {\footnotesize $New~Customers$};
 
   \foreach \x in {0,10,...,60}
     \node at (\x, \ymin) [below] {\scriptsize \x};
@@ -24,6 +24,6 @@
 
   %,mark=*,mark size=0.5pt
   \draw[color=blue] plot[smooth] file {simulationData/newCustomer.txt}
-   node [above=0.2cm, right] {\scriptsize $New~Customer$};
+   node [above=0.2cm, right] {\scriptsize $New~Customers$};
 
 \end{tikzpicture}

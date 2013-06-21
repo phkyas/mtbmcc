@@ -2,37 +2,27 @@
 \chapter{Proof of Concept -- Using the Example of SAP HANA Cloud}\label{ch:poc}
 % ****************************************************************************************************
 
-% zwei modellierungsarten: abolut und relative
+In order to evaluate and show the applicability of the previous developed \ac{DSR} artifacts -- classification scheme (cf. Chapter \ref{ch:sota}), \ac{CLD} (cf. Chapter \ref{ch:cld}), and \ac{SFD} (cf. Chapter \ref{ch:sfd}) --, in the following a \acf{PoC} study using the example of the SAP HANA Cloud platform is presented. This approach is in conformity with the \ac{DSR} design cycle of \citet[pp. 88,90-91]{Hevner2007} and the \ac{DSR} activity evaluation according to \citet[p. 56]{Peffers2007}, whereby the artifacts have been evaluated against the real world by their reapplication in the context of \ac{PaaS} business models.
 
-\begin{comment}
+% ****************************************************************************************************
+\section{Business Model Design Elements}\label{ch:poc:cs}
+% ****************************************************************************************************
+The business model of the SAP HANA Cloud platform is explained and illustrated, using the business model conceptualization proposed by \citet{Johnson2008}, in detail within Subsection \ref{ch:sota:sap}. In order to classify \ac{PaaS} business models, a corresponding classification scheme have been developed. How the SAP HANA Cloud platform addresses the identified classification criteria is briefly discussed below and illustrated in Figure \ref{fig:cs:sap} by means of a morphological box, whereas the addressed characteristics are highlighted.
 
-	GOV 0.6
-	TS 0.5
-	AS 0.4
-	CVP_ITS 0.04
-	CVP_ISV 0.05
-	CVP_AC 0.01 oder 0.02
-	CVP_SI 0.03
-	CVP_PC 0.07
-	PoAaC_ITS 0.01
-	PoAaC_ISV 0.01
-	PoAaC_AC 0.02
-	PoAaC_SI 0.025
-	PoAaC_PC 0.025
-	
-	Senior Researcher
-		expert in 
-			a) PaaS development 
-			b) Innovation and network theorie
-
-\end{comment}
+Within the case study analysis of this platform, four diverse stakeholder groups, which are directly targeted, were identified -- application customer, development partners, platform customers, and individual developers. Using the classification scheme terminology, the SAP HANA Cloud platform addresses all five identified customer segments -- \ac{IT} startup, \ac{SI}, \ac{ISV}, platform customer, as well as application customer. However, these customer segments are served differently as illustrated further below. SAP HANA Cloud aims to support the development, deployment, and management of standalone as well as integrated cloud applications. However, the focus of this platform is rather to provide extensive integration features und thus classified as \ac{PaaS} platform with the core value proposition integration. The SAP HANA Cloud platform is neither an open source platform nor a highly regulated platform, hence a partly limited governance model is pursued. Meaning platform users of all characteristics have an extensive freedom of choice, although certain areas are regulated directly by the platform provider. Even though the SAP HANA Cloud platform is offering several technical capabilities, for instance the SAP Hana Cloud Eclipse plugin and corresponding \ac{SDK} (Java), they are considered rather as limited and thus for the criterion technical scope the characteristic limited technical capabilities is selected. In particular, the comparison with other \ac{PaaS} platforms and their technical capabilities support this classification. Based on the SAP HANA Cloud platform case study, three revenue streams which are used by this platform have been identified. First, platform customers are charged with subscription-based fees ranging from $370$ to $16.000$ \ac{EUR} monthly. Second, SAP takes a revenue share of $15\%$ for platform modules developed by complementors -- \acp{ISV} and \ac{IT} -- and distributed over the SAP store. Third, various charged addition services are offered, including annual development partner fees of $1.990$ \ac{EUR} and application certification fees ranging from $495$ to $990$ \ac{EUR}.
 
 \begin{figure}[tb]
 	\centering
 	\input{gfx/classificationScheme_SAP}
-	\caption{SAP HANA Cloud Classification}
-	\label{fig:cs_sap}
+	\caption{Proof of Concept -- Classification}
+	\label{fig:cs:sap}
 \end{figure}
+
+As set out above, the classification scheme developed in this thesis can be easily used to initially assess and classify \ac{PaaS} business models and their characteristics. Whereby the classification scheme is aimed to be as user friendly as possible -- a key classification guideline according to \citet[p. 41]{Fettke2003} -- and thereby ensuring that the classification criteria as well as their characteristics are comprehensible and sufficient.
+
+
+
+% zwei modellierungsarten: abolut und relative
 
 
 \begin{table}[t]
@@ -46,43 +36,29 @@
 		& & \footnotesize $CVP_{PC}(t_0)$ & \footnotesize $0.07$ & \footnotesize $P_{IN_{PC}}$ & \footnotesize $0.0125$ & \footnotesize $P_{IM_{PC}}$ & \footnotesize $0.025$ \\
 		& & \footnotesize $CVP_{AC}(t_0)$ & \footnotesize $0.01$ & \footnotesize $P_{IN_{AC}}$ & \footnotesize $0.01$ & \footnotesize $P_{IM_{AC}}$ & \footnotesize $0.02$ \\ \bottomrule
 	\end{tabular}
-	\caption{Proof of Concept Model Variables}
+	\caption{Proof of Concept -- Simulation Variables}
 	\label{tab:mvar:sap}
 \end{table}
 
 
-In conformity with the design cycle of [29], our model has been evaluated against the real world by its reapplication in the context of PaaS business models. In this section, we present a proof of concept study using the 4CaaSt platform . The EU-funded research project 4CaaSt aims to create an advanced PaaS cloud platform which supports the optimized and flexible hosting of Internet-scale multi-tier applications. Hence, the 4CaaSt platform is a development-focused PaaS solution that mainly focuses on the customer segments IT startups, independent software vendors and platform customers. Although 4CaaSt provides an electronic marketplace for cloud-based services, the potential customer segment of application customers is not in direct focus of 4CaaSt, since most services offered on the marketplace consist in software components rather than ready to use applications. This is also indicated in Figure 6, where the main design elements of the 4CaaSt business model are highlighted.
 
-Large parts of the platform are available under open source licenses, hence 4CaaSt pursue an open governance model. 4CaaSt offers extensive technical capabilities by implementing concepts like real application container and bring-your-own-container. As already mentioned, currently large parts of the platform are open source. Nevertheless, a provider of the 4CaaSt platform might charge its customers transaction-based fees.
- 
-Figure 6. 4CaaSt Business Model Design Elements
-
-In the previous section, six factors influencing the CVP have been discussed. (1) The core value proposition of 4CaaSt which has a direct impact on the CVP is development-focused. This focus seems appropriate for the first three customer segments addressed, but not necessarily for application customers. (2) The open governance model as well as (3) extensive technical capabilities might also positively influence the CVP for IT startups, ISVs and platform customers, although this might not have much influence on application customers. (4) Currently 4CaaSt does not offer any additional services, hence this element will not strengthen the CVP. (5) Platform improvements improve the CVP. However, currently 4CaaSt is free of charge, meaning no revenue is generated that might lead to investments in platform improvements (see self-reinforcing feedback loops R\_2). Nevertheless, improvements of the 4Caast platform might be achieved by developers on an open source basis. However, it could be expected that self-reinforcing feedback loops R\_3 and R\_4 will only be weak. (6) Finally, the market penetration of 4CaaSt is rather low at present. This might change with an increase of the customer base; see self-reinforcing feedback loop (R\_5).
- 
-Figure 7. 4CaaSt Customer Segment Dynamics
-
-Since 4CaaSt does not address SIs, there are fewer interdependencies between 4CaaSt's customer segments, compare Figure 5 and Figure 7. As a consequence, 4CaaSt will not leverage the two self-reinforcing feedback loops R\_6 and R\_7. Platform modules are developed and provided by ISVs and IT startups and are valuable mainly for platform and application customers. However, 4CaaSt only offers a few ready to use applications that might be used by application customers. Hence, the self-reinforcing feedback loops R\_8, and R\_9 will only have weak effect. Platform customers on the other hand are positively influenced by a high number of available software components and services on which they can build on. Consequently, 4CaaSt will be able to leverage the two self-reinforcing feedback loops R\_10 and R\_11 respectively the cross-sided network effects which are represented by these loops. 
-
-The application of our developed artifacts in the real world scenario of 4CaaSt clearly identifies two emphases, where 4CaaSt might improve their business model. First, 4CaaSt needs to ensure platform improvements. This could on the one hand be accomplished by the platform providers themselves, or 4CaaSt could also create incentives for open source developers. Second, 4CaaSt should definitely improve its value proposition to application customers to utilize critical cross-sided network effects.
-
-\newpage
 
 \begin{figure}[htb]
 	\centering
 	\input{gfx/simulation/graph_populationStocks}
-	\caption{Population Customer Segment Stocks}
+	\caption{Proof of Concept Simulation -- Customers}
 \end{figure}
 
 \begin{figure}[htb]
 	\centering
 	\input{gfx/simulation/graph_potentialStocks}
-	\caption{Potential Customer Segment Stocks}
+	\caption{Proof of Concept Simulation -- Potential Customers}
 \end{figure}
 
 \begin{figure}[htb]
 	\centering
 	\input{gfx/simulation/graph_overallAdoption}
-	\caption{Customer Segment Adoption Rates}
+	\caption{Proof of Concept Simulation -- New Customers}
 \end{figure}
 
 
