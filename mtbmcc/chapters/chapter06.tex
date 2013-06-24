@@ -41,8 +41,26 @@ The application of the developed \ac{CLD} artifact (cf. Figure \ref{fig:cld_bp})
 \section{Simulation Results}\label{ch:poc:sr}
 % ****************************************************************************************************
 
-% zwei modellierungsarten: abolut und relative
+\begin{table}[t]
+	\centering
+	\begin{tabular}{ll}
+		\toprule 
+		\footnotesize \textbf{Parameter} & \footnotesize \textbf{Value} \\ \midrule
+		\footnotesize Initial Time & $0$ \\
+		\footnotesize Final Time & $60$ \\
+		\footnotesize Time Step & $0.25$ \\
+		\footnotesize Time Unit & \footnotesize Month \\ \midrule
+		\footnotesize Integration Type & \footnotesize RK4 Auto\footnotemark \\ \bottomrule
+	\end{tabular}
+	\caption{Proof of Concept -- Simulation Parameter}
+	\label{tab:tb}
+\end{table}
 
+	\footnotetext{RK4 Auto denotes a fourth order Runge-Kutta integration combined with an automatic adjustment of the step size in order to ensure accuracy.}
+
+In Chapter \ref{ch:sfd} the theoretical foundations -- mathematical formulas -- of the \ac{SFD} respectively platform adoption simulation model have been discussed. Moreover, a comprehensive view of all necessary and instanced model formulas is provided in Appendix \ref{ch:app04}. Reviewing and applying this simulation model in the context of \ac{PaaS} business models presupposes adequate simulation software. For this purpose the simulation software package Vensim\footnote{Vensim. Retrieved June 24, 2013, from \url{http://vensim.com}} was chosen for the simple reason that here a free, nevertheless powerful, educational version -- Vensim \acs{PLE} (\acl{PLE}) -- and a free of charge model reader -- Vensim Model Reader -- are offered. Using this tool, the platform adoption simulation model has been basically instantiated by means of the developed formulas. Furthermore, the time boundaries -- rather short time horizon -- and the integration type have been defined as shown in Table \ref{tab:tb}.
+
+In addition to these basic simulation parameters, the actual simulation variables (cf. Section \ref{ch:sfd:mv} and Table \ref{tab:mvar}) of the SAP HANA Cloud platform have been specified. These instantiated variables are illustrated in Table \ref{tab:mvar:sap}. Based on the partly limited governance model a middle value of $0.6$ for the variable governance model is selected. Since the offered technical capabilities are currently rather limited, the corresponding variable technical scope is set to a low value of $0.2$. Even though some additional services are provided they could be improved and thus a value of $0.4$ for the variable additional services is determined. For the five customer segments the \acp{CVP} and probabilities for innovators as well as imitators have been defined based on an adequate analysis of the SAP HANA Cloud business model and through expert discussions. Due to the limited technical capabilities and the comparable high start-up costs for \acp{ISV} and \ac{IT} startup, their \acp{CVP} have been modeled with a value of $0.05$ respectively with a value of $0.04$. Moreover, the innovator and imitator probabilities haven been set for both customer segments to $0.005$ respectively $0.01$. The \ac{CVP} for \acp{SI} is determined with a value of $0.03$, since the overall customer base is still small; however SAP is a large software vendor and thus \acp{SI} are even so interested in offering consultancy services. Probabilities for innovators and imitators have been defined with a value of $0.0125$ respectively $0.025$. All in all, the \ac{CVP} for platform customers is relatively well at present and hence this variable is set to $0.07$. The corresponding probabilities for early adopters -- innovators and imitators -- have been modeled with the same values as for \acp{SI}. Finally, the \ac{CVP} for application customers is defined with a low value of $0.01$, since the number of platform modules is negligible at this juncture. Nevertheless, the probabilities for innovators and imitators are set to $0.01$ respectively $0.02$, since SAP certificated applications built upon SAP HANA Cloud might attract potential application customers. Summarizing, using the platform adoption simulation model developed in Chapter \ref{ch:sfd} in combination with the above described simulation parameters and variables an instantiation of the simulation model has been implemented by applying the simulation software Vensim \ac{PLE}.
 
 \begin{table}[t]
 	\centering
@@ -50,7 +68,7 @@ The application of the developed \ac{CLD} artifact (cf. Figure \ref{fig:cld_bp})
 		\toprule 
 		\multicolumn{8}{c}{\footnotesize \textbf{Variables and their corresponding Values}} \\ \midrule
 		\footnotesize $GOV(t_0)$ & \footnotesize $0.6$ & \footnotesize $CVP_{ITS}(t_0)$ & \footnotesize $0.04$ & \footnotesize $P_{IN_{ITS}}$ & \footnotesize $0.005$ & \footnotesize $P_{IM_{ITS}}$ & \footnotesize $0.01$ \\
-		\footnotesize $TS(t_0)$ & \footnotesize $0.5$ & \footnotesize $CVP_{SI}(t_0)$ & \footnotesize $0.03$ & \footnotesize $P_{IN_{SI}}$ & \footnotesize $0.0125$ & \footnotesize $P_{IM_{SI}}$ & \footnotesize $0.025$ \\
+		\footnotesize $TS(t_0)$ & \footnotesize $0.2$ & \footnotesize $CVP_{SI}(t_0)$ & \footnotesize $0.03$ & \footnotesize $P_{IN_{SI}}$ & \footnotesize $0.0125$ & \footnotesize $P_{IM_{SI}}$ & \footnotesize $0.025$ \\
 		\footnotesize $AS(t_0)$ & \footnotesize $0.4$ & \footnotesize $CVP_{ISV}(t_0)$ & \footnotesize $0.05$ & \footnotesize $P_{IN_{ISV}}$ & \footnotesize $0.005$ & \footnotesize $P_{IM_{ISV}}$ & \footnotesize $0.01$ \\
 		& & \footnotesize $CVP_{PC}(t_0)$ & \footnotesize $0.07$ & \footnotesize $P_{IN_{PC}}$ & \footnotesize $0.0125$ & \footnotesize $P_{IM_{PC}}$ & \footnotesize $0.025$ \\
 		& & \footnotesize $CVP_{AC}(t_0)$ & \footnotesize $0.01$ & \footnotesize $P_{IN_{AC}}$ & \footnotesize $0.01$ & \footnotesize $P_{IM_{AC}}$ & \footnotesize $0.02$ \\ \bottomrule
@@ -59,22 +77,27 @@ The application of the developed \ac{CLD} artifact (cf. Figure \ref{fig:cld_bp})
 	\label{tab:mvar:sap}
 \end{table}
 
-\begin{figure}[htb]
-	\centering
-	\input{gfx/simulation/graph_populationStocks}
-	\caption{Proof of Concept Simulation -- Customers}
-\end{figure}
+In the following the results of this simulation are in general discussed. A detailed overview is provided in Appendix \ref{ch:app05} by means of graphs for the most important model parameters as well as for each customer segment individually. Figure \ref{fig:sim:ar} illustrates the adoption rates of all customer segments. The sum of these adoption rates results in the variable new customers as calculated by Formula \ref{eq:nc} and is illustrated in Figure \ref{fig:sim:nc}. Since the customer segment platform customers is served with the most sophisticated \ac{CVP}, its adoption rate reaches the peak first and hence the platform customer population increases quite fast and already at an early stage (cf. Figure \ref{fig:sim:pcs}). A bit surprising, the adoption rate of the customer segment \acp{SI} reaches its peak second. The \ac{CVP} for \acp{SI} is comparable rather low, however this \ac{CVP} is influenced among other things by the platform customer market penetration which increases, based on the early and high adoption rate, quite fast. Thereafter the adoption rate of the customer segment \acp{ISV} reaches its peak. This customer segments reaches the highest peak (representing absolute the highest adoption rate), explained by the proper \ac{CVP} and the early and high platform customer adoption rate, since the \ac{CVP} for \acp{ISV} is positively influenced by the market penetration of this customer segment. The adoption rate of the customer segment \ac{IT} startups reaches its peak next. Due to the fact that the \ac{CVP} for this customer segment is a little worse compared to the \ac{ISV} \ac{CVP}, the \ac{IT} startup customer segment reaches its adoption rate peak latter and not that high as the customer segment \acp{ISV}. The lowest and latest adoption rate reaches the customer segment application customers. Reason for this shaped adoption rate are the relatively low \ac{CVP} and the slow growth of the number of available platform modules (cf. Figure \ref{fig:sim:pm}). Since platform modules are developed by complementors -- \acp{ISV} and \ac{IT} startups --, these two customer segments need to growth first and associated the number of platform modules will also increase, nevertheless delayed. To sum up, the adoption simulation of the SAP HANA Cloud platform confirmed the previous revealed insights and emphasized rather weak point quantitatively.
 
-\begin{figure}[htb]
-	\centering
-	\input{gfx/simulation/graph_potentialStocks}
-	\caption{Proof of Concept Simulation -- Potential Customers}
-\end{figure}
-
-\begin{figure}[htb]
+\begin{figure}[tb]
 	\centering
 	\input{gfx/simulation/graph_overallAdoption}
-	\caption{Proof of Concept Simulation -- New Customers}
+	\caption{Proof of Concept -- Simulation Result}
+	\label{fig:sim:ar}
 \end{figure}
 
+By applying the simulation model for the SAP HANA Cloud platform the exemplary \ac{PoC} study is concluded. The application of the three \ac{DSR} artifacts using this platform has shown the applicability of these artifacts in the domain of \ac{PaaS} business models. First, using the classification scheme \ac{PaaS} business models can be classified and, for instance, compared with other \ac{PaaS} business models. Thereby first insights concerning the currently pursued business models -- weaknesses but also strengths -- can be identified. Second, by utilizing the developed \acp{CLD} these first insights can be investigated in more detail. Beyond that, further insights may be revealed and will lead, in combination with the first insights, to a better understanding of the investigated business model. Third, by simulating the adoption of the examined \ac{PaaS} platform using the \ac{SFD} respectively simulation model, the so far gained insights can be quantified and further so far unrevealed insights may be found. All in all, the three \ac{DSR} artifacts -- classification scheme, \ac{CLD}, and \ac{SFD} respectively simulation model -- facilitate a better understanding of the investigated \ac{PaaS} business model in general and in particular with regard to the adoption dynamics.
 
+\begin{comment}
+	\begin{figure}[htb]
+		\centering
+		\input{gfx/simulation/graph_populationStocks}
+		\caption{Proof of Concept Simulation -- Customers}
+	\end{figure}
+
+	\begin{figure}[htb]
+		\centering
+		\input{gfx/simulation/graph_potentialStocks}
+		\caption{Proof of Concept Simulation -- Potential Customers}
+	\end{figure}
+\end{comment}
